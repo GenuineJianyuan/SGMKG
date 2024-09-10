@@ -1,0 +1,56 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to filter, process, and visualize Sentinel-2 satellite imagery. The script aims to remove clouds and atmospheric effects from the images, filter them based on location and date, calculate the median composite, clip the composite to a specific region of interest, and display the final result on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Remove Clouds from Sentinel-2 Images",
+        "Step description": "The purpose of this step is to define a function `s2_rmcloud` that removes clouds and cirrus from Sentinel-2 images. The function takes an image as input, extracts the QA60 band, creates bit masks for cloud and cirrus, applies bitwise operations to mask out cloudy pixels, and returns the image with clouds removed as output. This step is implemented by creating a JavaScript function that processes the input image to mask out cloud and cirrus pixels, ensuring the output image is free from cloud cover.",
+        "Input": ["Sentinel-2 image"], 
+        "Output":["Cloud-free Sentinel-2 image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Sentinel-2 Image Collection",
+        "Step description": "The purpose of this step is to filter the Sentinel-2 image collection by applying the `s2_rmcloud` function, bounding it to the region of interest, filtering by a specific date range, and further filtering based on a cloudy pixel percentage threshold. This step is implemented by filtering the image collection based on predefined criteria to select clear, cloud-free scenes for further analysis.",
+        "Input": ["Sentinel-2 image collection", "Region of interest", "Date range", "Cloudy pixel percentage threshold"], 
+        "Output":["Filtered cloud-free Sentinel-2 images"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Center Map on Region of Interest",
+        "Step description": "The purpose of this step is to center the map on the region of interest and add a layer to visualize it on the map. This step helps in spatially orienting the subsequent analysis and displaying the selected region for reference. The implementation involves setting the map view to focus on the specified region of interest and adding a visual layer to display it on the map interface.",
+        "Input": ["Region of interest"], 
+        "Output":["Map with region of interest displayed"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Calculate Median Composite of Images",
+        "Step description": "This step calculates the median composite of the cloud-free Sentinel-2 images using the `mean()` function. The purpose is to create a single composite image representing the average spectral values of the selected images, reducing noise and enhancing the overall image quality. The implementation involves computing the median composite by averaging the pixel values of the selected images to generate a smoother and less noisy representation of the scene.",
+        "Input": ["Cloud-free Sentinel-2 images"], 
+        "Output":["Median composite image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Clip Median Composite Image to Region of Interest",
+        "Step description": "In this step, the script clips the median composite image to the region of interest using the `clipToCollection()` function. The purpose is to focus the analysis and visualization on the specific area of interest, removing any irrelevant background information. The implementation involves spatially cropping the median composite image to match the boundaries of the region of interest for detailed analysis.",
+        "Input": ["Median composite image", "Region of interest"], 
+        "Output":["Clipped median composite image"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Define Visualization Parameters",
+        "Step description": "The purpose of this step is to define visualization parameters for displaying the clipped composite image on the map. The parameters specify the bands to display, the minimum and maximum pixel values for stretching, and a gamma correction value for enhancing the image visualization. This step is implemented by setting the visualization parameters to optimize the display of the clipped composite image on the map interface.",
+        "Input": ["Clipped median composite image"], 
+        "Output":["Visualization parameters"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Display Clipped Composite Image on Map",
+        "Step description": "This final step adds the clipped composite image to the map using the defined visualization parameters. The purpose is to visually represent the processed Sentinel-2 image data on the map, allowing for easy interpretation and analysis of the results. The implementation involves overlaying the clipped composite image on the map with the specified visualization parameters to provide a clear visual representation of the geospatial data.",
+        "Input": ["Clipped median composite image", "Visualization parameters"], 
+        "Output":["Map with processed Sentinel-2 image displayed"]
+        }
+       ] 
+}
+```

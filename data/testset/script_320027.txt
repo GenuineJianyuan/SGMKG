@@ -1,0 +1,63 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process that aims to detect crop areas in a specific region (Iowa) using Landsat 8 satellite imagery. The code imports a user-uploaded CSV file containing sample points, filters Landsat 8 images for a specified time range, extracts spectral values for each sample point, trains a random forest classifier, applies the classifier to classify the Landsat image, visualizes the classified image, calculates the corn field area in Iowa, and outputs the result.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Import CSV File",
+        "Step description": "The purpose of this step is to load the user-uploaded CSV file containing sample points. The operation involves loading the user-uploaded CSV file using the ee.FeatureCollection() function. This step requires the user's CSV file path as input and outputs a feature collection of uploaded samples.", 
+        "Input": ["User's CSV file path"], 
+        "Output":["Feature collection of uploaded samples"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Set Time Range and Spatial Scope",
+        "Step description": "This step aims to define the time range and spatial extent for filtering Landsat 8 images. It involves creating a rectangular geometry for Iowa, filtering Landsat 8 images based on the spatial extent and time range. The functions used include ee.Geometry.Rectangle(), ee.ImageCollection().filterBounds(), and ee.ImageCollection().filterDate(). The input for this step includes start and end dates, Iowa geometry, and the output is a Landsat 8 image collection filtered by time and location.", 
+        "Input": ["Start and end dates", "Iowa geometry"], 
+        "Output":["Landsat 8 image collection filtered by time and location"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Load Landsat 8 Image",
+        "Step description": "The purpose of this step is to load Landsat 8 images for the specified time range and spatial extent. The operation involves loading Landsat 8 images and taking the median value to create a single image. The input for this step is the Landsat 8 image collection, and the output is the median Landsat 8 image.", 
+        "Input": ["Landsat 8 image collection"], 
+        "Output":["Median Landsat 8 image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Extract Spectral Values",
+        "Step description": "This step aims to extract spectral values for each sample point from the Landsat image. It involves mapping over the uploaded sample points, extracting spectral values using reduceRegion(), and setting the extracted values to each sample point. The input for this step includes sample points and Landsat image bands, and the output is training data with spectral values for each sample point.", 
+        "Input": ["Sample points", "Landsat image bands"], 
+        "Output":["Training data with spectral values for each sample point"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Train Random Forest Classifier",
+        "Step description": "The purpose of this step is to train a random forest classifier using the extracted spectral values. The operation involves training a random forest classifier using the training data. The input for this step includes training data, class property, and input properties, and the output is the trained random forest classifier.", 
+        "Input": ["Training data", "Class property", "Input properties"], 
+        "Output":["Trained random forest classifier"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Apply Classifier to Landsat Image",
+        "Step description": "To classify the Landsat image using the trained random forest classifier. The operation involves applying the trained classifier to classify the Landsat image. The input for this step includes Landsat image bands and the trained classifier, and the output is the classified image.", 
+        "Input": ["Landsat image bands", "Trained classifier"], 
+        "Output":["Classified image"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Visualize Classified Image",
+        "Step description": "The purpose of this step is to visualize the classified image on the map. It involves centering the map on Iowa and adding the classified image layer with specified visualization parameters. The input for this step is the classified image, and the output is a visualized map with the classified image layer.", 
+        "Input": ["Classified image"], 
+        "Output":["Visualized map with classified image layer"]
+        },
+        {
+        "Step name":"Step8", 
+        "Short Name":"Calculate Corn Field Area",
+        "Step description": "This step aims to calculate the corn field area in Iowa from the classified image. It involves identifying corn pixels, calculating the corn field area using pixel area and reduceRegion(). The input for this step includes the classified image and Iowa geometry, and the output is the corn field area in Iowa.", 
+        "Input": ["Classified image", "Iowa geometry"], 
+        "Output":["Corn field area in Iowa"]
+        }
+       ] 
+}
+```

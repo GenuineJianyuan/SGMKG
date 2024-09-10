@@ -1,0 +1,43 @@
+﻿Here is the JSON array representing the combination relationships between the steps:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step5"],
+        "reason": "The output 'redriver (FeatureCollection)' from Step1 is used as input in Step5 to clip the mean LST for daytime to the boundary of Bahia."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'imagem (ImageCollection)' from Step2 is used as input in Step3 to preprocess the daytime LST data."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'imagem (ImageCollection)' from Step3 is used as input in Step4 to filter the LST data for the year 2010."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output 'collection10year (ImageCollection)' from Step4 is used as input in Step5 to calculate the mean LST for daytime."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output 'clipOC (Image)' from Step5 is used as input in Step6 to visualize the daytime LST data on the map."
+    },
+    {
+        "relationship":["Step2", "Step7"],
+        "reason": "The same MODIS LST data 'MODIS/MOD11A2' is used as input in both Step2 and Step7 to load daytime and nighttime LST data respectively."
+    },
+    {
+        "relationship":["Step7", "Step8"],
+        "reason": "The output 'imagem2 (ImageCollection)' from Step7 is used as input in Step8 to preprocess the nighttime LST data."
+    },
+    {
+        "relationship":["Step8", "Step9"],
+        "reason": "The output 'imagem2 (ImageCollection)' from Step8 is used as input in Step9 to filter the LST data for the year 2010 for nighttime."
+    },
+    {
+        "relationship":["Step9", "Step10"],
+        "reason": "The output 'collection10year2 (ImageCollection)' from Step9 is used as input in Step10 to calculate the mean LST for nighttime."
+    },
+    {
+        "relationship":["Step10", "Step11"],
+        "reason": "

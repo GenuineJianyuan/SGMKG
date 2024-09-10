@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to classify land cover in Myanmar. The code first loads Sentinel-2 satellite imagery for the year 2019 and a feature collection of labeled examples. It then filters the imagery based on cloud cover percentage, calculates the Normalized Difference Vegetation Index (NDVI), samples regions for training data, trains a Random Forest classifier, and finally classifies the imagery into different land cover classes.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Data",
+        "Step description": "The purpose of this step is to load Sentinel-2 satellite imagery and a feature collection of labeled examples. This step involves loading the Sentinel-2 image collection and the feature collection. The code uses the GEE function 'ee.ImageCollection' to load the Sentinel-2 image collection from the COPERNICUS/S2 dataset and the function 'ee.FeatureCollection' to load the feature collection.",
+        "Input": ["Sentinel-2 image collection", "feature collection"], 
+        "Output":["Loaded Sentinel-2 image collection", "feature collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Imagery",
+        "Step description": "The purpose of this step is to filter Sentinel-2 imagery based on date and cloud cover percentage. This step involves filtering the Sentinel-2 image collection for the time period from January 1, 2019, to May 30, 2019, and removing images with a cloudy pixel percentage greater than 5%. The code uses the GEE function 'filterDate' to specify the date range and 'filterMetadata' to remove images with cloud cover percentage greater than 5%.",
+        "Input": ["Sentinel-2 image collection"], 
+        "Output":["Filtered Sentinel-2 image collection"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Vegetation Index (NDVI) for the filtered imagery. This step involves computing the NDVI using bands B4 (Red) and B8 (NIR) and renaming the output band as 'NDVI'. The code uses the GEE function 'normalizedDifference' to calculate the NDVI.",
+        "Input": ["Filtered Sentinel-2 image collection"], 
+        "Output":["Sentinel-2 image collection with NDVI band added"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Sample Training Data",
+        "Step description": "The purpose of this step is to sample regions for training data. This step involves selecting specific bands for training, sampling regions from the labeled examples feature collection, and setting the scale to 30 meters. The code uses the GEE function 'select' to choose specific bands, 'sampleRegions' to sample regions from the labeled examples, and 'setMulti' to set the scale to 30 meters.",
+        "Input": ["Sentinel-2 image collection with NDVI", "labeled examples feature collection"], 
+        "Output":["Training data for the classifier"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Train Classifier",
+        "Step description": "The purpose of this step is to train a Random Forest classifier using the training data. This step involves using the Random Forest algorithm with 20 trees to train the classifier using the selected bands and the labeled examples. The code uses the GEE function 'classifier.train' to train the Random Forest classifier.",
+        "Input": ["Training data"], 
+        "Output":["Trained Random Forest classifier"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Classify Imagery",
+        "Step description": "The purpose of this step is to classify the Sentinel-2 imagery into land cover classes. This step involves applying the trained classifier to the Sentinel-2 imagery with selected bands to classify the pixels into different land cover classes. The code uses the GEE function 'classify' to classify the imagery.",
+        "Input": ["Sentinel-2 image collection with NDVI", "trained Random Forest classifier"], 
+        "Output":["Classified image showing different land cover classes"]
+        }
+       ] 
+}
+```

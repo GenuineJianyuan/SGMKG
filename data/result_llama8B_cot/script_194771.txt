@@ -1,0 +1,30 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Binary image representing class 10) is used as input for Step2, which selects the land cover class representing 'Mixed Forests' (class 12) from the MODIS dataset for the year 2020."
+  },
+  {
+    "relationship": ["Step1", "Step3"],
+    "reason": "The output of Step1 (Binary image representing class 10) is used as input for Step3, which selects the land cover class representing 'Closed Shrublands' (class 14) from the MODIS dataset for the year 2020."
+  },
+  {
+    "relationship": ["Step2", "Step4"],
+    "reason": "The outputs of Step2 (Binary image representing class 12) and Step3 (Binary image representing class 14) are used as inputs for Step4, which merges the binary images representing classes 10, 12, and 14 into a single image."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4 (Merged image) is used as input for Step5, which reprojects the merged image to the EPSG:4326 projection with a pixel size of 500 meters."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output of Step5 (Reprojected image) is used as input for Step6, which adds the final reprojected image to the map for visualization."
+  },
+  {
+    "relationship": ["Step5", "Step7"],
+    "reason": "The output of Step5 (Reprojected image) is used as input for Step7, which exports the final reprojected image to Google Drive as a GeoTIFF file."
+  }
+]
+```

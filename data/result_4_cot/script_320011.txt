@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is a composite image with the mean methane concentration band, which is used as input in Step3 to sample the methane composite within the area of interest."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the area of interest polygon geometry, which is used as input in Step3 to sample the methane composite within the defined area of interest."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is a FeatureCollection with latitude, longitude, and methane concentration properties, which is used as input in Step4 to calculate the global mean and standard deviation of methane concentrations."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the global mean and standard deviation of methane concentrations, which is used as input in Step5 to perform IDW interpolation to estimate methane concentrations."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the interpolated methane concentrations, which is used as input in Step6 to visualize the methane data on a map along with the original methane data."
+    }
+]
+```

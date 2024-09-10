@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization and steps for the geospatial model, I will analyze the combination relationship of these steps.
+
+Here is the list of connections in JSON format:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered and processed Landsat 8 image collection', is used as input for Step2, 'Calculate NDVI', to calculate the Normalized Difference Vegetation Index (NDVI) from the Landsat 8 images."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2, 'NDVI image', is used as input for Step3, 'Set Map Center and Add NDVI Layer', to set the center of the map and add the NDVI layer for visualization."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3, 'Map with NDVI layer centered on Thailand', is not used as input for Step4, 'Define NDVI Visualization Parameters'. Instead, Step4 uses the 'NDVI image' as input, which is the same output as Step2."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4, 'Visualization parameters for the NDVI layer', is used as input for Step5, 'Add NDVI Layer to Map', to add the NDVI layer with color-coded visualization to the map."
+    }
+]
+```
+
+Note that Step3 does not directly use the output of Step2, but instead uses the same input 'NDVI image' as Step2.

@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a solution for a specific geo-analysis task that involves masking out clouds and cirrus from Sentinel-2 satellite imagery over the Sharqiya Governorate region. The code filters Sentinel-2 images from a specific date range in 2020, applies a cloud masking function to remove cloudy pixels, and then visualizes the RGB composite of the processed images over the Sharqiya Governorate boundary.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Sentinel-2 images by date range",
+        "Step description": "The purpose of this step is to filter Sentinel-2 images from a specific date range in 2020. This step implements by using the `filterDate` function with the parameters '2020-01-11' and '2020-01-21' to select images within the specified date range. The `filterDate` function is called on the `ee.ImageCollection('COPERNICUS/S2_SR')` collection.",
+        "Input": ["Sentinel-2 image collection 'COPERNICUS/S2_SR'"],
+        "Output":["Filtered image collection containing images from the specified date range"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Pre-filter images for less cloudy granules",
+        "Step description": "The purpose of this step is to pre-filter images to get less cloudy granules. This step involves filtering images based on cloud cover percentage using the `filter` function with the condition `ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20)` to select images with a cloudy pixel percentage less than 20%. The `filter` function is called after filtering images by date range.",
+        "Input": ["Filtered image collection from the previous step"],
+        "Output":["Further filtered image collection with less cloudy granules"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Apply cloud and cirrus masking function",
+        "Step description": "The purpose of this step is to apply a cloud and cirrus masking function to the Sentinel-2 images. This step defines a function `maskS2clouds` to mask out clouds and cirrus, and then maps this function over the image collection. The `maskS2clouds` function uses the QA band to create a mask that filters out cloud and cirrus pixels. This mask is then applied to each image in the collection using the `updateMask` function.",
+        "Input": ["Pre-filtered image collection"],
+        "Output":["Image collection with clouds and cirrus masked out"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize RGB composite over Sharqiya Governorate",
+        "Step description": "The purpose of this step is to visualize the RGB composite of the processed images over the Sharqiya Governorate boundary. This step involves adding the Sharqiya Governorate boundary as a feature collection, centering the map on the region using `Map.centerObject`, and adding the RGB composite layer with the specified visualization parameters.",
+        "Input": ["Processed image collection", "Sharqiya Governorate boundary"],
+        "Output":["Visualization of the RGB composite over the Sharqiya Governorate region"]
+        }
+       ] 
+}
+```

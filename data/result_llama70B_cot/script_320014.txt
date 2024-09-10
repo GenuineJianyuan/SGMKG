@@ -1,0 +1,36 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1 (Defined ROI geometry) is used as input in Step2 to filter Landsat 8 images based on location."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2 (Filtered Landsat 8 image collection) is used as input in Step3 to select a representative Landsat image for LAI calculation."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3 (Selected Landsat image) is used as input in Step4 to calculate the Normalized Difference Vegetation Index (NDVI)."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4 (NDVI image) is used as input in Step5 to derive Leaf Area Index (LAI) values."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output of Step5 (LAI image) is used as input in Step6 to visualize LAI on the map."
+    },
+    {
+        "relationship":["Step1", "Step7"],
+        "reason": "The output of Step1 (ROI geometry) is used as input in Step7 to obtain statistical information (mean and standard deviation) of LAI values within the ROI."
+    },
+    {
+        "relationship":["Step5", "Step7"],
+        "reason": "The output of Step5 (LAI image) is used as input in Step7 to obtain statistical information (mean and standard deviation) of LAI values within the ROI."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the two steps.

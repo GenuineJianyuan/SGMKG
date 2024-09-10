@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is 'Population data for 2011 within the Buffer2011 area', which is used as input in Step2 as 'Population data for 2011 within Buffer2011'. This connection exists because Step2 calculates the sum of the population using the data retrieved in Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is 'Total population sum for 2011 within Buffer2011', which is used as input in Step3 as 'Total population sum for 2011 within Buffer2011'. This connection exists because Step3 exports the calculated population sum obtained in Step2 to a CSV file."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is 'Population data for 2013 within the Buffer2013 area', which is used as input in Step5 as 'Population data for 2013 within Buffer2013'. This connection exists because Step5 calculates the sum of the population using the data retrieved in Step4."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is 'Total population sum for 2013 within Buffer2013', which is used as input in Step6 as 'Total population sum for 2013 within Buffer2013'. This connection exists because Step6 exports the calculated population sum obtained in Step5 to a CSV file."
+    }
+]
+```

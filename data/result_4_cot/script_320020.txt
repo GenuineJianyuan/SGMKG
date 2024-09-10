@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is a 'Mosaic image clipped to the region of interest', which is used as the input in Step2 as 'Mosaic image'. This connection exists because Step2 requires the filtered and mosaicked image to select specific bands for further analysis."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is an 'Image with selected bands', which is used as the input in Step3 as 'Image with selected bands'. This connection exists because Step3 needs the selected bands from the mosaic image to calculate the mean values of each band within the region of interest."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is 'Mean values of each band as an image', which is not directly used as input in Step4. However, Step4 requires 'Centered image data', which is derived from the mean values calculated in Step3. Therefore, while there is no direct output-input relationship, the mean values inform the centering process in Step4."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is an 'Image containing the first 13 principal components', which is used as the input in Step5 as 'Image containing principal components'. This connection exists because Step5 visualizes the principal components derived from the PCA performed in Step4."
+    }
+]
+```

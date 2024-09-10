@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Landsat 8 ImageCollection for the specified time period', which is used as input in Step2 as 'Filtered Landsat 8 ImageCollection'. This connection exists because Step2 requires the filtered collection to create a cloud-free composite image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Cloud-free composite image', which is used as input in Step3 as 'Cloud-free composite images'. This connection exists because Step3 aims to visualize the cloud-free composite image generated in Step2."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 does not directly output any data that is used as input in Step4. However, Step4 requires the 'Cloud-free composite image' from Step2 and the 'study area polygon' as input. Thus, there is no direct connection between Step3 and Step4."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2, which is the 'Cloud-free composite image', is used as input in Step4 as 'Cloud-free composite image'. This connection exists because Step4 clips the cloud-free composite image to the specified study area polygon."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is the 'Clipped composite image', which is used as input in Step5 as 'Clipped composite image'. This connection exists because Step5 aims to visualize the clipped composite image generated in Step4."
+    }
+]
+```

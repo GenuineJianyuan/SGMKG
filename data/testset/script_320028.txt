@@ -1,0 +1,50 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code aims to detect corn areas in a specific region in India using MODIS land cover data. The code first sets the study area to a rectangle covering India, then loads the MODIS land cover dataset for the year 2020. It selects the 'LC_Type1' band from the dataset and clips it to the India region. The code identifies corn areas by comparing the land cover type to a specific value representing corn fields. It visualizes the corn areas on the map and calculates the total corn field area in the India region.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Set India Region",
+        "Step description": "The purpose of this step is to define a rectangle geometry representing the India region. This is implemented by creating a rectangle geometry using the ee.Geometry.Rectangle() function with the coordinates of the India region.",
+        "Input": ["Coordinates of the India region"],
+        "Output":["India region geometry variable (indiaRegion)"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Load MODIS Land Cover Data",
+        "Step description": "The purpose of this step is to load MODIS land cover data for the year 2020. This is achieved by loading the MODIS land cover dataset using ee.ImageCollection() and filtering it for the year 2020.",
+        "Input": ["MODIS MCD12Q1 dataset ID", "Date range ('2020-01-01', '2020-12-31')"],
+        "Output":["MODIS land cover image collection variable (modisLandCover)"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Select Land Cover Band",
+        "Step description": "The purpose of this step is to select the 'LC_Type1' band from the MODIS land cover dataset. This is done by using the select() function to choose the 'LC_Type1' band from the MODIS land cover image.",
+        "Input": ["MODIS land cover image"],
+        "Output":["Land cover image variable (landCover)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Identify Corn Areas",
+        "Step description": "The purpose of this step is to identify corn areas in the land cover image by comparing the land cover values to a specific value representing corn fields. This is achieved using the eq() function to compare the land cover values to the corn land cover type value.",
+        "Input": ["Land cover image", "Corn land cover type value"],
+        "Output":["Binary image indicating corn areas (cornAreas)"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Visualize Corn Areas",
+        "Step description": "The purpose of this step is to visualize the corn areas on the map by adding a layer for visualization. This is done using the Map.addLayer() function to display the cornAreas binary image on the map.",
+        "Input": ["Binary image of corn areas"],
+        "Output":["Visualization of corn areas on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Calculate Total Corn Field Area",
+        "Step description": "The purpose of this step is to calculate the total corn field area in the India region by multiplying the binary corn areas image by pixel area and reducing the region to get the total area. This is achieved by multiplying the cornAreas image by pixel area, then using reduceRegion() with a sum reducer to calculate the total area.",
+        "Input": ["Binary image of corn areas", "Pixel area", "India region geometry"],
+        "Output":["Total corn field area in the India region"]
+        }
+       ] 
+}
+```

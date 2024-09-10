@@ -1,0 +1,20 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps and create a JSON array with the required format.
+
+Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output from Step1 ('Tree cover, loss image, and gain image variables') is used as input for Step2 ('Filtered protected areas within the Congo')."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output from Step2 ('Filtered protected areas within the Congo') is used as input for Step3 ('Statistics on the area lost in the Republic of the Congo and protected areas, visualized on a map')."
+  }
+]
+```
+
+In the first connection, the output from Step1 ('Tree cover, loss image, and gain image variables') is used as input for Step2 ('Filtered protected areas within the Congo'). This is because Step2 filters the feature collection based on the bands selected in Step1.
+
+In the second connection, the output from Step2 ('Filtered protected areas within the Congo') is used as input for Step3 ('Statistics on the area lost in the Republic of the Congo and protected areas, visualized on a map'). This is because Step3 calculates the area of forest loss in the Republic of the Congo and its protected areas, using the filtered protected areas from Step2.

@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is 'Filtered and selected MODIS data for the year 2001 with the 'BurnDate' band', which is used as input in Step2 to calculate the mean burned area for the year 2001."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is 'Mean burned area image for the year 2001', which is used as input in Step3 to clip the mean burned area image to the extent of Bolivia."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is 'Clipped mean burned area image for the year 2001', which is used as input in Step4 to reproject the clipped burned area image to EPSG:4326 projection."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is 'Reprojected mean burned area image for the year 2001', which is used as input in Step5 to add the reprojected burned area image to the map visualization."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The output of Step4 is 'Reprojected mean burned area image for the year 2001', which is used as input in Step6 to export the reprojected burned area image to Google Drive."
+    }
+]
+```

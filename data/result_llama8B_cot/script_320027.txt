@@ -1,0 +1,34 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 (Feature collection of uploaded samples) is used as input for Step2 (Landsat 8 image collection filtered by time and location)."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 (Landsat 8 image collection filtered by time and location) is used as input for Step3 (Median Landsat 8 image)."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 (Median Landsat 8 image) is used as input for Step4 (Training data with spectral values for each sample point)."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 (Training data with spectral values for each sample point) is used as input for Step5 (Trained random forest classifier)."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 (Trained random forest classifier) is used as input for Step6 (Classified image)."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output of Step6 (Classified image) is used as input for Step7 (Visualized map with classified image layer)."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "The output of Step7 (Visualized map with classified image layer) is not used as input for Step8 (Corn field area in Iowa). Instead, Step8 uses the output of Step6 (Classified image) and Iowa geometry as input."
+    }
+]
+```

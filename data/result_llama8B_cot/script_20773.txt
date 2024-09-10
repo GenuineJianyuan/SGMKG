@@ -1,0 +1,28 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Displayed shape of Porto Seguro' and 'Sentinel-2 image on the map with specified visualization parameters' from Step1 are used as input for Step2 to create a training dataset."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output 'Combined training dataset containing all land cover classes' from Step2 is used as input for Step3 to sample regions from the Sentinel-2 image and create a training set."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output 'Training set for model training' from Step3 is used as input for Step4 to train a classification model using the training set."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output 'Trained classification model' from Step4 is used as input for Step5 to classify the Sentinel-2 image into different land cover classes using the trained model."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output 'Classified image with land cover classes' from Step5 is used as input for Step6 to display the classified image on the map with a color palette representing different land cover classes."
+  }
+]
+```
+
+Note that the relationships are based on the original sequence of the steps and the input/output relationships described in each step's "Step description", "Input", and "Output" elements.

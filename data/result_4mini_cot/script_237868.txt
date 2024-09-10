@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'FeatureCollection of the Karnataka district polygon', which is used as input in Step2 to visualize the Karnataka district polygon on the map."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Filtered MODIS image collection for the specified date range', which is used as input in Step4 to select the daytime land surface temperature band from the filtered MODIS images."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Image collection containing only the daytime land surface temperature band', which is used as input in Step5 to calculate the mean land surface temperature across all images in the collection."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the 'Image representing the mean land surface temperature', which is used as input in Step6 to clip the mean temperature image to the boundaries of the Karnataka district polygon."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is the 'Clipped land surface temperature image for the Karnataka district', which is used as input in Step7 to visualize the land surface temperature data on the map."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "The output from Step7 is the 'Visualization of land surface temperature on the map', which is not directly used as input in Step8. However, Step8 uses the 'Clipped land surface temperature image' from Step6 to export the processed image to Google Drive."
+    }
+]
+```

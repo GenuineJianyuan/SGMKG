@@ -1,0 +1,36 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output 'Display the Peninsula region on the map' from Step1 is used as input to filter the Sentinel-2 satellite imagery data for the Peninsula region in Step2."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output 'Filtered and processed Sentinel-2 composite image' from Step2 is used as input to visualize the composite image of the Peninsula region in Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "No direct relationship exists between these steps."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output 'Gaussian and Laplacian kernels for edge detection' from Step4 is used as input to apply the Gaussian kernel for edge detection on the composite image in Step5."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output 'Enhanced image with Gaussian edge detection' from Step5 is used as input to apply the Laplacian kernel for edge detection on the enhanced image in Step6."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output 'Image with Laplacian edge detection' from Step6 is used as input to visualize the results of edge detection using both Gaussian and Laplacian kernels in Step7."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "No direct relationship exists between these steps."
+    }
+]
+```
+
+Note that Steps 3 and 4, as well as Steps 7 and 8, do not have a direct relationship because there is no output-input connection between them.

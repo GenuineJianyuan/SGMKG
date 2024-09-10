@@ -1,0 +1,50 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a solution for detecting center-pivot irrigation systems in satellite imagery. It utilizes the Landsat satellite data to calculate the NDVI (Normalized Difference Vegetation Index) and then applies convolution operations to identify circular patterns that represent the center-pivot irrigation fields. The script also highlights the edges of these features and identifies the centers of the circular patterns.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to load a Landsat satellite image and calculate the NDVI. To achieve this, the script uses the ee.Image() function to load the Landsat satellite image and the image.normalizedDifference() function to calculate the NDVI using bands B5 and B4. This step is essential for obtaining the NDVI image which will be used in subsequent steps.",
+        "Input": ["Landsat satellite image"],
+        "Output":["NDVI image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Convolve with Kernels",
+        "Step description": "In this step, the NDVI image is convolved with circular and square kernels. The script creates circular and square kernels with a specified radius using the ee.Kernel.circle() and ee.Kernel.square() functions. Then, it applies the ndvi.convolve() operation to convolve the NDVI image with these kernels. This process helps in identifying circular patterns in the image that represent the center-pivot irrigation fields.",
+        "Input": ["NDVI image", "circular and square kernels"],
+        "Output":["Convolved images with circular and square kernels"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Find Differences",
+        "Step description": "The purpose of this step is to find the difference between the convolved images with circles and squares. To achieve this, the script subtracts the convolved images with circles and squares, takes the absolute value using diff.abs(), scales the result by 100, and converts it to byte format with diff.toByte(). This step helps in highlighting the differences between the circular and square patterns.",
+        "Input": ["Convolved images with circles and squares"],
+        "Output":["Difference image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Highlight Kernel Peaks",
+        "Step description": "In this step, the script highlights the maximum differences as 'Kernel Peaks'. It finds the local maxima in the difference image using diff.focal_max(), sets non-maximum pixels to 0, applies a threshold, and highlights the peaks using peaks.updateMask(). This step helps in identifying the key features in the image that represent the center-pivot irrigation systems.",
+        "Input": ["Difference image"],
+        "Output":["Highlighted peaks image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Detect Edges",
+        "Step description": "The purpose of this step is to detect the edges of the features using the Canny edge detector. The script applies the ee.Algorithms.CannyEdgeDetector() function to the NDVI image, sets the edges threshold, and detects the edges using canny.gt(). This step is crucial for identifying the boundaries of the center-pivot irrigation fields.",
+        "Input": ["NDVI image"],
+        "Output":["Edge image"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Create Ring Kernel and Highlight Edges",
+        "Step description": "In this final step, the script creates a 'ring' kernel from two circular kernels and highlights the feature edges. It creates inner and outer circular kernels using ee.Kernel.circle(), combines them to create a ring kernel with ring.add(), convolves the Canny edge image with the ring kernel using canny.convolve(), and highlights the feature edges with centers.updateMask(). This step helps in emphasizing the edges of the center-pivot irrigation fields for better visualization.",
+        "Input": ["Edge image", "inner and outer circular kernels"],
+        "Output":["Highlighted feature edges image"]
+        }
+       ] 
+}
+```

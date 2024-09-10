@@ -1,0 +1,36 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is a 'filtered ImageCollection containing the sos data', which is used as input in Step2 to select the 'MidGreenup_1' band for start of season (sos)."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is an 'ImageCollection containing only the MidGreenup_1 band data', which is used as input in Step3 to clip the first image in the sos ImageCollection to the region of interest (roi)."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is a 'clipped image for start of season (sos) for one city', which is used as input in Step4 to add the clipped sos image to the map with specified visualization parameters."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is a 'visualization of the sos image on the map', which is not directly used as input in Step5; however, Step5 uses the 'clipped sos image' from Step3 to export the image to Google Drive."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "The output from Step1 is still the 'filtered ImageCollection containing the sos data', which is also applicable for Step6 to select the 'MidGreendown_1' band for end of season (eos)."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is an 'ImageCollection containing only the MidGreendown_1 band data', which is used as input in Step7 to clip the first image in the eos ImageCollection to the region of interest (roi)."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "The output from Step7 is a 'clipped image for end of season (eos) for one city', which is used as input in Step8 to add the clipped eos image to the map with specified visualization parameters."
+    },
+    {
+        "relationship": ["Step8", "Step9"],
+        "reason": "The output from Step8 is a 'visualization of the eos image on the map', which is not directly used as input in Step9; however, Step9 uses the 'clipped eos image' from Step7 to export the image to Google Drive."
+    }
+]
+```

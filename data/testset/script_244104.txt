@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to analyze burned areas in Bolivia for the year 2001. It filters MODIS satellite data for the specified time frame and selects the 'BurnDate' band. The code then calculates the mean burned area for the year 2001, clips it to the extent of Bolivia, reprojects it, adds it to the map visualization, and exports it as an image to Google Drive.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter MODIS Data",
+        "Step description": "The purpose of this step is to filter MODIS satellite data for the specified time frame and select the 'BurnDate' band. The code uses the ee.ImageCollection.filterBounds() function to filter the data to the specified geometry (Bolivia) and ee.ImageCollection.filterDate() to select data for the year 2001. It then uses ee.ImageCollection.select() to choose the 'BurnDate' band.",
+        "Input": ["MODIS satellite data"],
+        "Output":["Filtered and selected MODIS data for the year 2001 with the 'BurnDate' band"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate Mean Burned Area",
+        "Step description": "The purpose of this step is to calculate the mean burned area for the year 2001. The code uses the ee.ImageCollection.mean() function to calculate the mean burned area for the year 2001 from the filtered and selected MODIS data.",
+        "Input": ["Filtered and selected MODIS data for the year 2001"],
+        "Output":["Mean burned area image for the year 2001"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Clip to Bolivia Extent",
+        "Step description": "The purpose of this step is to clip the mean burned area to the extent of Bolivia. The code uses the ee.Image.clip() function to clip the mean burned area image to the extent of Bolivia defined by the BOL geometry.",
+        "Input": ["Mean burned area image for the year 2001", "Bolivia geometry"],
+        "Output":["Clipped mean burned area image for the year 2001"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Reproject to EPSG:4326",
+        "Step description": "The purpose of this step is to reproject the clipped burned area image to EPSG:4326 projection with a 500m resolution. The code uses the ee.Image.reproject() function to reproject the clipped burned area image to EPSG:4326 projection with a 500m resolution.",
+        "Input": ["Clipped mean burned area image for the year 2001"],
+        "Output":["Reprojected mean burned area image for the year 2001"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Add to Map Visualization",
+        "Step description": "The purpose of this step is to add the reprojected burned area image to the map visualization. The code uses the Map.addLayer() function to add the reprojected burned area image to the map visualization with a specified palette and visualization parameters.",
+        "Input": ["Reprojected mean burned area image for the year 2001"],
+        "Output":["Visualization of the burned area on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Export to Google Drive",
+        "Step description": "The purpose of this step is to export the reprojected burned area image to Google Drive. The code uses the Export.image.toDrive() function to export the reprojected burned area image to Google Drive with the specified parameters such as description, scale, and region.",
+        "Input": ["Reprojected mean burned area image for the year 2001", "export parameters"],
+        "Output":["Exported image file of the burned area for the year 2001 on Google Drive"]
+        }
+       ] 
+}
+```

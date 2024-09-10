@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process for landslide detection using Google Earth Engine. It involves remapping land cover classes, calculating NDVI, analyzing slope, categorizing slope, and combining these factors to create a final result for landslide detection. Landsat imagery, SRTM Digital Elevation Model data, and a boundary region are used as input data sources for the analysis.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Remap Land Cover Classes",
+        "Step description": "The purpose of this step is to remap land cover classes to assign weights for landslide detection. This is implemented by using the `remap` function to remap land cover classes using specified weights. The `remap` function takes the land use/land cover image (`LULC`) and weights for each land cover class as input, and outputs a remapped image (`remappedImage`).",
+        "Input": ["LULC image", "Weights for each land cover class"],
+        "Output":["Remapped image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate NDVI (Normalized Difference Vegetation Index) for Landsat imagery. This is achieved by using the `normalizedDifference` function to calculate NDVI using Landsat bands B5 (NIR) and B4 (Red). The `normalizedDifference` function takes Landsat imagery (`landsat`) as input and outputs an NDVI image (`ndvi`).",
+        "Input": ["Landsat imagery"],
+        "Output":["NDVI image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate Slope",
+        "Step description": "The purpose of this step is to calculate slope from SRTM Digital Elevation Model data. This is done using the `ee.Terrain.slope` function to calculate slope from the Digital Elevation Model data. The `ee.Terrain.slope` function takes SRTM Digital Elevation Model data (`dem`) as input and outputs a slope image (`slope`).",
+        "Input": ["SRTM Digital Elevation Model data"],
+        "Output":["Slope image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Categorize Slope",
+        "Step description": "The purpose of this step is to categorize slope into different categories based on thresholds. This is accomplished by using the `expression` function to categorize slope values into predefined categories. The `expression` function takes the slope image (`slope`) as input and outputs a categorized slope image (`slope_categories`).",
+        "Input": ["Slope image"],
+        "Output":["Categorized slope image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Combine Factors for Landslide Detection",
+        "Step description": "The purpose of this step is to combine NDVI, slope categories, and remapped land cover image to create a final result for landslide detection. This is done by multiplying NDVI, slope categories, and remapped land cover image by specified weights and adding them together. The inputs to this step are the NDVI image (`ndvi`), slope categories image (`slope_categories`), and remapped land cover image (`remappedImage`), and the output is the final result image for landslide detection (`result`).",
+        "Input": ["NDVI image", "Slope categories image", "Remapped land cover image"],
+        "Output":["Final result image for landslide detection"]
+        }
+       ] 
+}
+```

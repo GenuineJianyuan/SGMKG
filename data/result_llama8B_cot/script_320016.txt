@@ -1,0 +1,25 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The median composite images for 2000 (Landsat 5) and 2020 (Landsat 8) from Step1 are used as input to calculate NDVI, NDWI, and NDBI indices in Step2."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The NDVI, NDWI, and NDBI images for 2000 and 2020 from Step2 are used as input to detect land cover change by comparing index differences and creating a binary change mask in Step3."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The binary change detection map indicating areas of land cover change from Step3 is used as input to visualize the land cover change on the map in Step4."
+  }
+]
+```
+
+The combination relationship of the steps is as follows:
+
+* Step1 loads Landsat images and calculates median composite images for 2000 and 2020, which are then used as input to calculate NDVI, NDWI, and NDBI indices in Step2.
+* Step2 calculates NDVI, NDWI, and NDBI indices for 2000 and 2020, which are then used as input to detect land cover change by comparing index differences and creating a binary change mask in Step3.
+* Step3 detects land cover change by comparing NDVI, NDWI, and NDBI indices between 2000 and 2020, and creates a binary change mask, which is then used as input to visualize the land cover change on the map in Step4.
+* Step4 visualizes the land cover change on the map using the binary change detection map from Step3.

@@ -1,0 +1,36 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'Feature collection representing the study area' from Step1 is used as an input in Step3 to filter Landsat images for winter and summer periods."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Landsat ImageCollection object' from Step2 is used as an input in Step3 to filter Landsat images for winter and summer periods."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'Binary images representing water presence for winter and summer' from Step3 is used as an input in Step4 to compute the difference in water extent between winter and summer."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output 'Binary image representing the difference in water extent' from Step4 is used as an input in Step5 to visualize the flooded areas."
+    },
+    {
+        "relationship":["Step4", "Step6"],
+        "reason": "The output 'Binary image representing the difference in water extent' from Step4 is used as an input in Step6 to compute the total flooded area."
+    },
+    {
+        "relationship":["Step1", "Step6"],
+        "reason": "The output 'Feature collection representing the study area' from Step1 is used as an input in Step6 to compute the total flooded area."
+    },
+    {
+        "relationship":["Step6", "Step7"],
+        "reason": "The output 'Total flooded area in square kilometers' from Step6 is used as an input in Step7 to print the total flooded area."
+    }
+]
+```
+
+These connections represent the flow of data between the steps, where the output of one step is used as an input in another step.

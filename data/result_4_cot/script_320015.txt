@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output from Step1 is the geometry object representing the boundary of Beijing, which is used as input in Step5 to filter and composite Landsat images specifically for the geographic boundary of Beijing."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "The output from Step2 consists of variables storing the time ranges for 2020 and 2021, which are used as input in Step5 to filter the Landsat images based on the specified time periods."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the Landsat 8 image collection object, which is used as input in Step4 to calculate the NDVI for each image in the collection."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the NDVI image, which is used as input in Step5 to create a composite NDVI image for the specified time periods."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the composite NDVI image for 2020 and 2021, which is used as input in Step6 to compute the NDVI difference between the two years."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is the NDVI difference image, which is used as input in Step7 to visualize the NDVI difference on the map."
+    },
+    {
+        "relationship": ["Step1", "Step8"],
+        "reason": "The output from Step1 is the geometry object representing the boundary of Beijing, which is used as input in Step8 to center the map view on the Beijing region."
+    }
+]
+```

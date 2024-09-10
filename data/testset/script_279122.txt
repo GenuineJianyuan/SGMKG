@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to classify land cover types in Myanmar using Sentinel-2 satellite imagery. The code filters Sentinel-2 images from the year 2019, calculates the Normalized Difference Vegetation Index (NDVI), samples training data from labeled examples, trains a Random Forest classifier, and classifies the image into different land cover classes.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Sentinel-2 images",
+        "Step description": "The purpose of this step is to filter Sentinel-2 images from the year 2019 based on date and cloud cover percentage. This step involves filtering images using the `filterDate` function to specify the date range and the `filter` function with a condition on 'CLOUDY_PIXEL_PERCENTAGE' to remove cloudy pixels. The operations include filtering Sentinel-2 images from the year 2019 using the specified date range and cloud cover percentage threshold.",
+        "Input": ["Sentinel-2 image collection (`se2`)", "date range ('2019-01-01' to '2019-05-30')", "cloud cover percentage threshold (5)"], 
+        "Output":["Filtered Sentinel-2 image (`SE2_2019`)"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Vegetation Index (NDVI) from the filtered Sentinel-2 image. This step involves computing NDVI using the `normalizedDifference` function on bands B4 (Red) and B8 (NIR) of the filtered image.",
+        "Input": ["Filtered Sentinel-2 image (`SE2_2019`)"], 
+        "Output":["Image with NDVI band (`SE2_2019WithNDVI`)"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Sample training data",
+        "Step description": "The purpose of this step is to sample training data from labeled examples based on regions in the image. This step involves sampling regions from the image using the `sampleRegions` function with the labeled examples feature collection, specifying the properties to sample ('val'), and setting the scale to 30 meters.",
+        "Input": ["Image with NDVI band (`SE2_2019WithNDVI`)", "labeled examples feature collection (`examples`)"], 
+        "Output":["Training data (`training`)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Train Random Forest classifier",
+        "Step description": "The purpose of this step is to train a Random Forest classifier using the sampled training data. This step involves training a Random Forest classifier with 20 trees using the `ee.Classifier.randomForest` function on the training data, specifying the class property ('val') and input properties (bands).",
+        "Input": ["Training data (`training`)", "bands for classification"], 
+        "Output":["Trained Random Forest classifier (`classifier`)"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Classify image",
+        "Step description": "The purpose of this step is to classify the image into different land cover classes using the trained Random Forest classifier. This step involves classifying the image using the `classify` function with the trained Random Forest classifier on the image bands.",
+        "Input": ["Image with NDVI band (`SE2_2019WithNDVI`)", "trained Random Forest classifier (`classifier`)"], 
+        "Output":["Classified image (`classified`)"]
+        }
+       ] 
+}
+```

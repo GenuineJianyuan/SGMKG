@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to calculate the Drought Ratio Index (DRI) for Bhutan using Sentinel-2 Surface Reflectance data. The code filters the Sentinel-2 data for a specific time period, calculates the NDVI and EVI indices, computes the DRI, and then visualizes and exports the DRI as a GeoTIFF file.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Sentinel-2 Data",
+        "Step description": "The purpose of this step is to load Sentinel-2 Surface Reflectance data for Bhutan. The code filters the Sentinel-2 data by location (Bhutan), date range ('2022-01-01' to '2023-01-01'), cloud cover percentage (<5%), takes the median, clips to Bhutan, and divides by 10000. The function 'ee.ImageCollection' is used to load the Sentinel-2 Surface Reflectance data, and operations like 'filterBounds', 'filterDate', 'filter', 'median', 'clip', and 'divide' are applied to process the data.",
+        "Input": ["Sentinel-2 Surface Reflectance data"],
+        "Output":["Processed Sentinel-2 Surface Reflectance data"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NDVI and EVI",
+        "Step description": "The purpose of this step is to calculate the NDVI and EVI indices from the processed Sentinel-2 Surface Reflectance data. NDVI is calculated using the 'normalizedDifference' function on bands B8 (NIR) and B4 (Red), while EVI is calculated using the 'expression' function with the provided formula on bands B8 (NIR), B4 (Red), and B2 (Blue). The functions 'normalizedDifference' and 'expression' are called to compute the NDVI and EVI indices.",
+        "Input": ["Processed Sentinel-2 Surface Reflectance data"],
+        "Output":["NDVI and EVI indices"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate DRI",
+        "Step description": "The purpose of this step is to calculate the Drought Ratio Index (DRI) using the NDVI and EVI indices. The DRI is computed by subtracting NDVI from EVI and dividing the result by the sum of EVI and NDVI. The operations 'subtract' and 'divide' are applied to obtain the DRI from the NDVI and EVI indices.",
+        "Input": ["NDVI and EVI indices"],
+        "Output":["Drought Ratio Index (DRI)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize DRI",
+        "Step description": "The purpose of this step is to display the Drought Ratio Index (DRI) on the map. The DRI layer is added to the map with a specific visualization palette and range. The function 'Map.addLayer' is used to visualize the DRI on the map.",
+        "Input": ["Drought Ratio Index (DRI)"],
+        "Output":["Visualization of the Drought Ratio Index on the map"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Export DRI as GeoTIFF",
+        "Step description": "The purpose of this step is to export the Drought Ratio Index (DRI) as a GeoTIFF file. The DRI is exported to Google Drive with a specific description, scale, region, and maximum number of pixels. The function 'Export.image.toDrive' is called to export the DRI as a GeoTIFF file.",
+        "Input": ["Drought Ratio Index (DRI)"],
+        "Output":["Exported GeoTIFF file of the Drought Ratio Index"]
+        }
+       ] 
+}
+```

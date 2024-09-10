@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling script using Google Earth Engine to analyze Landsat satellite imagery. The script focuses on a specific area (WRS_PATH: 188, WRS_ROW: 34) and a specific time frame (August 5-7, 2001). It applies scaling factors to the optical and thermal bands of the imagery, visualizes false color and thermal images, identifies hotspots based on a specific threshold in the thermal band, and displays the results on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Landsat Imagery",
+        "Step description": "The purpose of this step is to filter Landsat imagery based on specific path, row, and date criteria. This step implements filtering functions to narrow down the dataset to the desired images. The functions used include filterDate, filter, and filter to apply the necessary criteria. The Google Earth Engine API ee.ImageCollection is used to load Landsat imagery and then filter it based on the specified parameters.",
+        "Input": ["Landsat imagery from 'LANDSAT/LT05/C02/T1_L2'"],
+        "Output":["Filtered Landsat imagery dataset"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Apply Scaling Factors",
+        "Step description": "The purpose of this step is to apply scaling factors to the optical and thermal bands of the Landsat imagery. This step involves multiplying and subtracting specific values from the optical bands and multiplying and adding specific values to the thermal band. The functions used include multiplication and subtraction for optical bands, and multiplication and addition for the thermal band.",
+        "Input": ["Landsat imagery dataset"],
+        "Output":["Landsat imagery with scaled optical and thermal bands"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Visualize False Color Composite",
+        "Step description": "The purpose of this step is to visualize a false color composite image on the map. This step adds a false color composite layer to the map using specific visualization parameters for bands, min, and max values. The functions used include defining visualization parameters for bands (SR_B5, SR_B4, SR_B3) and setting min and max values for visualization.",
+        "Input": ["Landsat imagery dataset with scaled bands"],
+        "Output":["False color composite image layer on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize Thermal Band",
+        "Step description": "The purpose of this step is to visualize the thermal band image on the map. This step adds a thermal band layer to the map using specific visualization parameters for the thermal band, min, and max values. The functions used include defining visualization parameters for the thermal band (ST_B6) and setting min and max values for visualization.",
+        "Input": ["Landsat imagery dataset with scaled bands"],
+        "Output":["Thermal band image layer on the map"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Identify and Visualize Hotspots",
+        "Step description": "The purpose of this step is to identify and visualize hotspots in the thermal band. This step involves creating a buffer around a point of interest and updating the mask based on a specific threshold to identify hotspots. The functions used include creating a buffer around a point of interest and mapping over the dataset to update the mask based on the threshold.",
+        "Input": ["Landsat imagery dataset with scaled bands"],
+        "Output":["Hotspot visualization layer on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Set Map Options",
+        "Step description": "The purpose of this step is to set map options and center the map on a specific location. This step sets the map to HYBRID view, centers the map at a specific latitude and longitude, and sets the zoom level. The functions used include setting map options, centering the map, and specifying the view type, center location, and zoom level.",
+        "Input": ["None"],
+        "Output":["Map displayed with specified options and center location"]
+        }
+       ] 
+}
+```

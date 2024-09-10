@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 includes the median composite images for 2000 (Landsat 5) and 2020 (Landsat 8), which are used as input in Step2 to calculate the NDVI, NDWI, and NDBI indices for both years."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The outputs of Step2 are the NDVI, NDWI, and NDBI images for both 2000 and 2020. These images are used as input in Step3 to detect land cover change by comparing the indices between the two years."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the binary change detection map indicating areas of land cover change, which is used as input in Step4 to visualize the land cover change on the map."
+    }
+]
+```

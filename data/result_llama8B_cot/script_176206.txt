@@ -1,0 +1,26 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1, 'Filtered image collection for the year 1981', is used as input for Step2, 'Calculate Average Temperature', to calculate the average temperature from the 'tmmn' and 'tmmx' bands."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2, 'New image with the 'tempave' band representing average temperature', is used as input for Step3, 'Join Temperature Band', to join the temperature average band to the original image as a new band."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3, 'Image with the temperature average band added', is used as input for Step4, 'Mask Zero Values', to mask out zero values in the data."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4, 'Masked image data without zero values', is used as input for Step5, 'Display Image on Map', to display the final image on the map."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output of Step5, 'Displayed image on the map', is used as input for Step6, 'Export Image to Google Drive', to export the final image to Google Drive."
+  }
+]
+```

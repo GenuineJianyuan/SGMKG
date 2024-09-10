@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code focuses on conducting a geo-analysis task within the Amazon Basin region using Google Earth Engine. The code utilizes the Hansen Global Forest Change dataset to calculate and visualize various vegetation indices such as NDVI (Normalized Difference Vegetation Index) and NDWI (Normalized Difference Water Index). The purpose of this script is to analyze the vegetation dynamics in the Amazon Basin region over time and visualize the results using different color palettes.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load and Define Region of Interest",
+        "Step description": "The purpose of this step is to load the Hansen Global Forest Change dataset and define the region of interest as the Amazon Basin. This step involves loading the 'UMD/hansen/global_forest_change_2020_v1_8' image and clipping it to the Amazon Basin region. The functions called in this step include loading dataset and defining region of interest. The GEE API used for loading the dataset is ee.Image() and for clipping the image to the region of interest is image.clip().",
+        "Input": ["Hansen Global Forest Change dataset", "Amazon Basin region"],
+        "Output":["Clipped image of the dataset within the Amazon Basin region"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NDVI and NDWI",
+        "Step description": "The purpose of this step is to calculate NDWI (Normalized Difference Water Index) and NDVI (Normalized Difference Vegetation Index) using the Hansen dataset. This step involves subtracting and dividing specific bands of the Hansen dataset to calculate NDWI and NDVI. The function called in this step is calculation of vegetation indices. The GEE API used for this calculation is image.normalizedDifference().",
+        "Input": ["Clipped images of specific bands from the Hansen dataset"],
+        "Output":["NDWI and NDVI images"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Define Visualization Parameters",
+        "Step description": "The purpose of this step is to define visualization parameters for NDVI and NDWI images. This step involves setting visualization parameters such as min, max, and color palettes for NDVI and NDWI images. The function called in this step is visualization customization. The GEE API used for setting visualization parameters is image.visualize().",
+        "Input": ["NDVI and NDWI images"],
+        "Output":["Customized visualization of NDVI and NDWI images on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Add Layers to Map",
+        "Step description": "The purpose of this step is to add NDVI and NDWI layers to the map for visualization. This step involves adding NDVI and NDWI layers to the map for visualization. The function called in this step is map visualization. The GEE API used for adding layers to the map is Map.addLayer().",
+        "Input": ["NDVI and NDWI images"],
+        "Output":["Visual representation of NDVI and NDWI layers on the map"]
+        }
+       ] 
+}
+```

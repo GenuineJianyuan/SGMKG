@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Landsat image collection', which serves as the input for Step2. Step2 requires the filtered images to apply scaling factors to the optical and thermal bands."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Landsat image collection with scaled bands', which is used as the input for Step3. Step3 adds the scaled bands back to the Landsat images, thus requiring the scaled bands from Step2."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Landsat image collection with additional scaled bands', which serves as the input for Step4. Step4 visualizes the true color composite image using the scaled bands added in Step3."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "While Step4 outputs the 'True color composite image displayed on the map', Step5 operates independently to set the map center. However, Step5 uses the specific location coordinates to center the map, which is a separate operation from the image processing in Step4."
+    }
+]
+```

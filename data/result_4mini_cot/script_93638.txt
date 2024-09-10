@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Thresholded image layer on the map', which serves as the input for Step2 as 'Thresholded image'. This connection exists because Step2 requires the thresholded image to perform edge detection using the Canny edge detector."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2 is the 'Edge detection layer on the map', which is used as input in Step4 as 'Edge detection result'. This connection exists because Step4 needs the edge detection result to convolve with the ring kernel and highlight the detected areas."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Ring kernel for convolution', which is used as input in Step4 as 'Ring kernel'. This connection exists because Step4 requires the ring kernel to convolve with the edge detection result to highlight the areas representing center-pivot irrigation systems."
+    }
+]
+```

@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the JSON array listing the connections:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Filtered Landsat 8 Image Collection' from Step1 is used as input in Step2 to clip the imagery to the ROI."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Clipped Landsat 8 Image Collection' from Step2 is used as input in Step3 to mask out cloud and cloud shadow pixels."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'Masked Landsat 8 Image Collection' from Step3 is used as input in Step4 to visualize the processed Landsat 8 imagery on the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 and Step2: The filtered Landsat 8 Image Collection from Step1 is used as input in Step2 to clip the imagery to the ROI.
+2. Step2 and Step3: The clipped Landsat 8 Image Collection from Step2 is used as input in Step3 to mask out cloud and cloud shadow pixels.
+3. Step3 and Step4: The masked Landsat 8 Image Collection from Step3 is used as input in Step4 to visualize the processed Landsat 8 imagery on the map.
+
+These connections exist because the output from one step is used as input in the subsequent step, ensuring a logical flow of data processing in the geospatial model.

@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the loaded image variable 'image', which is necessary for Step2 to define the bands for prediction. Step2 specifies the bands to be used for classification based on the loaded image."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output from Step2 is the defined bands variable 'bands', which is used in Step4 to sample pixel values from the image. In Step4, the image and the defined bands are necessary to extract pixel values within the training polygons."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the FeatureCollection of training polygons variable 'polygons', which is used as input in Step4 to sample pixel values. Step4 requires both the image and the polygons to sample pixel values for training data."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the training data variable 'training', which is essential for Step5 to train the Support Vector Machine (SVM) classifier. Step5 uses the training data along with the target property and bands for prediction."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the trained classifier variable 'trained', which is used in Step6 to classify the image. Step6 applies the trained classifier to the image to produce the classified output."
+    }
+]
+```

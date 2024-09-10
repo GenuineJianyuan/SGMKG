@@ -1,0 +1,36 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code utilizes the Canny Edge Detector algorithm to detect edges in a Landsat image. It first loads a Landsat image, computes the Normalized Difference Vegetation Index (NDVI) from it, then applies the Canny Edge Detector algorithm to the NDVI image. The resulting edges are displayed on the map along with the NDVI image.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load and Compute NDVI",
+        "Step description": "The purpose of this step is to load a Landsat image and calculate the NDVI from it. The Landsat image is loaded using ee.Image() function, and the NDVI is computed using the normalizedDifference() function. The input to this step is the Landsat image ('LANDSAT/LT05/C02/T1_TOA/LT05_031034_20110619'). The output is the NDVI image.",
+        "Input": ["LANDSAT/LT05/C02/T1_TOA/LT05_031034_20110619"],
+        "Output":["NDVI image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Apply Canny Edge Detector",
+        "Step description": "The purpose of this step is to detect edges in the NDVI image using the Canny Edge Detector algorithm. The CannyEdgeDetector() function is applied to the NDVI image with a threshold of 0.7. The input to this step is the NDVI image, and the output is the edge-detected image.",
+        "Input": ["NDVI image"],
+        "Output":["Edge-detected image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Mask Image",
+        "Step description": "The purpose of this step is to mask the edge-detected image to remove areas with no edges. The updateMask() function is used to update the mask of the edge-detected image and remove areas with no edges. The input to this step is the edge-detected image, and the output is the masked edge-detected image.",
+        "Input": ["Edge-detected image"],
+        "Output":["Masked edge-detected image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Display Results",
+        "Step description": "The purpose of this step is to visualize the NDVI image and the masked edge-detected image on the map. The Map.setCenter() function is used to set the center of the map, and the Map.addLayer() function is used to add the NDVI image and the masked edge-detected image as layers on the map. The input to this step is the NDVI image and the masked edge-detected image, and the output is the displayed map with NDVI and Canny Edges layers.",
+        "Input": ["NDVI image", "Masked edge-detected image"],
+        "Output":["Displayed map with NDVI and Canny Edges layers"]
+        }
+       ] 
+}
+```

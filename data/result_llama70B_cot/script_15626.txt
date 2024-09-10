@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization, I will analyze the workflow and identify the combination relationships between the steps. Here is the output in the required JSON format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Clipped image of the dataset within the Amazon Basin region', is used as input in Step2 to calculate NDVI and NDWI."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'NDWI and NDVI images', is used as input in Step3 to define visualization parameters."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Customized visualization of NDVI and NDWI images on the map', is used as input in Step4 to add layers to the map for visualization."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 and Step2 are connected because the clipped image output from Step1 is used as input in Step2 to calculate NDVI and NDWI.
+2. Step2 and Step3 are connected because the NDWI and NDVI images output from Step2 are used as input in Step3 to define visualization parameters.
+3. Step3 and Step4 are connected because the customized visualization output from Step3 is used as input in Step4 to add layers to the map for visualization.
+
+Note that these connections exist because the output of one step is used as input in the subsequent step, as indicated by the "Input" and "Output" fields in the original JSON summarization.

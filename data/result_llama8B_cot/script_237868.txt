@@ -1,0 +1,36 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The Karnataka district polygon shapefile is loaded and added to the map for visualization."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The Karnataka district polygon is used as a reference to filter the MODIS image collection for a specific date range."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The filtered MODIS image collection is used to select the daytime land surface temperature band."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The image collection containing only the daytime land surface temperature band is used to calculate the mean land surface temperature."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The mean land surface temperature image is clipped to the boundaries of the Karnataka district polygon."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The clipped land surface temperature image is added to the map for visualization."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "The visualized land surface temperature data is exported to Google Drive."
+    }
+]
+```
+
+Note that the relationships are based on the original sequence of steps and the input/output relationships described in each step's description, input, and output.

@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to classify land cover types in Nebraska based on Landsat 5 imagery from 2012. The code first calculates the Normalized Difference Vegetation Index (NDVI) and adds it as a new band to the Landsat 5 image. It then limits the training data to a specific feature collection (irrigated areas), remaps the classes, samples the data, and trains a Support Vector Machine (SVM) classifier. Finally, it classifies the Landsat image using the trained classifier and visualizes the results on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Vegetation Index (NDVI) and add it as a new band to the Landsat 5 image. This is achieved by first normalizing the difference between bands 4 and 3 to calculate NDVI. The band is then renamed as 'NDVI', band 6 is divided by 300, and both NDVI and band 6 are added as new bands to the image.",
+        "Input": ["Landsat 5 image (L5)"],
+        "Output":["Landsat 5 image with NDVI band added (L5wNDVI)"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Limit Training Data and Remap Classes",
+        "Step description": "The purpose of this step is to limit the training data to a specific feature collection and remap the classes. The training data is limited to the 'Irr' feature collection, and classes 1 and 2 are remapped to 0 and 1 respectively.",
+        "Input": ["Feature collection (Irr)"],
+        "Output":["Remapped training data (training)"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Sample and Prepare Data",
+        "Step description": "The purpose of this step is to sample the data and prepare it for training. The Landsat image with the NDVI band (L5wNDVI) is sampled at training sites based on the 'class' property. A random column is added, and samples with a random value less than 0.1 are filtered out.",
+        "Input": ["Landsat image with NDVI band (L5wNDVI)", "Remapped training data (training)"],
+        "Output":["Sampled training sites (training_sites)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Train SVM Classifier",
+        "Step description": "The purpose of this step is to train a Support Vector Machine (SVM) classifier using the sampled training data. An SVM classifier is trained using the sampled training sites, specifying the input bands for classification.",
+        "Input": ["Sampled training sites (training_sites)", "Input bands (bands)"],
+        "Output":["Trained SVM classifier (trained)"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Classify Landsat Image",
+        "Step description": "The purpose of this step is to classify the Landsat image using the trained SVM classifier. The input bands for classification are selected, and the Landsat image is classified using the trained SVM classifier.",
+        "Input": ["Landsat image with NDVI band (L5wNDVI)", "Trained SVM classifier (trained)"],
+        "Output":["Classified image (classified)"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is a 'Cloud-free Sentinel-2 image', which is used as input in Step2 along with the 'Sentinel-2 image collection', 'Region of interest', 'Date range', and 'Cloudy pixel percentage threshold'. Step2 filters the image collection to select clear, cloud-free scenes for further analysis."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs 'Filtered cloud-free Sentinel-2 images', which are relevant for visualizing the region of interest in Step3. Step3 uses the 'Region of interest' as input to center the map and display the selected area."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 does not produce a direct output that is used in Step4. However, it sets the context for the analysis. Step4 requires 'Cloud-free Sentinel-2 images' as input, which are the output from Step2. Therefore, the connection is indirect, relying on the filtered images from Step2."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 outputs 'Filtered cloud-free Sentinel-2 images', which are directly used as input in Step4 to calculate the 'Median composite image'. This step processes the filtered images to create a composite that represents the average spectral values."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is the 'Median composite image', which is used as input in Step5 along with the 'Region of interest'. Step5 clips the median composite image to the specified region, focusing the analysis on the area of interest."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs a 'Clipped median composite image', which is used as input in Step6. Step6 defines visualization parameters that will be applied to the clipped composite image for display purposes."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output of Step6 is 'Visualization parameters', which are used as input in Step7 along with the 'Clipped median composite image'. Step7 adds the clipped composite image to the map using these parameters, allowing for a clear visual representation of the processed data."
+    }
+]
+```

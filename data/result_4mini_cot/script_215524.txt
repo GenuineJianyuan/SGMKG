@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is the 'Image object representing the SRTM elevation map', which is used as an input in Step3 to reduce the image within the specified region."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Geometry object representing the rectangular region', which is used as an input in Step3 to define the region for the image reduction."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Dictionary containing the computed maximum pixel value', which is used as an input in Step4 to print the result to the console."
+    }
+]
+```

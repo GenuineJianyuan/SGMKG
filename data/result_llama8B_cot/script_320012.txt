@@ -1,0 +1,26 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps and create the required JSON array.
+
+Here is the JSON array representing the connections between the steps:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The filtered Landsat image collection from Step1 is used as input to select the bands for compositing in Step2."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The selected bands for compositing from Step2 are used as input to create the composite image in Step3."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The composite image from Step3 is used as input to visualize the composite image on the map in Step4."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The visualized composite image on the map from Step4 is used as input to export the composite image to Google Drive in Step5."
+  }
+]
+```
+
+Each JSON object represents the connection between a pair of steps, with the "relationship" key specifying the step names and the "reason" key explaining the reason for the connection. The connections are based on the original sequence of the steps and the input/output relationships between them.

@@ -1,0 +1,57 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code aims to perform a geo-analysis task using Google Earth Engine. The task involves selecting specific land cover classes from the MODIS dataset for the year 2020, merging them, reprojecting the final image, and exporting it to Google Drive as a GeoTIFF file. The spatial scope is defined by a polygon geometry, and the time scope is limited to the year 2020. The main data source is the MODIS land cover dataset.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Select Evergreen Broadleaf Forests",
+        "Step description": "The purpose of this step is to select the land cover class representing 'Evergreen Broadleaf Forests' (class 10) from the MODIS dataset for the year 2020. The function `eq()` is used to create a binary image where pixels matching the class value are set to 1, and all other pixels are set to 0. The operation involves multiplying the binary image by the class value and renaming the band to '10'.", 
+        "Input": ["MODIS land cover dataset for 2020"], 
+        "Output":["Binary image representing class 10"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Select Mixed Forests",
+        "Step description": "The purpose of this step is to select the land cover class representing 'Mixed Forests' (class 12) from the MODIS dataset for the year 2020. Similar to Step 1, the `eq()` function is used to create a binary image for class 12, which is then multiplied by 12 and renamed to '12'.", 
+        "Input": ["MODIS land cover dataset for 2020"], 
+        "Output":["Binary image representing class 12"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Select Closed Shrublands",
+        "Step description": "The purpose of this step is to select the land cover class representing 'Closed Shrublands' (class 14) from the MODIS dataset for the year 2020. The `eq()` function is used to create a binary image for class 14, which is multiplied by 14 and renamed to '14'.", 
+        "Input": ["MODIS land cover dataset for 2020"], 
+        "Output":["Binary image representing class 14"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Merge Binary Images",
+        "Step description": "The purpose of this step is to merge the binary images representing classes 10, 12, and 14 into a single image. The `add()` function is used to add the binary images together, resulting in a final image where each pixel value corresponds to the sum of the class values at that location.", 
+        "Input": ["Binary images for classes 10, 12, and 14"], 
+        "Output":["Merged image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Reproject Image",
+        "Step description": "The purpose of this step is to reproject the merged image to the EPSG:4326 projection with a pixel size of 500 meters. The `reproject()` function is used to change the projection of the image while maintaining the pixel resolution.", 
+        "Input": ["Merged image"], 
+        "Output":["Reprojected image"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Add Image to Map",
+        "Step description": "The purpose of this step is to add the final reprojected image to the map for visualization. The `Map.addLayer()` function is used to display the image on the map.", 
+        "Input": ["Reprojected image"], 
+        "Output":["No specific output"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Export Image to Drive",
+        "Step description": "The purpose of this step is to export the final reprojected image to Google Drive as a GeoTIFF file. The `Export.image.toDrive()` function is used to initiate the export process, specifying the image to export, the description, folder, scale, region, and file format.", 
+        "Input": ["Reprojected image clipped to the specified geometry"], 
+        "Output":["Exported GeoTIFF file"]
+        }
+       ] 
+}
+```

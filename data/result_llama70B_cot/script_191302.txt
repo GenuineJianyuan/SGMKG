@@ -1,0 +1,29 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship between the steps. Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Landsat image collection', is used as input in Step2 to apply scaling factors."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Landsat image collection with scaled bands', is used as input in Step3 to add the scaled bands back to the Landsat images."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Landsat image collection with additional scaled bands', is used as input in Step4 to visualize the true color composite image."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'True color composite image displayed on the map', is not directly used as input in Step5, but both steps are part of the overall workflow to display the final output on the map centered on a specific location."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 filters the Landsat image collection and outputs a filtered collection, which is then used as input in Step2 to apply scaling factors.
+2. Step2 applies scaling factors and outputs a Landsat image collection with scaled bands, which is then used as input in Step3 to add the scaled bands back to the Landsat images.
+3. Step3 adds the scaled bands and outputs a Landsat image collection with additional scaled bands, which is then used as input in Step4 to visualize the true color composite image.
+4. Step4 visualizes the true color composite image and displays it on the map, and Step5 sets the map center to a specific location. Although there is no direct output-input relationship between Step4 and Step5, they are part of the overall workflow to display the final output on the map.

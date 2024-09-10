@@ -1,0 +1,18 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps and create the required JSON array.
+
+Here is the combination relationship of the steps:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Landsat 7 imagery with NDVI band added) is used as input for Step2 (Build Quality Mosaic) to calculate the NDVI values."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (Quality mosaic image based on NDVI values) is used as input for Step3 (Visualize Greenest Pixels) to visualize the greenest pixels."
+  }
+]
+```
+
+The relationship between Step1 and Step2 is that the output of Step1 (Landsat 7 imagery with NDVI band added) is used as input for Step2 (Build Quality Mosaic) to calculate the NDVI values. The relationship between Step2 and Step3 is that the output of Step2 (Quality mosaic image based on NDVI values) is used as input for Step3 (Visualize Greenest Pixels) to visualize the greenest pixels.

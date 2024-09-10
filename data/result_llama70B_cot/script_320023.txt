@@ -1,0 +1,43 @@
+﻿Here is the JSON array representing the combination relationships between the steps:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'Geometry object representing the northeastern provinces' from Step1 is used as input 'Northeastern provinces boundary' in Step3."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Variables storing the start and end dates' from Step2 is used as input 'Start and end dates' in Step3."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'Filtered Landsat 8 data within the specified time range and location' from Step3 is used as input 'Landsat image' in Step4."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output 'Landsat image with an additional NDVI band' from Step4 is used as input in Step5 to apply NDVI calculation to all Landsat images."
+    },
+    {
+        "relationship":["Step5", "Step8"],
+        "reason": "The output 'Landsat ImageCollection with NDVI bands added to each image' from Step5 is used as input 'NDVI data' in Step8."
+    },
+    {
+        "relationship":["Step2", "Step6"],
+        "reason": "The output 'Variables storing the start and end dates' from Step2 is used as input 'Start and end dates' in Step6."
+    },
+    {
+        "relationship":["Step1", "Step6"],
+        "reason": "The output 'Geometry object representing the northeastern provinces' from Step1 is used as input 'Northeastern provinces boundary' in Step6."
+    },
+    {
+        "relationship":["Step6", "Step8"],
+        "reason": "The output 'Filtered soil moisture data within the specified time range and location' from Step6 is used as input 'soil moisture data' in Step8."
+    },
+    {
+        "relationship":["Step7", "Step9"],
+        "reason": "The output 'Visualization parameter objects for NDVI and soil moisture' from Step7 is used as input 'Visualization parameters' in Step9."
+    },
+    {
+        "relationship":["Step8", "Step9"],
+        "reason": 

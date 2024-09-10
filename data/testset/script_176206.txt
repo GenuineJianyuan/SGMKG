@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process that focuses on analyzing climate data for Kenya for the year 1981 using the TerraClimate dataset. The code imports a shapefile of Kenya, filters the TerraClimate dataset for the year 1981, selects specific climate variables, calculates the average temperature, joins it to the image as a new band, masks out zero values, displays the image on the map, and exports the final image to Google Drive.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Import and Filter Data",
+        "Step description": "The purpose of this step is to import the Kenya shapefile and filter the TerraClimate dataset for the year 1981. The functions involved include importing a shapefile, filtering an image collection by date, and selecting specific bands. To implement this step, the code imports the Kenya shapefile as a FeatureCollection, filters the TerraClimate dataset for the year 1981, and selects the 'pdsi', 'soil', 'tmmn', 'tmmx' bands. The functions used are ee.FeatureCollection.load() to import the shapefile, ee.ImageCollection.filterDate() to filter by date, and ee.Image.select() to select specific bands.",
+        "Input": ["Kenya shapefile", "TerraClimate dataset"],
+        "Output":["Filtered image collection for the year 1981"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate Average Temperature",
+        "Step description": "The purpose of this step is to calculate the average temperature from the 'tmmn' and 'tmmx' bands. The function involved is mathematical expression calculation and band renaming. The implementation involves calculating the average temperature using the expression '(max+min)/2', where 'max' is the 'tmmx' band and 'min' is the 'tmmn' band, and renaming the output band as 'tempave'. The function ee.Image.expression() is used to calculate the average temperature and ee.Image.rename() is used to rename the output band.",
+        "Input": ["'tmmn' and 'tmmx' bands"],
+        "Output":["New image with the 'tempave' band representing average temperature"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Join Temperature Band",
+        "Step description": "The purpose of this step is to join the temperature average band to the image as a new band. The function involved is band concatenation. To implement this step, the code concatenates the temperature average band to the original image to create a new image with an additional band. The function ee.Image.addBands() is used for band concatenation.",
+        "Input": ["Original image", "Temperature average band"],
+        "Output":["Image with the temperature average band added"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Mask Zero Values",
+        "Step description": "The purpose of this step is to mask out zero values in the data. The function involved is data masking. The implementation includes masking out zero values in the image data to remove any invalid or missing values. The function ee.Image.updateMask() is used for data masking.",
+        "Input": ["Image data"],
+        "Output":["Masked image data without zero values"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Display Image on Map",
+        "Step description": "The purpose of this step is to display the final image on the map. The function involved is map visualization. To implement this step, the code sets visualization parameters for the image, centers the map on a specific location, and adds the image layer to the map. The functions ee.Image.visualize(), Map.setCenter(), and Map.addLayer() are used for map visualization.",
+        "Input": ["Final image data"],
+        "Output":["Displayed image on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Export Image to Google Drive",
+        "Step description": "The purpose of this step is to export the final image to Google Drive. The function involved is image export. The implementation includes exporting the final image to Google Drive with a specific description. The function Export.image.toDrive() is used for image export.",
+        "Input": ["Final image data"],
+        "Output":["Exported image file in Google Drive"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is a FeatureCollection representing France, which is used as an input in Step2 to filter the datasets (LAI, temperature, and precipitation) for the specified region of France."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 includes the LAI, temperature, and precipitation datasets, which are used as inputs in Step3 to apply weights to each dataset based on their importance in crop growth."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 consists of the weighted LAI, temperature, and precipitation datasets, which are used as inputs in Step4 to combine these weighted datasets into a composite index representing crop growth."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the combined index representing crop growth, which is used as an input in Step5 to visualize this index on a map with specified visualization parameters."
+    }
+]
+```

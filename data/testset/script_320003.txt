@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to compute the area of US counties and filter out those that are smaller than 3,000 square kilometers. It utilizes the TIGER boundaries dataset to load county boundaries, calculates the area of each county in hectares, and then filters out the counties that are smaller than the specified threshold. The final result is a visualization of the smaller counties on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load TIGER dataset",
+        "Step description": "The purpose of this step is to load the TIGER boundaries dataset which contains the geographic boundaries of US counties. The function ee.FeatureCollection() is used to create a FeatureCollection object. The 'TIGER/2016/Counties' dataset is loaded using the Loading operation. This step takes no input and outputs a FeatureCollection of counties.",
+        "Input": [], 
+        "Output":["counties (FeatureCollection)"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate county areas",
+        "Step description": "The purpose of this step is to calculate the area of each county in hectares. The map() function is used to apply a function over the counties FeatureCollection. The area() function calculates the area in square meters, which is then divided and converted to hectares using divide(). Finally, the set() function is used to set a new property 'area' for each feature. This step takes the FeatureCollection of counties as input and outputs a FeatureCollection with added area property.",
+        "Input": ["counties (FeatureCollection)"], 
+        "Output":["countiesWithArea (FeatureCollection)"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Filter small counties",
+        "Step description": "The purpose of this step is to filter out counties that are smaller than 3,000 square kilometers. The filter() function is applied to the FeatureCollection to get only counties with an area less than 3e5 square meters (3,000 square kilometers). The lt() function is used to perform the comparison. This step takes the FeatureCollection with area information as input and outputs a FeatureCollection of smaller counties.",
+        "Input": ["countiesWithArea (FeatureCollection)"], 
+        "Output":["smallCounties (FeatureCollection)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize smaller counties",
+        "Step description": "The purpose of this step is to visualize the smaller counties on the map. The addLayer() function is used to add a layer to the map with a specific color for the smaller counties. Additionally, the setCenter() function is used to set the center of the map to a specific location. This step takes the FeatureCollection of smaller counties as input and outputs a visualization of these counties on the map.",
+        "Input": ["smallCounties (FeatureCollection)"], 
+        "Output":["Visualization of smaller counties on the map"]
+        }
+       ] 
+}
+```

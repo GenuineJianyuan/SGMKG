@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the JSON array listing the connections:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered dataset for the year 2018', is used as input in Step2 to select the 'BurnDate' band."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Image with only the 'BurnDate' band selected', is used as input in Step3 to visualize the burned area."
+    },
+    {
+        "relationship":["Step2", "Step4"],
+        "reason": "The output of Step2, 'Image with 'BurnDate' band selected', is used as input in Step4 to clip the image to the study area."
+    },
+    {
+        "relationship":["Step4", "Step6"],
+        "reason": "The output of Step4, 'Clipped image of burned areas within the study area', is used as input in Step6 to export the image to Google Drive."
+    },
+    {
+        "relationship":["Step1", "Step5"],
+        "reason": "The input 'Study Area shapefile' is used in both Step1 and Step5, and the output of Step1 is not directly used in Step5, but they share a common input."
+    }
+]
+```
+
+Note that there is no direct connection between Step3 and any other step, as its output is only used for visualization and not as input for any other step. Similarly, Step5 is not directly connected to any other step, as its output is only used to set the map center and not as input for any other step.

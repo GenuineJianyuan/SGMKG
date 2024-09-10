@@ -1,0 +1,24 @@
+﻿Based on the provided JSON summarization, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1, 'Filtered Sentinel-1 GRD image collection with VV and VH bands selected', is used as input for Step2, 'Calculate RVI4S1 index', to calculate the Radar Vegetation Index (RVI4S1) using the formula provided in the code."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2, 'RVI4S1 image with visualization parameters', is used as input for Step3, 'Map RVI4S1 calculation function', to apply the calculateRVI4S1 function to each image in the Sentinel-1 GRD collection."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3, 'Collection of RVI4S1 images', is used as input for Step4, 'Display RVI4S1 image on map', to display the first RVI4S1 image from the collection on the map."
+  }
+]
+```
+
+The combination relationship of the steps is as follows:
+
+* Step1 outputs the filtered Sentinel-1 GRD image collection with VV and VH bands selected, which is used as input for Step2 to calculate the RVI4S1 index.
+* Step2 outputs the RVI4S1 image with visualization parameters, which is used as input for Step3 to apply the calculateRVI4S1 function to each image in the Sentinel-1 GRD collection.
+* Step3 outputs the collection of RVI4S1 images, which is used as input for Step4 to display the first RVI4S1 image from the collection on the map.

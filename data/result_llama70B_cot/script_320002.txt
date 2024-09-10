@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'NDVI image' from Step1 is used as input in Step2 to convolve with circular and square kernels."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Convolved images with circular and square kernels' from Step2 is used as input in Step3 to find the differences between the convolved images."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'Difference image' from Step3 is used as input in Step4 to highlight the kernel peaks."
+    },
+    {
+        "relationship":["Step1", "Step5"],
+        "reason": "The output 'NDVI image' from Step1 is used as input in Step5 to detect edges using the Canny edge detector."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output 'Edge image' from Step5 is used as input in Step6 to create a ring kernel and highlight the feature edges."
+    }
+]
+```
+
+These connections are based on the input-output relationships between the steps, as described in the original sequence and the "Step description", "Input", and "Output" elements.

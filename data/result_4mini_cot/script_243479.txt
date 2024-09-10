@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Landsat 8 Image Collection', which is used as the input for Step2. Step2 clips this filtered collection to the specified region of interest (ROI)."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Clipped Landsat 8 Image Collection', which serves as the input for Step3. Step3 applies a cloud masking function to this clipped collection to remove cloud and cloud shadow pixels."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Masked Landsat 8 Image Collection', which is used as the input for Step4. Step4 visualizes this masked collection on the map with specified visualization parameters."
+    }
+]
+```

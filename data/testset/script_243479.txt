@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to perform a geo-analysis task using Google Earth Engine (GEE). The task involves masking out cloud and cloud shadow pixels from Landsat 8 Surface Reflectance imagery within a specific region of interest (ROI) defined by a given feature collection. The code filters the Landsat 8 imagery based on a date range and cloud cover percentage, clips the images to the ROI, applies a cloud masking function, and then visualizes the processed imagery on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Landsat 8 imagery",
+        "Step description": "The purpose of this step is to filter Landsat 8 imagery based on a specific date range and cloud cover percentage. The code uses the `filterDate` function to select Landsat 8 imagery from January 1, 2020, to October 31, 2020. It then applies the `filterMetadata` function to filter out images with a cloud cover percentage less than 5.",
+        "Input": ["Landsat 8 Image Collection"],
+        "Output":["Filtered Landsat 8 Image Collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Clip Landsat 8 imagery to ROI",
+        "Step description": "The purpose of this step is to clip the filtered Landsat 8 imagery to the region of interest (ROI). The code uses the `clip` function within the `map` function to clip each image in the filtered Image Collection to the specified ROI defined by the feature collection.",
+        "Input": ["Filtered Landsat 8 Image Collection", "Region of Interest (ROI)"],
+        "Output":["Clipped Landsat 8 Image Collection"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Mask out cloud and cloud shadow pixels",
+        "Step description": "The purpose of this step is to mask out cloud and cloud shadow pixels from the Landsat 8 imagery. The code defines a `maskL8sr` function that masks out cloud shadow and cloud pixels based on the pixel QA band values. It then applies this function to each image in the clipped Image Collection using the `map` function.",
+        "Input": ["Clipped Landsat 8 Image Collection"],
+        "Output":["Masked Landsat 8 Image Collection"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize processed Landsat 8 imagery",
+        "Step description": "The purpose of this step is to visualize the processed Landsat 8 imagery on the map. The code specifies visualization parameters such as bands, min-max values, and gamma correction for the RGB composite of the Landsat 8 imagery. It then adds the processed Image Collection to the map with the defined visualization parameters.",
+        "Input": ["Masked Landsat 8 Image Collection"],
+        "Output":["Visualized Landsat 8 imagery on the map"]
+        }
+       ] 
+}
+```

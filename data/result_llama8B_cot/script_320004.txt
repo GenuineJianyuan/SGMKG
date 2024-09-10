@@ -1,0 +1,30 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 (Filtered and adjusted MODIS landcover image) is used as input for Step2 (Load and filter Landsat data for the specified region)."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 (Filtered Landsat data collection) is used as input for Step3 (Create a Landsat composite image for visualization)."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 (Landsat composite image) is used as input for Step4 (Create a training dataset by sampling the stacked images)."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 (Training dataset for classifier) is used as input for Step5 (Train a classifier using the training data)."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 (Trained classifier) is used as input for Step6 (Apply the trained classifier to the Landsat composite)."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output of Step6 (Classified and clipped landcover image) is used as input for Step7 (Visualize the upsampled landcover image)."
+    }
+]
+```

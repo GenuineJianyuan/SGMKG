@@ -1,0 +1,12 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 includes the 'Tree cover, loss image, and gain image variables', which are essential for filtering the feature collection in Step2. Specifically, the loss image is used to identify areas of forest loss within the Republic of the Congo and its protected areas."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2, which is 'Filtered protected areas within the Congo', serves as an input for Step3. In Step3, the geometry of the filtered protected areas is used alongside the loss pixels in 2018 to calculate the area of forest loss specifically within these protected areas."
+    }
+]
+```

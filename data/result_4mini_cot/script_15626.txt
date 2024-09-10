@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Clipped image of the dataset within the Amazon Basin region', which serves as the input for Step2. In Step2, NDVI and NDWI are calculated using the specific bands from the clipped image obtained in Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 consists of 'NDWI and NDVI images', which are used as input in Step3. In Step3, visualization parameters are defined for these NDVI and NDWI images to prepare them for display."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Customized visualization of NDVI and NDWI images on the map', which is utilized in Step4. In Step4, these visualized images are added to the map for final visualization."
+    }
+]
+```

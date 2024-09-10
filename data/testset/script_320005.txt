@@ -1,0 +1,56 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code performs a flood analysis in the study area of Poyang Lake using Landsat satellite imagery. The code first selects the study area, then filters Landsat images for two periods (winter and summer), calculates the difference in water extent between the two periods, visualizes the flooded areas, computes the total flooded area, and finally prints out the total flooded area in square kilometers.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Select Study Area",
+        "Step description": "The purpose of this step is to define a polygon feature collection representing the study area of Poyang Lake. This is achieved by creating a polygon geometry for Poyang Lake and adding it to a feature collection. The function called to realize this step is to define a polygon feature collection.",
+        "Input": ["Coordinates for the study area polygon"],
+        "Output":["Feature collection representing the study area"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Define Landsat ImageCollection",
+        "Step description": "The purpose of this step is to retrieve Landsat satellite imagery for the analysis. This is done by using the 'LANDSAT/LC08/C02/T1_L2' ImageCollection to access Landsat imagery. The function called to realize this step is to define the Landsat ImageCollection.",
+        "Input": ["Landsat image collection ID"],
+        "Output":["Landsat ImageCollection object"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Generate Images for Two Periods",
+        "Step description": "The purpose of this step is to filter Landsat images for winter and summer periods, calculate the Normalized Difference Water Index (NDWI), and identify water pixels based on a threshold. The function called to realize this step is to filter Landsat images by date, calculate NDWI, and identify water pixels.",
+        "Input": ["Landsat ImageCollection", "Date ranges for winter and summer"],
+        "Output":["Binary images representing water presence for winter and summer"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Calculate Water Extent Difference",
+        "Step description": "The purpose of this step is to compute the difference in water extent between winter and summer. This is achieved by subtracting the winter water extent from the summer water extent. The function called to realize this step is to compute the difference between summer and winter water extent.",
+        "Input": ["Binary images representing water presence in winter and summer"],
+        "Output":["Binary image representing the difference in water extent"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Visualize Flooded Areas",
+        "Step description": "The purpose of this step is to add the flood extent layer to the map for visualization. This involves centering the map on the study area and adding the flood extent layer with a color palette to represent flooded areas. The function called to realize this step is to add the flood extent layer to the map.",
+        "Input": ["Binary image representing the difference in water extent"],
+        "Output":["Visualization of flooded areas on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Compute Total Flooded Area",
+        "Step description": "The purpose of this step is to calculate the total area of flooded regions. This is done by multiplying the flood extent by pixel area, dividing by 10000 to convert to square kilometers, and reducing the region to sum the flooded area. The function called to realize this step is to calculate the total area of flooded regions.",
+        "Input": ["Binary image representing the difference in water extent", "Study area geometry"],
+        "Output":["Total flooded area in square kilometers"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Print Total Flooded Area",
+        "Step description": "The purpose of this step is to display the total flooded area in the console. This involves retrieving the total flooded area value and printing it to the console. The function called to realize this step is to display the total flooded area in the console.",
+        "Input": ["Total flooded area value"],
+        "Output":["Printed output of the total flooded area in square kilometers"]
+        }
+       ] 
+}
+```

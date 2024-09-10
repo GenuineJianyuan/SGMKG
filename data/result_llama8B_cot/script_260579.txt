@@ -1,0 +1,24 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Preprocessed SST image with normalized values) is used as input for Step2 (Define Region of Interest). The preprocessed SST image is used to define the region of interest."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (Geometry object representing the region of interest) is used as input for Step3 (Sample SST Values). The geometry object is used to sample SST values at random locations within the defined region."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3 (Feature collection with sampled SST values at random locations) is used as input for Step4 (Interpolate SST Values). The sampled SST values are used to perform Kriging interpolation."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4 (Interpolated SST values using Kriging) is used as input for Step5 (Visualize Results on Map). The interpolated SST values are used to visualize the results on a map."
+  }
+]
+```
+
+Note that the relationship only exists if the output and its matched input exist.

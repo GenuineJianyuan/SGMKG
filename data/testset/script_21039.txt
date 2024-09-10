@@ -1,0 +1,56 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial analysis script using Google Earth Engine to analyze snow cover using Landsat satellite imagery. The script filters Landsat images based on a specific geometry and time range, calculates the Normalized Difference Snow Index (NDSI) for each image, and then creates a minimum composite for three different years (2014, 2018, and 2022). Finally, it visualizes the results on the map by adding layers for each year.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Landsat images based on geometry and time range",
+        "Step description": "The purpose of this step is to filter Landsat images based on a specific geometry and time range. This is achieved by using the functions filterBounds() and filterDate(). The script filters the Landsat image collection based on the provided geometry (polygon) and time range (from 2014-04-10 to 2022-04-10).",
+        "Input": ["Landsat image collection", "geometry", "time range"],
+        "Output":["Filtered Landsat image collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Landsat images for the year 2014",
+        "Step description": "The purpose of this step is to further filter the previously filtered Landsat image collection to only include images from the year 2014. This is done by using the function filterDate(). The script filters the Landsat image collection to only include images from the year 2014 (from 2014-01-01 to 2014-12-31).",
+        "Input": ["Filtered Landsat image collection"],
+        "Output":["Landsat image collection for the year 2014"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Filter Landsat images for the year 2022",
+        "Step description": "The purpose of this step is to further filter the previously filtered Landsat image collection to only include images from the year 2022. This is done by using the function filterDate(). The script filters the Landsat image collection to only include images from the year 2022 (from 2022-01-01 to 2022-12-31).",
+        "Input": ["Filtered Landsat image collection"],
+        "Output":["Landsat image collection for the year 2022"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Filter Landsat images for the year 2018",
+        "Step description": "The purpose of this step is to further filter the previously filtered Landsat image collection to only include images from the year 2018. This is done by using the function filterDate(). The script filters the Landsat image collection to only include images from the year 2018 (from 2018-01-01 to 2018-12-31).",
+        "Input": ["Filtered Landsat image collection"],
+        "Output":["Landsat image collection for the year 2018"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Calculate NDSI for each image",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Snow Index (NDSI) for each image. This is achieved by defining a function ndsi() that calculates the NDSI using Landsat bands B3 (green) and B6 (SWIR) and renames the output band as 'NDSI'.",
+        "Input": ["Landsat image"],
+        "Output":["Image with NDSI band"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Create minimum composite of NDSI images for 2014, 2018, and 2022",
+        "Step description": "The purpose of this step is to create a minimum composite of NDSI images for the years 2014, 2018, and 2022. This is done by mapping the ndsi() function to the Landsat image collections for each year and calculating the minimum NDSI value for each pixel across all images in the collection, resulting in a minimum composite image for each year.",
+        "Input": ["Landsat image collections for each year"],
+        "Output":["Minimum composite NDSI images for 2014, 2018, and 2022"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Visualize results on the map",
+        "Step description": "The purpose of this step is to visualize the results on the map. This is achieved by adding layers to the map for the minimum composite NDSI images for the years 2014, 2018, and 2022, showing areas with snow cover (NDSI > 0).",
+        "Input": ["Minimum composite NDSI images for each year"],
+        "Output":["Visualization of snow cover for 2014, 2018, and 2022 on the map"]
+        }
+       ] 
+}
+```

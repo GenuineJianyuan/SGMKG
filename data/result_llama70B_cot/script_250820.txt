@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'image' from Step1 is used as input in Step3 to reduce the image within the specified region."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'poly' from Step2 is used as input in Step3 to define the region of interest for the reduction."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'max' from Step3 is used as input in Step4 to print the computed maximum pixel value to the console."
+    }
+]
+```
+
+Here's a brief explanation for each connection:
+
+1. Step1 and Step3: The output 'image' from Step1 is used as input in Step3 to reduce the image within the specified region.
+2. Step2 and Step3: The output 'poly' from Step2 is used as input in Step3 to define the region of interest for the reduction.
+3. Step3 and Step4: The output 'max' from Step3 is used as input in Step4 to print the computed maximum pixel value to the console.
+
+These connections illustrate the flow of data between the steps, highlighting how the outputs from one step are used as inputs in subsequent steps.

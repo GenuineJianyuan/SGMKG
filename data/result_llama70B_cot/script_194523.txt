@@ -1,0 +1,44 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Filtered Landsat 8 ImageCollection (Data1)' from Step1 is used as input in Step2 to create a composite image."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Composite image (Data_Collection)' from Step2 is used as input in Step3 to calculate the Normalized Difference Water Index (NDWI)."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'NDWI image (NDWI)' from Step3 is used as input in Step4 to mask out non-water areas in the composite image."
+    },
+    {
+        "relationship":["Step2", "Step4"],
+        "reason": "The output 'Composite image (Data_Collection)' from Step2 is used as input in Step4 to mask out non-water areas."
+    },
+    {
+        "relationship":["Step3", "Step5"],
+        "reason": "The output 'NDWI image (NDWI)' from Step3 is used as input in Step5 to classify water and ice based on elevation from the Digital Elevation Model (DEM)."
+    },
+    {
+        "relationship":["Step4", "Step6"],
+        "reason": "The output 'Masked composite image (Collection_mask)' from Step4 is used as input in Step6 to visualize the data layers on the map."
+    },
+    {
+        "relationship":["Step3", "Step6"],
+        "reason": "The output 'NDWI image (water)' from Step3 is used as input in Step6 to visualize the data layers on the map."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output 'Classified ice image (ice)' from Step5 is used as input in Step6 to visualize the data layers on the map."
+    },
+    {
+        "relationship":["Step3", "Step7"],
+        "reason": "The output 'NDWI image (water)' from Step3 is used as input in Step7 to export the water image to Google Drive."
+    }
+]
+```
+
+Each JSON object in the array represents a

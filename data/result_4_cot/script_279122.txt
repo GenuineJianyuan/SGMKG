@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the filtered Sentinel-2 image (`SE2_2019`), which is used as the input in Step2 to calculate the NDVI. Step2 computes the NDVI using the bands of the filtered image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the image with NDVI band (`SE2_2019WithNDVI`), which is used as the input in Step3 to sample training data. Step3 samples regions from the NDVI image using labeled examples."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the training data (`training`), which is used as the input in Step4 to train the Random Forest classifier. Step4 uses the sampled training data to create a classifier."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the trained Random Forest classifier (`classifier`), which is used as the input in Step5 to classify the image. Step5 applies the trained classifier to the NDVI image to produce the classified image."
+    }
+]
+```

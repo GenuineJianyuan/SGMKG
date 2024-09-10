@@ -1,0 +1,52 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the 'Clipped SRTM elevation data within the specified area', which is used as input in Step2 as 'Clipped DEM image' to visualize the DEM on the map."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "Step1 outputs the 'Clipped SRTM elevation data within the specified area', which is used as input in Step3 as 'Clipped DEM image' to calculate the aspect from the DEM."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "Step1 outputs the 'Clipped SRTM elevation data within the specified area', which is used as input in Step4 as 'Clipped DEM image' to calculate the hillshade from the DEM."
+    },
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "Step1 outputs the 'Clipped SRTM elevation data within the specified area', which is used as input in Step5 as 'Clipped DEM image' to calculate the slope from the DEM."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "Step1 outputs the 'Clipped SRTM elevation data within the specified area', which is used as input in Step6 as 'Clipped DEM image' to calculate various terrain products from the DEM."
+    },
+    {
+        "relationship": ["Step1", "Step7"],
+        "reason": "Step1 outputs the 'Clipped SRTM elevation data within the specified area', which is used as input in Step7 as 'Clipped DEM image' to fill minima in the DEM."
+    },
+    {
+        "relationship": ["Step1", "Step8"],
+        "reason": "Step1 outputs the 'Clipped SRTM elevation data within the specified area', which is used as input in Step8 as 'Clipped DEM image' to compute the mean elevation within the specified area."
+    },
+    {
+        "relationship": ["Step3", "Step8"],
+        "reason": "Step3 outputs the 'Aspect image representing the direction of slope', but it does not directly connect to Step8. Therefore, there is no relationship."
+    },
+    {
+        "relationship": ["Step4", "Step8"],
+        "reason": "Step4 outputs the 'Hillshade image representing the shading of the terrain', but it does not directly connect to Step8. Therefore, there is no relationship."
+    },
+    {
+        "relationship": ["Step5", "Step8"],
+        "reason": "Step5 outputs the 'Slope image representing the steepness of the terrain', but it does not directly connect to Step8. Therefore, there is no relationship."
+    },
+    {
+        "relationship": ["Step6", "Step8"],
+        "reason": "Step6 outputs the 'Image containing various terrain products', but it does not directly connect to Step8. Therefore, there is no relationship."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "Step7 outputs the 'DEM image with filled minima', which is used as input in Step8 as 'Clipped DEM image' to compute the mean elevation within the specified area."
+    }
+]
+```

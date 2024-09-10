@@ -1,0 +1,29 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a solution for a geo-analysis task that aims to create a quality mosaic of Landsat imagery for the year 2000, specifically focusing on the normalized difference vegetation index (NDVI) of bands 4 and 3. The code first loads Landsat 7 imagery for the year 2000, calculates the NDVI, and then creates a quality mosaic by sorting the pixels based on the NDVI values. The final output is a visualization of the greenest pixels from the year 2000.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load and Calculate NDVI",
+        "Step description": "The purpose of this step is to load Landsat 7 imagery for the year 2000 and calculate the NDVI. The code uses the ee.ImageCollection() function to load the Landsat 7 imagery, then filters the images by date using the filterDate() function. Next, it calculates the NDVI using bands 4 and 3 with the normalizedDifference() function and adds the NDVI as a new band to each image with the addBands() function.",
+        "Input": ["Landsat 7 imagery for the year 2000"],
+        "Output":["Landsat 7 imagery with NDVI band added"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Build Quality Mosaic",
+        "Step description": "The purpose of this step is to build a quality mosaic using the NDVI values. The code converts the image bands to an array, slices the quality and values from the array, sorts the values by quality in descending order, selects the best pixel based on quality using the qualityMosaic() function, and projects the best pixel back to a regular scalar image.",
+        "Input": ["Landsat 7 imagery with NDVI band added"],
+        "Output":["Quality mosaic image based on NDVI values"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Visualize Greenest Pixels",
+        "Step description": "The purpose of this step is to visualize the greenest pixels from the quality mosaic. The code selects the color bands for visualization (B3, B2, B1), adds the layer to the map with specified gain values for visualization enhancement using the Map.addLayer() function, and sets the map center with the Map.setCenter() function.",
+        "Input": ["Quality mosaic image"],
+        "Output":["Visualization of the greenest pixels on the map"]
+        }
+       ] 
+}
+```

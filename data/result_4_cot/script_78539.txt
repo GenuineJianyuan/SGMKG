@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Sentinel-2 image collection', which serves as the input for Step2. In Step2, the cloud masking function is applied to this filtered image collection to produce the 'Cloud-masked Sentinel-2 image collection'."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Cloud-masked Sentinel-2 image collection', which is used as the input for Step3. In Step3, the NDCI is calculated using the cloud-masked images to produce the 'NDCI image collection'."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'NDCI image collection', which is used as an input in Step4 along with the 'cloud-masked Sentinel-2 image collection' and 'RGB composite image'. In Step4, these inputs are visualized on the map, resulting in the visualization of the RGB composite, cloud-masked imagery, NDCI results, and specific band visualization."
+    }
+]
+```

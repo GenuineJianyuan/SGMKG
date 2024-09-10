@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a 'Landsat 8 image', which is used as input in Step2 to extract the RGB and panchromatic bands."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs an 'RGB image', which is used as input in Step3 to convert the RGB image to the HSV color space."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 also outputs a 'Panchromatic image', which is used as input in Step4 to swap in the panchromatic band in the HSV image."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs an 'HSV image', which is used as input in Step4 to replace the saturation and value bands with the panchromatic band."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a 'Pansharpened RGB image', which is used as input in Step5 to visualize the pansharpened RGB image alongside the original RGB image on the map."
+    }
+]
+```

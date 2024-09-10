@@ -1,0 +1,24 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Filtered Landsat 8 Image Collection) is used as input for Step2 (Clip Landsat 8 imagery to ROI) to clip the filtered images to the region of interest (ROI)."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (Clipped Landsat 8 Image Collection) is used as input for Step3 (Mask out cloud and cloud shadow pixels) to apply the cloud masking function to the clipped images."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3 (Masked Landsat 8 Image Collection) is used as input for Step4 (Visualize processed Landsat 8 imagery) to visualize the processed images on the map."
+  }
+]
+```
+
+The relationships between the steps are as follows:
+
+1. Step1 filters the Landsat 8 imagery based on a specific date range and cloud cover percentage, and the output is used as input for Step2 to clip the images to the region of interest (ROI).
+2. Step2 clips the filtered images to the ROI, and the output is used as input for Step3 to apply the cloud masking function to the clipped images.
+3. Step3 applies the cloud masking function to the clipped images, and the output is used as input for Step4 to visualize the processed images on the map.

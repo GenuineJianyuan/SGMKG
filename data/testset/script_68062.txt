@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to visualize burned areas using the FireCCI51 dataset for the year 2018 within a specific study area defined by a shapefile. The code filters the dataset for the specified time frame, selects the 'BurnDate' band, clips the resulting image to the study area, and then exports the final burned area image to Google Drive as a GeoTIFF file.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter dataset for 2018",
+        "Step description": "The purpose of this step is to filter the FireCCI51 dataset for the year 2018. This is achieved by using the function ee.ImageCollection('ESA/CCI/FireCCI/5_1').filterDate() to filter the image collection based on the specified date range ('2018-01-01' to '2018-05-31').",
+        "Input": ["FireCCI51 dataset"],
+        "Output":["Filtered dataset for the year 2018"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Select 'BurnDate' band",
+        "Step description": "The purpose of this step is to select the 'BurnDate' band from the filtered dataset. This is done by using the function dataset.select() to choose the 'BurnDate' band from the filtered dataset.",
+        "Input": ["Filtered dataset for the year 2018"],
+        "Output":["Image with only the 'BurnDate' band selected"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Visualize burned area",
+        "Step description": "The purpose of this step is to visualize the burned area using a color palette. This is achieved by adding the burned area image to the map with a specific color palette for visualization using the function Map.addLayer().",
+        "Input": ["Image with 'BurnDate' band selected"],
+        "Output":["Visual representation of burned areas on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Clip image to study area",
+        "Step description": "The purpose of this step is to clip the burned area image to the study area. This is done by using the function maxBA.clip() to clip the burned area image to the study area defined by the shapefile.",
+        "Input": ["Image with burned areas", "Study Area shapefile"],
+        "Output":["Clipped image of burned areas within the study area"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Set study area as map center",
+        "Step description": "The purpose of this step is to set the study area as the center of the map. This is achieved by using the function Map.centerObject() to center the map on the study area with a specified zoom level.",
+        "Input": ["Study Area shapefile"],
+        "Output":["Map centered on the study area"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Export image to Google Drive",
+        "Step description": "The purpose of this step is to export the clipped burned area image to Google Drive. This is done by using the function Export.image.toDrive() to export the clipped burned area image as a GeoTIFF file to Google Drive with specified parameters.",
+        "Input": ["Clipped image of burned areas within the study area"],
+        "Output":["GeoTIFF file exported to Google Drive"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is 'nightlights2017', which is the filtered ImageCollection containing images within the specified time range. This output is used as the input for Step2, where the mean() function calculates the average radiance of the nighttime lights for the entire year from the 'nightlights2017' ImageCollection."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is still 'nightlights2017', which now contains the mean radiance Image. This output is used as input in Step3, where the clip() function is applied to focus the analysis on the area of interest by clipping the 'nightlights2017' Image to the boundary of Tanzania."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is 'nightlights2017', which is now the clipped Image of nighttime lights for Tanzania. This output is used as input in Step4, where the select() function isolates the average radiance band from the 'nightlights2017' Image."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is 'Image with only the avg_rad band', which contains the isolated average radiance band. This output is used as input in Step5, where the addLayer() function visualizes the nighttime lights data on the map using this Image."
+    }
+]
+```

@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is the 'Feature collection representing the study area', which is used as input in Step3 as the 'study area boundary' to calculate the mean aboveground biomass carbon density."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Image collection containing biomass carbon density data', which provides the 'agb' band needed as input in Step3 to calculate the mean aboveground biomass carbon density."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Image representing the mean aboveground biomass carbon density', which is used as input in Step4 to visualize the biomass carbon density on the map."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "The output from Step3, which is the 'Image representing the mean aboveground biomass carbon density', is used as input in Step6 to compute statistics for the biomass image within the study area."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "While Step4 visualizes the biomass image, it does not directly connect to Step5. However, the output from Step3 (the biomass image) is used in Step5 to export the image to Google Drive."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "There is no direct relationship between Step5 and Step6 as they operate independently. Step5 exports the image, while Step6 computes statistics based on the biomass image from Step3."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is the 'Computed statistics (mean and standard deviation) for biomass carbon density', which is used as input in Step7 to print the computed statistics to the console."
+    }
+]
+```

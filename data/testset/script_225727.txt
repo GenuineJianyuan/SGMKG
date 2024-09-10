@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to perform a geo-analysis task using Google Earth Engine. The task involves calculating the Normalized Difference Vegetation Index (NDVI) from Landsat 8 satellite imagery within a specific date range and location. The code filters the Landsat 8 image collection based on a geometry, date range, and cloud cover, then calculates the NDVI, creates a greenest pixel composite, and displays the result on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Landsat 8 images",
+        "Step description": "The purpose of this step is to filter the Landsat 8 image collection based on location and date range. This is achieved by using the 'filterBounds', 'filterDate', and 'sort' functions. The 'filterBounds' function is used to filter the image collection by the specified geometry, 'filterDate' is used to select images within the date range ('2017-01-01' to '2018-01-01'), and 'sort' is used to sort the images by cloud cover. These operations help in narrowing down the image collection to the desired subset.",
+        "Input": ["Landsat 8 image collection", "geometry", "date range"],
+        "Output":["Filtered Landsat 8 image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Vegetation Index (NDVI) for the selected Landsat 8 image. This is done by selecting the Near-Infrared (NIR) and Red bands from the image and applying the NDVI formula: (NIR - Red) / (NIR + Red). The 'select' function is used to choose the NIR (B5) and Red (B4) bands, and the 'expression' function is used to calculate the NDVI. Finally, the NDVI band is renamed to 'NDVI' for clarity.",
+        "Input": ["Landsat 8 image"],
+        "Output":["Image with NDVI band"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Add NDVI band to all images",
+        "Step description": "The purpose of this step is to add the NDVI band to all images in the Landsat 8 image collection. This is achieved by mapping a function to each image using the 'map' function. The function calculates the NDVI for a single image, and then this function is applied to all images in the collection. By doing this, the NDVI band is added to each image in the collection.",
+        "Input": ["Landsat 8 image collection"],
+        "Output":["Landsat 8 image collection with NDVI band added to each image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Create greenest pixel composite",
+        "Step description": "The purpose of this step is to create a greenest pixel composite using the NDVI band. This is done by generating a quality mosaic based on the NDVI values of the images. The 'qualityMosaic' function is used on the Landsat 8 image collection with NDVI bands to create a composite image where each pixel represents the greenest pixel based on the NDVI values. This helps in visualizing the greenest areas in the imagery.",
+        "Input": ["Landsat 8 image collection with NDVI band"],
+        "Output":["Greenest pixel composite image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Display greenest pixel composite",
+        "Step description": "The purpose of this step is to display the greenest pixel composite on the map. This is achieved by adding a layer to the map and defining visualization parameters for the RGB bands. The greenest pixel composite image is then added to the map with the specified visualization parameters, allowing users to visualize the greenest areas in the imagery.",
+        "Input": ["Greenest pixel composite image"],
+        "Output":["Displayed greenest pixel composite on the map"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,24 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Visualization of the Kajiado boundary on the map' from Step1 is used as input to load the boundary feature collection for the subsequent steps."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output 'Filtered and sorted image collection with precipitation band selected' from Step2 is used as input to visualize the precipitation data on the map in Step3."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output 'Visualization of precipitation data on the map' from Step3 is used as input to export the colorized precipitation image to Google Drive in Step4."
+  }
+]
+```
+
+The relationships between the steps are as follows:
+
+1. Step1 loads the Kajiado boundary feature collection and visualizes it on the map. The output of this step is used as input to load the boundary feature collection for the subsequent steps.
+2. Step2 retrieves and filters the CHIRPS dataset for daily precipitation data. The output of this step is used as input to visualize the precipitation data on the map in Step3.
+3. Step3 visualizes the precipitation data on the map. The output of this step is used as input to export the colorized precipitation image to Google Drive in Step4.

@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered image collection based on the selected band and time period', which serves as the input for Step2. In Step2, this filtered image collection is used to calculate the mean value of the NO2 column number density, resulting in a single image that represents the average NO2 levels."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2 is the 'Mean image representing the average NO2 column number density', which is used as input in Step4. In Step4, this mean image is clipped to the administrative boundary defined in Step3, ensuring that the analysis is focused on the specific area of interest."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Loaded table of state boundaries', which is used as input in Step4. In Step4, this table defines the area to which the mean image is clipped, allowing for a focused analysis within the specified administrative boundary."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is the 'Clipped image within the specified administrative boundary', which serves as the input for Step5. In Step5, this clipped image is visualized on the map, allowing for a spatial representation of NO2 levels in the Tangerang Selatan region."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 is the 'Visual representation of NO2 levels on the map', which is not directly used as input in Step6. However, the clipped image from Step4 is exported in Step6. The visualization in Step5 aids in understanding the data that is being exported in Step6, although there is no direct input-output relationship between these two steps."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The output of Step4 is the 'Clipped image within the specified administrative boundary', which is used as input in Step6. In Step6, this clipped image is exported to Google Drive for further analysis or sharing, allowing users to access the analyzed data outside of the Earth Engine environment."
+    }
+]
+```

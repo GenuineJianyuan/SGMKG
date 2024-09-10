@@ -1,0 +1,70 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process that aims to identify water bodies using Sentinel-1 and Sentinel-2 satellite imagery. The code includes steps for data preparation, noise reduction, cloud removal, NDWI calculation, and water body identification. The spatial scope is defined by a polygon geometry, and the time scope is from March 1, 2020, to June 1, 2020. The data sources used are Sentinel-1 GRD and Sentinel-2 SR imagery, as well as external datasets for hydrology and slope. The code processes the data to identify water bodies based on specific thresholds and conditions, and visualizes the results on a map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Define Polygon Geometry",
+        "Step description": "The purpose of this step is to define a polygon geometry for the spatial scope of the analysis. This is achieved by using the ee.Geometry.Polygon() function to create a polygon geometry with coordinates that define the spatial extent of the analysis.",
+        "Input": ["Coordinates for the polygon vertices"],
+        "Output":["A polygon geometry object"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Create Masks for Hydrology and Slope Thresholds",
+        "Step description": "The purpose of this step is to create masks for hydrology and slope thresholds. This involves loading the MERIT Hydro dataset, selecting the 'hnd' band, setting a threshold of 20, inverting the mask, calculating slope from the SRTM90 dataset, setting a threshold of 10, and inverting the mask.",
+        "Input": ["MERIT Hydro dataset", "SRTM90 dataset"],
+        "Output":["Binary masks for hydrology and slope"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Implement Noise Reduction on Sentinel-1 Imagery",
+        "Step description": "The purpose of this step is to implement noise reduction on Sentinel-1 imagery. This involves selecting the VV and VH bands, applying a focal median filter with a kernel size of 1.5, renaming the smoothed bands, and adding them back to the image.",
+        "Input": ["Sentinel-1 image"],
+        "Output":["Sentinel-1 image with smoothed VV and VH bands"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Prepare Sentinel-1 Data for Analysis",
+        "Step description": "The purpose of this step is to prepare Sentinel-1 data for analysis. This is done by defining start and end dates, filtering the Sentinel-1 GRD collection by geometry and date range, filtering by polarization and instrument mode, applying noise reduction function, and selecting the minimum value image.",
+        "Input": ["Sentinel-1 GRD collection", "geometry", "start and end dates"],
+        "Output":["Processed Sentinel-1 image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Identify Water Bodies Using Sentinel-1 Imagery",
+        "Step description": "The purpose of this step is to identify water bodies using Sentinel-1 imagery. This involves applying a threshold on the VH band, updating the mask based on slope and hydrology masks, clipping to the defined geometry, and adding the layer to the map.",
+        "Input": ["Processed Sentinel-1 image", "slope and hydrology masks", "geometry"],
+        "Output":["Visualization of water bodies on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Implement NDWI Calculation on Sentinel-2 Imagery",
+        "Step description": "The purpose of this step is to implement NDWI calculation on Sentinel-2 imagery. This involves calculating NDWI using bands B3 and B8, updating the mask based on slope and hydrology masks, clipping to the defined geometry, renaming the band, and adding it back to the image.",
+        "Input": ["Sentinel-2 image"],
+        "Output":["Sentinel-2 image with NDWI band"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Remove Clouds from Sentinel-2 Imagery",
+        "Step description": "The purpose of this step is to remove clouds from Sentinel-2 imagery. This is achieved by selecting the quality band, unmasking it, and updating the mask to remove cloudy pixels.",
+        "Input": ["Sentinel-2 image"],
+        "Output":["Cloud-free Sentinel-2 image"]
+        },
+        {
+        "Step name":"Step8", 
+        "Short Name":"Prepare Sentinel-2 Data for Analysis",
+        "Step description": "The purpose of this step is to prepare Sentinel-2 data for analysis. This involves filtering the Sentinel-2 SR collection by geometry and date range, filtering by cloud percentage, removing clouds, and calculating NDWI.",
+        "Input": ["Sentinel-2 SR collection", "geometry", "start and end dates"],
+        "Output":["Processed Sentinel-2 image"]
+        },
+        {
+        "Step name":"Step9", 
+        "Short Name":"Identify Water Bodies Using Sentinel-2 Imagery",
+        "Step description": "The purpose of this step is to identify water bodies using Sentinel-2 imagery. This includes selecting the NDWI band, finding the maximum value, creating a binary water mask, and adding the layer to the map.",
+        "Input": ["Processed Sentinel-2 image"],
+        "Output":["Visualization of water bodies on the map"]
+        }
+       ] 
+}
+```

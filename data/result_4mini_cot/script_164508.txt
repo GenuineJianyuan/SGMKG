@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered feature collection representing the boundary of Italy', which is necessary for Step2 as it requires the geographical context of Italy to filter the NO2 values specifically for that region. However, the output from Step1 is not directly used as an input in Step2, so this relationship does not exist."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Filtered image collection containing NO2 values for the specified months', which is essential for Step3. Step3 requires this filtered NO2 image collection to calculate the average NO2 values for the years 2019 and 2020. Thus, the filtered NO2 values from Step2 serve as the input for Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Average NO2 image for 2019 and 2020 clipped to Italy', which is used as input in Step4. Step4 visualizes these average NO2 images on the map, making the output from Step3 a crucial input for the visualization process in Step4."
+    }
+]
+```

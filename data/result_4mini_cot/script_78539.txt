@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered Sentinel-2 image collection', which is used as input in Step2. Step2 applies a cloud masking function to this filtered image collection to remove cloudy pixels, resulting in the 'Cloud-masked Sentinel-2 image collection'."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Cloud-masked Sentinel-2 image collection', which is used as input in Step3. Step3 calculates the Normalized Difference Chlorophyll Index (NDCI) using this cloud-masked image collection, producing the 'NDCI image collection'."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'NDCI image collection', which is used as input in Step4. Step4 visualizes the NDCI results along with the RGB composite image and the cloud-masked Sentinel-2 imagery on the map, resulting in a comprehensive visualization of the data."
+    }
+]
+```

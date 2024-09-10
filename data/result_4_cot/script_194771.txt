@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1 is a binary image representing class 10, which is used as input in Step4 to merge with the binary images from Step2 and Step3."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output from Step2 is a binary image representing class 12, which is used as input in Step4 to merge with the binary images from Step1 and Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is a binary image representing class 14, which is used as input in Step4 to merge with the binary images from Step1 and Step2."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is a merged image, which is used as input in Step5 for reprojection."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is a reprojected image, which is used as input in Step6 to add the image to the map for visualization."
+    },
+    {
+        "relationship": ["Step5", "Step7"],
+        "reason": "The output from Step5 is a reprojected image, which is clipped to the specified geometry and used as input in Step7 for exporting the image to Google Drive."
+    }
+]
+```

@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 includes the loaded Landsat 5 images for June 4, 1990, and June 11, 2010. These images are used as input in Step2 to compute the NDVI values for each image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 consists of the NDVI values for both Landsat images. These NDVI values are used as input in Step3 to calculate the difference in NDVI between the two images."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the NDVI difference between the two Landsat images. This NDVI difference is used as input in Step4, where a land mask is applied to remove non-land areas."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the masked NDVI difference with non-land areas removed. This masked NDVI difference is used as input in Step5 to display the final result on the map."
+    }
+]
+```

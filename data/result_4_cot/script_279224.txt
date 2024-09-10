@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Loaded Sentinel-2 image collection', which is used as input in Step2 to filter the imagery based on date and cloud cover percentage."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Filtered Sentinel-2 image collection', which is used as input in Step3 to calculate the Normalized Difference Vegetation Index (NDVI) for the filtered imagery."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Sentinel-2 image collection with NDVI band added', which is used as input in Step4 to sample regions for training data."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is 'Training data for the classifier', which is used as input in Step5 to train the Random Forest classifier using this training data."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "The output from Step3 is the 'Sentinel-2 image collection with NDVI band added', which is also used as input in Step6 to classify the imagery into land cover classes using the trained classifier."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the 'Trained Random Forest classifier', which is used as input in Step6 to classify the Sentinel-2 imagery into different land cover classes."
+    }
+]
+```

@@ -1,0 +1,36 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step4"],
+        "reason": "The output of Step1 (start and end dates in seconds) is used as input in Step4 to create a binary layer for FORMA 2012."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2 (geometry object representing the region) is not directly used as input in Step3, but both steps are necessary for loading the FORMA 500 dataset."
+    },
+    {
+        "relationship":["Step2", "Step5"],
+        "reason": "The output of Step2 (geometry object representing the region) is not directly used as input in Step5, but both steps are necessary for loading the Hansen et al. dataset."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3 (FORMA dataset as an image object) is not directly used as input in Step4, but both steps are necessary for creating a binary layer for FORMA 2012."
+    },
+    {
+        "relationship":["Step4", "Step6"],
+        "reason": "The output of Step4 (binary layer indicating deforestation in 2012) is used as input in Step6 to create an image showing deforestation in 2012."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output of Step5 (Hansen dataset as an image object) is used as input in Step6 to create an image showing deforestation in 2012."
+    },
+    {
+        "relationship":["Step6", "Step7"],
+        "reason": "The output of Step6 (image showing deforestation in 2012) is used as input in Step7 to display deforestation data on the map."
+    }
+]
+```
+
+Note that I only connected steps where there is a direct output-input relationship or a necessary sequence of steps for the model to work.

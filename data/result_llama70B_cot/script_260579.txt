@@ -1,0 +1,32 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output of Step1, 'Preprocessed SST image with normalized values', is used as input in Step3 to sample SST values at random locations."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Geometry object representing the region of interest', is used as input in Step3 to define the region for sampling."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Feature collection with sampled SST values at random locations', is used as input in Step4 to perform Kriging interpolation."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Interpolated SST values using Kriging', is used as input in Step5 to visualize the results on a map."
+    },
+    {
+        "relationship":["Step1", "Step5"],
+        "reason": "The output of Step1, 'Preprocessed SST image with normalized values', is used as input in Step5 to visualize the original SST layer on the map."
+    },
+    {
+        "relationship":["Step3", "Step5"],
+        "reason": "The output of Step3, 'Feature collection with sampled SST values at random locations', is used as input in Step5 to visualize the sample points on the map."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the steps.

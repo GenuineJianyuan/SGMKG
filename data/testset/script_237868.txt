@@ -1,0 +1,63 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to analyze land surface temperature in a specific region (Karnataka district in India) using MODIS satellite data. The code filters MODIS images for a specific date range, selects the daytime land surface temperature band, calculates the mean temperature, clips the result to the Karnataka district polygon, visualizes the data on the map, and exports the processed image to Google Drive.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Karnataka district polygon shapefile",
+        "Step description": "The purpose of this step is to load the Karnataka district polygon shapefile using the ee.FeatureCollection() function. This step involves loading the shapefile named 'Karnataka_dist_polygon' as a FeatureCollection.",
+        "Input": ["Karnataka district polygon shapefile"],
+        "Output":["FeatureCollection of the Karnataka district polygon"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Add Karnataka district polygon to map",
+        "Step description": "This step aims to add the Karnataka district polygon to the map for visualization. The Map.addLayer() function is used to achieve this, adding the Karnataka district polygon with default visualization parameters.",
+        "Input": ["FeatureCollection of the Karnataka district polygon"],
+        "Output":["Visualization of the Karnataka district polygon on the map"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Filter MODIS image collection for date range",
+        "Step description": "The purpose of this step is to filter the MODIS image collection for a specific date range. The ee.ImageCollection().filter() function is used to filter the 'MODIS/006/MOD11A2' image collection for images between '2018-09-20' and '2018-10-04'.",
+        "Input": ["MODIS image collection"],
+        "Output":["Filtered MODIS image collection for the specified date range"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Select daytime land surface temperature band",
+        "Step description": "In this step, the daytime land surface temperature band is selected from the filtered MODIS image collection. The ee.ImageCollection().select() function is employed to choose the 'LST_Day_1km' band.",
+        "Input": ["Filtered MODIS image collection"],
+        "Output":["Image collection containing only the daytime land surface temperature band"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Calculate mean land surface temperature",
+        "Step description": "This step involves calculating the mean land surface temperature by using the ee.Reducer.mean() function along with reduce(). The mean temperature values across all images in the collection are computed.",
+        "Input": ["Image collection of daytime land surface temperature"],
+        "Output":["Image representing the mean land surface temperature"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Clip mean temperature image to Karnataka district polygon",
+        "Step description": "The purpose of this step is to clip the mean land surface temperature image to the boundaries of the Karnataka district polygon. The ee.Image.clip() function is utilized for this operation.",
+        "Input": ["Mean land surface temperature image", "Karnataka district polygon"],
+        "Output":["Clipped land surface temperature image for the Karnataka district"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Visualize land surface temperature data on map",
+        "Step description": "In this step, the land surface temperature data is visualized on the map. The clipped land surface temperature image is added to the map using Map.addLayer() with a predefined visualization palette and range.",
+        "Input": ["Clipped land surface temperature image"],
+        "Output":["Visualization of land surface temperature on the map"]
+        },
+        {
+        "Step name":"Step8", 
+        "Short Name":"Export processed image to Google Drive",
+        "Step description": "The final step involves exporting the processed land surface temperature image to Google Drive. The Export.image.toDrive() function is used for this purpose, exporting the clipped land surface temperature image with a specified scale and region.",
+        "Input": ["Clipped land surface temperature image", "scale", "region (Karnataka district polygon)"],
+        "Output":["Exported image file to Google Drive"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,21 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Imported image' from Step1 is used as input 'Clustering result image' in Step2 to add the clustering result to the map for visualization."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'Imported image' from Step1 is used as input 'Clustering result image' in Step3 to print the clustering result."
+    }
+]
+```
+
+Here's the explanation for each connection:
+
+1. The connection between Step1 and Step2 exists because the output 'Imported image' from Step1 is used as input 'Clustering result image' in Step2. This is evident from the "Input" and "Output" elements in the JSON summarization.
+2. The connection between Step1 and Step3 exists because the output 'Imported image' from Step1 is used as input 'Clustering result image' in Step3. This is also evident from the "Input" and "Output" elements in the JSON summarization.
+
+Note that there is no connection between Step2 and Step3 because they do not share any output-input relationships.

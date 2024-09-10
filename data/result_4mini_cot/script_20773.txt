@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the loaded land cover classes (feature collections) which are necessary inputs for Step2 to create a combined training dataset."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a combined training dataset that is used as input in Step3 to sample regions from the Sentinel-2 image and create a training set."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a training set for model training, which is required as input in Step4 to train the classification model."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a trained classification model that is used as input in Step5 to classify the Sentinel-2 image into different land cover classes."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs a classified image with land cover classes, which is then used as input in Step6 to display the classified image on the map with a color palette."
+    }
+]
+```

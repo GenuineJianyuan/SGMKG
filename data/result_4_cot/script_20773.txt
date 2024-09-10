@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the loaded shape of Porto Seguro and the Sentinel-2 image collection, which are necessary for Step2 to create a training dataset. The training dataset is formed by merging multiple land cover classes, which requires the initial data from Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a combined training dataset containing all land cover classes, which is used as input in Step3. Step3 samples regions from the Sentinel-2 image based on this training dataset to create a training set."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a training set for model training, which is required as input in Step4. Step4 uses this training set to train a classification model."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a trained classification model, which is used as input in Step5. Step5 classifies the Sentinel-2 image into different land cover classes using this trained model."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs a classified image with land cover classes, which is used as input in Step6. Step6 displays this classified image on the map with a color palette representing different land cover classes."
+    }
+]
+```

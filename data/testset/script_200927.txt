@@ -1,0 +1,63 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to extract rainfall data from a specific point location (latitude and longitude) using the Google Earth Engine platform. It filters the JAXA/GPM_L3/GSMaP/v6/operational dataset for a specific date range and selects the 'hourlyPrecipRate' band to visualize precipitation data on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Define Point Location",
+        "Step description": "The purpose of this step is to define the latitude and longitude of the point location. This step involves variable assignment where the latitude and longitude values are assigned to the 'lat' and 'lon' variables. The ee.Number() function is used to create Earth Engine numbers representing the latitude and longitude values.",
+        "Input": ["Latitude and longitude values"],
+        "Output":["Variables 'lat' and 'lon' storing the latitude and longitude values"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Create Point Geometry",
+        "Step description": "The purpose of this step is to create a point geometry at the specified latitude and longitude. This step involves geometry creation where the ee.Geometry.Point() function is used to create a point geometry at the specified latitude and longitude.",
+        "Input": ["Latitude and longitude values"],
+        "Output":["Point geometry representing the location"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Add Point to Map",
+        "Step description": "The purpose of this step is to add the point geometry to the map for visualization. This step involves map visualization where the Map.addLayer() function is used to add the point geometry to the map.",
+        "Input": ["Point geometry"],
+        "Output":["Visualization of the point on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Filter Dataset by Date Range",
+        "Step description": "The purpose of this step is to filter the image collection dataset for a specific date range. This step involves data filtering where the filter() function with the ee.Filter.date() method is used to filter the image collection dataset for the specified date range.",
+        "Input": ["Image collection dataset", "Date range"],
+        "Output":["Filtered image collection dataset"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Select Precipitation Band",
+        "Step description": "The purpose of this step is to select the 'hourlyPrecipRate' band from the dataset. This step involves band selection where the select() function is used to choose the 'hourlyPrecipRate' band from the filtered dataset.",
+        "Input": ["Filtered image collection dataset"],
+        "Output":["Image collection dataset with only the 'hourlyPrecipRate' band"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Set Visualization Parameters",
+        "Step description": "The purpose of this step is to set visualization parameters for the precipitation data. This step involves visualization settings where parameters such as min, max, and palette are defined for displaying the precipitation data on the map.",
+        "Input": ["None"],
+        "Output":["Visualization parameters for the precipitation data"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Center Map",
+        "Step description": "The purpose of this step is to center the map on the specified latitude and longitude. This step involves map centering where the Map.setCenter() function is used to center the map on the specified latitude and longitude coordinates.",
+        "Input": ["Latitude and longitude values"],
+        "Output":["Map centered at the specified location"]
+        },
+        {
+        "Step name":"Step8", 
+        "Short Name":"Add Precipitation Data to Map",
+        "Step description": "The purpose of this step is to add the precipitation data to the map for visualization. This step involves map visualization where the Map.addLayer() function is used to display the precipitation data on the map using the defined visualization parameters.",
+        "Input": ["Precipitation data", "Visualization parameters"],
+        "Output":["Visualization of precipitation data on the map"]
+        }
+       ] 
+}
+```

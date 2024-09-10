@@ -1,0 +1,36 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output of Step1, 'Composite image with the mean methane concentration band', is used as input in Step3 to sample the methane composite within the area of interest."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Area of interest polygon geometry', is used as input in Step3 to define the area of interest for sampling the methane composite."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'FeatureCollection with latitude, longitude, and methane concentration properties', is used as input in Step4 to calculate the global mean and standard deviation of methane concentrations."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Global mean and standard deviation of methane concentrations', is used as input in Step5 to perform IDW interpolation to estimate methane concentrations."
+    },
+    {
+        "relationship":["Step3", "Step5"],
+        "reason": "The output of Step3, 'FeatureCollection with latitude, longitude, and methane concentration properties', is used as input in Step5 to perform IDW interpolation to estimate methane concentrations."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output of Step5, 'Interpolated methane concentrations', is used as input in Step6 to visualize the methane data on a map."
+    },
+    {
+        "relationship":["Step1", "Step6"],
+        "reason": "The output of Step1, 'Composite image with the mean methane concentration band', is used as input in Step6 to visualize the original methane data on a map."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the two steps.

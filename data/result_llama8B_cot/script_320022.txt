@@ -1,0 +1,32 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1, 'Mosaic image with selected bands', is used as input for Step2, 'Define Endmembers'."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2, 'Arrays for urbanEndmember, vegEndmember, waterEndmember', is used as input for Step3, 'Compute Pseudo Inverse'."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3, 'Pseudo inverse matrix', is not used as input for Step4, 'Convert to 2D Array'. Instead, the input for Step4 is the output of Step1, 'Mosaic image'."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4, '2D array of pixel values', is used as input for Step5, 'Matrix Multiply'."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5, 'Endmembers fractions array', is used as input for Step6, 'Create Colored Image'."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output of Step6, 'Colored image showing urban, vegetation, and water fractions', is used as input for Step7, 'Display Results on Map'."
+    }
+]
+```
+
+Note that there is no connection between Step3 and Step4, as Step3 does not produce an output that is used as input for Step4.

@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output in the required JSON format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered and processed Landsat 8 image collection', is used as input in Step2 to calculate the NDVI."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'NDVI image', is used as input in Step3 to set the map center and add the NDVI layer."
+    },
+    {
+        "relationship":["Step2", "Step4"],
+        "reason": "The output of Step2, 'NDVI image', is used as input in Step4 to define the visualization parameters for the NDVI layer."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Visualization parameters for the NDVI layer', is used as input in Step5 to add the NDVI layer with color-coded visualization to the map."
+    },
+    {
+        "relationship":["Step2", "Step5"],
+        "reason": "The output of Step2, 'NDVI image', is used as input in Step5 to add the NDVI layer with color-coded visualization to the map."
+    }
+]
+```
+
+Each JSON object represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the two steps.

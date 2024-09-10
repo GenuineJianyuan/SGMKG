@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered ImageCollection for the year 2017', which is used as input in Step2 as 'Filtered ImageCollection'. This connection exists because Step2 requires the filtered dataset from Step1 to select the land cover type representing water bodies."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Image with the selected land cover band', which is used as input in Step3 as 'Selected land cover image'. This connection exists because Step3 needs the selected land cover image to mask out all non-water land cover types."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Masked image with only water bodies visible', which is used as input in Step4 as 'Masked image'. This connection exists because Step4 requires the masked image to calculate the number of water pixels within the Gansu region."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Dictionary containing the count of water pixels', which is not directly used as input in Step5. However, the results of Step4 inform the visualization in Step5. The input for Step5 includes 'water bodies image', which is derived from the previous steps, particularly Step3. Therefore, while there is no direct output-input relationship, the results of Step4 contribute to the context of the visualization in Step5."
+    }
+]
+```

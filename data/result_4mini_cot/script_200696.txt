@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 includes 'Filtered Sentinel-2 images for image_after', which is used as input in Step2 to calculate the Normalized Burn Ratio (NBR). Without the filtered images from Step1, Step2 cannot perform the NBR calculation."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The outputs from Step2 are 'NBR images image_NBR1' and 'NBR images image_NBR2', which are used as input in Step3 for visualization. Step3 requires the NBR images generated in Step2 to provide a visual representation of the burn severity."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 includes 'Filtered Sentinel-2 images for image_before' and 'Filtered Sentinel-2 images for image_after', which are used as input in Step3 for visualization. Step3 visualizes both the filtered images from Step1 and the NBR results from Step2."
+    }
+]
+```

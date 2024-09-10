@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered dataset for the year 2017', which is used as input in Step2 to calculate the total rainfall. Step2 requires the filtered dataset to perform the summation of rainfall data."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Total rainfall image', which is used as input in Step3 to visualize the total rainfall data on the map. Step3 requires the total rainfall image to create the visualization."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output from Step2, 'Total rainfall image', is also used as input in Step4 to calculate the average rainfall over India. Step4 requires the total rainfall image to compute the average value."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Average rainfall value', which is not directly used as input in Step5. However, Step5 uses the 'Total rainfall image' from Step2, which is indirectly related to the average calculation in Step4. Step5 focuses on exporting the total rainfall image."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "The output from Step1, 'Filtered dataset for the year 2017', is used as input in Step6 to export the filtered CHIRPS dataset to Google Drive. Step6 requires the filtered dataset to create the CSV file for external use."
+    }
+]
+```

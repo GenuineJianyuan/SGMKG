@@ -1,0 +1,24 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output 'Loaded study area boundary' and 'Filtered FireCCI51 dataset' from Step1 are used as input for Step2 to select the 'BurnDate' band and define visualization parameters."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output 'Visualization parameters' and 'BurnDate' band from Step2 are used as input for Step3 to clip the maximum burned area image to the study area boundary."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output 'Clipped burned area image' from Step3 is used as input for Step4 to set the study area as the map center and visualize the study area boundary and burned area."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output 'Visualized map with study area boundary and burned area' from Step4 is not used as input for Step5. Instead, the output 'Clipped burned area image' from Step3 is used as input for Step5 to export the image to Google Drive as a GeoTIFF file."
+    }
+]
+```
+
+Note that there is no connection between Step4 and Step5, as the output of Step4 is not used as input for Step5. Instead, the output of Step3 is used as input for Step5.

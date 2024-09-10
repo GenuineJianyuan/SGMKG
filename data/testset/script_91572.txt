@@ -1,0 +1,28 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to conduct a geo-analysis task focusing on the Republic of the Congo. The code utilizes Google Earth Engine to analyze forest cover change data from 2014 to 2018. The main steps include gathering and selecting relevant data, filtering feature collections for the study area, calculating the area of forest loss, and visualizing the results on a map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Gather and Select Bands",
+        "Step description": "This step aims to extract specific bands from the Global Forest Change datasets for further analysis. The `select()` function is used to choose the 'treecover2000', 'loss', and 'gain' bands from the GFC 2018 dataset. This step involves selecting the necessary bands for analysis.",
+        "Input": ["Global Forest Change datasets (gfc2018)"], 
+        "Output":["Tree cover, loss image, and gain image variables"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Feature Collection",
+        "Step description": "This step filters the feature collection to focus on the Republic of the Congo and its protected areas. The `filter()` and `map()` functions are used to select the Republic of the Congo from the countries feature collection, filter protected areas within the Congo, and intersect protected areas with the Congo boundary. This step aims to narrow down the study area to the target region of interest.",
+        "Input": ["Feature collections (countries, protected areas), Congo feature"], 
+        "Output":["Filtered protected areas within the Congo"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate Forest Loss Area",
+        "Step description": "This step calculates the area of forest loss in the Republic of the Congo and its protected areas in 2018. The `reduceRegion()` function is used to perform calculations by multiplying loss pixels with pixel area and then reducing the region to obtain statistics. The inputs include loss pixels in 2018, pixel area, Congo geometry, and protected areas geometry. The output provides statistics on the area lost in the Republic of the Congo and protected areas, visualized on a map.",
+        "Input": ["Loss pixels in 2018, pixel area, Congo geometry, protected areas geometry"], 
+        "Output":["Statistics on the area lost in the Republic of the Congo and protected areas, visualized on a map"]
+        }
+       ] 
+}
+```

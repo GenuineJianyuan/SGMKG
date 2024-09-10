@@ -1,0 +1,12 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 includes the selected bands (tree cover, loss image, and gain image variables) which are necessary for filtering the feature collection in Step2. The filtered feature collection in Step2 focuses on the Republic of the Congo and its protected areas, which requires the data extracted in Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2, which is the filtered protected areas within the Congo, serves as an input for Step3. In Step3, the area of forest loss is calculated specifically within the context of these protected areas and the overall Congo geometry, utilizing the loss pixels identified in Step1."
+    }
+]
+```

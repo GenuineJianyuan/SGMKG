@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the visualization of the Kajiado boundary on the map, which provides the spatial context needed for the subsequent analysis. In Step2, the CHIRPS dataset is filtered and sorted for the specified date range, and the Kajiado boundary serves as the region of interest for this filtering process."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the filtered and sorted image collection with the precipitation band selected. This output is used as input in Step3, where the precipitation data is visualized on the map. The visualization requires the precipitation data obtained from the previous step."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the visualization of precipitation data on the map, which is a colorized representation of the precipitation data. In Step4, this colorized precipitation image is exported to Google Drive. The export process requires the colorized precipitation image generated in Step3 as input."
+    }
+]
+```

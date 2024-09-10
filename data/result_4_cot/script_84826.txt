@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is a 'Cloud-masked Landsat 8 image', which is used as the input for Step2. In Step2, the panSharpenL8 function processes the cloud-masked image to perform pan-sharpening."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is a 'Pan-sharpened Landsat 8 image', which is not directly used as input in Step3. Instead, Step3 uses the 'Landsat 8 TOA ImageCollection' as input. However, the cloud-masked and pan-sharpened images are part of the overall processing workflow leading to the composite image creation in Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is a 'Median composite image for the specified time period', which is used as the input for Step4. In Step4, the visualization functions display the median composite image alongside the original Landsat 8 image."
+    }
+]
+```

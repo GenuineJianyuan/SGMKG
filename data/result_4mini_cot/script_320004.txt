@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1 is the 'Filtered and adjusted MODIS landcover image', which is used as input in Step4 to create a training dataset by sampling the stacked images."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output from Step2 is the 'Filtered Landsat data collection', which is used as input in Step4 to create a training dataset by sampling the stacked images."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Training dataset for classifier', which is used as input in Step5 to train a classifier using the training dataset."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "The output from Step3 is the 'Landsat composite image', which is used as input in Step6 to apply the trained classifier to the Landsat composite."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the 'Trained classifier', which is used as input in Step6 to classify the Landsat composite using the trained classifier."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is the 'Classified and clipped landcover image', which is used as input in Step7 to visualize the upsampled landcover image."
+    }
+]
+```

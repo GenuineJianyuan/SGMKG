@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the defined region of interest (Peninsula region) which is used as input in Step2 to filter the Sentinel-2 satellite imagery data specifically for that region."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the filtered and processed Sentinel-2 composite image, which is then used as input in Step3 to visualize this composite image on the map."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "Step3 outputs the composite image of the Peninsula region, which is used as input in Step5 to apply the Gaussian kernel for edge detection."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs the enhanced image with Gaussian edge detection, which is then used as input in Step6 to apply the Laplacian kernel for further edge detection."
+    },
+    {
+        "relationship": ["Step5", "Step7"],
+        "reason": "Step5 outputs the enhanced image with Gaussian edge detection, which is used as input in Step7 to visualize the edge detection results on the map."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "Step6 outputs the image with Laplacian edge detection, which is also used as input in Step7 to visualize the edge detection results on the map."
+    },
+    {
+        "relationship": ["Step1", "Step8"],
+        "reason": "Step1 outputs the Peninsula region, which is used as input in Step8 to center the map view on the Peninsula region for better visualization of the analysis results."
+    }
+]
+```

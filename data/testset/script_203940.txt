@@ -1,0 +1,56 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to calculate the mean value of Net Primary Productivity (NPP) over the Riau region. It utilizes the MODIS dataset to filter NPP data from 2001 to 2021 within the specified region. The script then clips the NPP data to the boundary of the Riau region, adds the clipped layer to the map, and exports the result as an image to Google Drive. Additionally, it visualizes the region on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter NPP data",
+        "Step description": "The purpose of this step is to filter the MODIS dataset for Net Primary Productivity (NPP) data within the specified time range. This step involves using the function ee.ImageCollection('MODIS/006/MOD17A3HGF').filterDate('2001-01-01', '2021-12-31') to filter the MODIS dataset for NPP data from 2001 to 2021. The input to this step is the MODIS dataset, and the output is the filtered NPP dataset.",
+        "Input": ["MODIS dataset"],
+        "Output":["Filtered NPP dataset"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter data by region",
+        "Step description": "The purpose of this step is to filter the NPP dataset based on the specified region (Riau). This step involves using the function .filter(ee.Filter.bounds(table)) to filter the NPP dataset based on the bounds of the Riau region. The input to this step is the filtered NPP dataset and the Riau region boundary, and the output is the NPP dataset within the Riau region.",
+        "Input": ["Filtered NPP dataset", "Riau region boundary"],
+        "Output":["NPP dataset within the Riau region"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Center the map on the region",
+        "Step description": "The purpose of this step is to center the map view on the Riau region. This step involves using the function Map.centerObject(table) to set the map view to focus on the Riau region. The input to this step is the Riau region boundary, and the output is the map centered on the Riau region.",
+        "Input": ["Riau region boundary"],
+        "Output":["Map centered on the Riau region"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Add region boundary to the map",
+        "Step description": "The purpose of this step is to visualize the boundary of the Riau region on the map. This step involves using the function Map.addLayer(table, {}, 'table') to add the Riau region boundary as a layer to the map. The input to this step is the Riau region boundary, and the output is the Riau region boundary layer on the map.",
+        "Input": ["Riau region boundary"],
+        "Output":["Riau region boundary layer on the map"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Add clipped NPP layer to the map",
+        "Step description": "The purpose of this step is to add the clipped NPP data to the map for visualization. This step involves using the function Map.addLayer(NPP_dataset.median().clip(table)) to clip the NPP dataset to the Riau region boundary and add it as a layer to the map. The input to this step is the NPP dataset within the Riau region, and the output is the clipped NPP layer on the map.",
+        "Input": ["NPP dataset within the Riau region"],
+        "Output":["Clipped NPP layer on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Export the clipped NPP image to Google Drive",
+        "Step description": "The purpose of this step is to export the clipped NPP data as an image to Google Drive. This step involves using the function Export.image.toDrive({...}) to export the clipped NPP data as an image to Google Drive with specified parameters. The input to this step is the clipped NPP data and export parameters, and the output is the NPP image exported to Google Drive.",
+        "Input": ["Clipped NPP data", "Export parameters"],
+        "Output":["NPP image exported to Google Drive"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Add region boundary visualization to the map",
+        "Step description": "The purpose of this step is to visualize the boundary of the Riau region on the map. This step involves using the function Map.addLayer(table.geometry().bounds(),{},'riau') to add the boundary of the Riau region as a layer to the map for visualization. The input to this step is the Riau region boundary, and the output is the Riau region boundary layer on the map.",
+        "Input": ["Riau region boundary"],
+        "Output":["Riau region boundary layer on the map"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to visualize burned areas using the FireCCI51 dataset for the year 2016 within a specified study area. The code filters the dataset for the specified time frame, selects the 'BurnDate' band, clips the resulting image to the study area, and then exports the final burned area image to Google Drive as a GeoTIFF file.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Dataset",
+        "Step description": "The purpose of this step is to filter the FireCCI51 dataset for the year 2016 based on the specified date range. This step involves using the `filterDate` function on the ImageCollection to select images within the specified time frame.",
+        "Input": ["FireCCI51 ImageCollection", "start and end date ('2016-01-01', '2016-05-31')"], 
+        "Output":["Filtered ImageCollection containing images for the specified time frame"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Visualize Burned Areas",
+        "Step description": "The purpose of this step is to visualize the burned areas. This is achieved by selecting the 'BurnDate' band from the filtered dataset, defining visualization parameters such as palette and min/max values, and adding the burned area layer to the map.",
+        "Input": ["Filtered ImageCollection"], 
+        "Output":["Visualization of burned areas on the map"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Clip Image",
+        "Step description": "The purpose of this step is to clip the burned area image to the specified study area boundaries. This involves using the `clip` function on the burned area image.",
+        "Input": ["Burned area image", "study area boundaries"], 
+        "Output":["Clipped burned area image within the study area boundaries"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Set Map Center",
+        "Step description": "The purpose of this step is to set the study area as the map center. This is done by using the `centerObject` function on the Map.",
+        "Input": ["Study area boundaries"], 
+        "Output":["Map centered on the study area"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Add Layers to Map",
+        "Step description": "The purpose of this step is to add layers to the map. This involves using the `addLayer` function on the Map to add the study area and clipped burned area layers to the map.",
+        "Input": ["Study area boundaries", "clipped burned area image"], 
+        "Output":["Study area and burned area layers added to the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Export Image",
+        "Step description": "The purpose of this step is to export the clipped burned area image to Google Drive as a GeoTIFF file. This is achieved by using the `Export.image.toDrive` function with specified parameters such as scale, maxPixels, and file format.",
+        "Input": ["Clipped burned area image"], 
+        "Output":["GeoTIFF file of the burned area exported to Google Drive"]
+        }
+       ] 
+}
+```

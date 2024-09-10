@@ -1,0 +1,24 @@
+﻿Based on the provided JSON summarization, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The filtered Sentinel-2 image (`SE2_2019`) from Step1 is used as input to calculate the Normalized Difference Vegetation Index (NDVI) in Step2."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The image with NDVI band (`SE2_2019WithNDVI`) from Step2 is used as input to sample training data from labeled examples in Step3."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The training data (`training`) from Step3 is used as input to train a Random Forest classifier in Step4."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The trained Random Forest classifier (`classifier`) from Step4 is used as input to classify the image into different land cover classes in Step5."
+  }
+]
+```
+
+Note that the relationships only exist if the output and its matched input exist.

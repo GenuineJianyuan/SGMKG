@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered dataset for the year 2017', which is used as input in Step2 to calculate the 'Total rainfall image'."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Total rainfall image', which is used as input in Step3 to visualize the 'Visualization of total rainfall on the map'."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2, 'Total rainfall image', is also used as input in Step4 along with the 'India boundary' to compute the 'Average rainfall value'."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "The output of Step2, 'Total rainfall image', is used as input in Step5 to export the 'Exported total rainfall image on Google Drive'."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "The output of Step1, 'Filtered dataset for the year 2017', is used as input in Step6 to export the 'Exported CSV file of filtered data on Google Drive'."
+    }
+]
+```

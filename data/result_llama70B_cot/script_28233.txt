@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization, I will analyze the workflow step by step and identify the combination relationships between the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Landsat 8 TOA image collection' from Step1 is used as input in Step2 to filter the least cloudy image in 2015."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Filtered image collection with the least cloudy image in 2015' from Step2 is used as input in Step3 to calculate the NDVI."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'NDVI image' from Step3 is used as input in Step4 to display the NDVI image on the map."
+    }
+]
+```
+
+Here's a brief explanation for each connection:
+
+1. Step1 and Step2: The output from Step1 (Landsat 8 TOA image collection) is used as input in Step2 to filter the least cloudy image in 2015.
+2. Step2 and Step3: The output from Step2 (Filtered image collection with the least cloudy image in 2015) is used as input in Step3 to calculate the NDVI.
+3. Step3 and Step4: The output from Step3 (NDVI image) is used as input in Step4 to display the NDVI image on the map.
+
+These connections exist because the output from one step is used as input in the subsequent step, ensuring a seamless workflow in the geospatial analysis model.

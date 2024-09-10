@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to analyze land cover change in the Beijing region between the years 2000 and 2020 using Landsat satellite imagery. The script loads Landsat 5 and Landsat 8 images for the respective years, calculates NDVI, NDWI, and NDBI indices, sets thresholds for change detection, compares the indices between the two years, and creates a binary change detection map. The final output is a visualization of land cover change on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Landsat Images",
+        "Step description": "The purpose of this step is to load Landsat 5 and Landsat 8 images for the years 2000 and 2020, respectively. This step involves loading Landsat images, filtering by region and date, and calculating the median composite. The functions used include loading Landsat images, filtering by region and date, and calculating the median composite. The operations are carried out using ee.ImageCollection to load Landsat images, applying filters for region and date, and calculating the median composite. The sequence includes loading Landsat 5 image collection, filtering by region and date, calculating median composite for 2000, loading Landsat 8 image collection, filtering by region and date, and calculating median composite for 2020.",
+        "Input": ["Landsat image collections for 2000 and 2020", "region boundary", "start and end dates for 2000 and 2020"],
+        "Output":["Median composite images for 2000 (Landsat 5)", "Median composite images for 2020 (Landsat 8)"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate Indices",
+        "Step description": "The purpose of this step is to calculate NDVI, NDWI, and NDBI indices for the years 2000 and 2020. This step involves normalized difference calculation for vegetation (NDVI), water (NDWI), and built-up areas (NDBI). The operations include calculating normalized differences using specific band combinations for each index. The sequence includes calculating NDVI for 2000, NDVI for 2020, NDWI for 2000, NDWI for 2020, NDBI for 2000, and NDBI for 2020.",
+        "Input": ["Landsat images for 2000 and 2020"],
+        "Output":["NDVI images for 2000 and 2020", "NDWI images for 2000 and 2020", "NDBI images for 2000 and 2020"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Detect Land Cover Change",
+        "Step description": "The purpose of this step is to determine land cover change by comparing NDVI, NDWI, and NDBI between 2000 and 2020. This step involves thresholding and binary change detection based on index differences. The operations include setting threshold values, subtracting indices between years, and creating binary change masks. The sequence includes setting threshold values, comparing NDWI between 2000 and 2020, comparing NDVI between 2000 and 2020, comparing NDBI between 2000 and 2020, and creating a change mask by combining binary change layers.",
+        "Input": ["NDVI, NDWI, and NDBI images for 2000 and 2020", "threshold values"],
+        "Output":["Binary change detection map indicating areas of land cover change"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize Change",
+        "Step description": "The purpose of this step is to visualize the land cover change on the map. This step involves adding the change detection layer to the map with specified visualization parameters. The operations include adding the change detection layer to the map and setting visualization parameters. The sequence includes adding the change detection layer to the map and setting visualization parameters for the layer.",
+        "Input": ["Binary change detection map"],
+        "Output":["Visualization of land cover change on the map"]
+        }
+       ] 
+}
+```

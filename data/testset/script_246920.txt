@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process that focuses on analyzing Landsat satellite imagery over a specific region in India. The code filters Landsat imagery based on location and date, calculates the Normalized Difference Water Index (NDWI) for the selected image, and visualizes the NDWI results on a map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Landsat Imagery",
+        "Step description": "The purpose of this step is to filter Landsat imagery based on location and date. The code filters Landsat imagery by bounds and date range. It uses the ee.ImageCollection function to retrieve Landsat imagery, filters the collection based on the specified India polygon geometry, and further filters the images by the date range of '2017-01-01' to '2017-12-31'.",
+        "Input": ["India polygon geometry", "date range ('2017-01-01' to '2017-12-31')"], 
+        "Output":["Filtered Landsat image collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Select Image with Least Cloud Cover",
+        "Step description": "The purpose of this step is to select the image with the least cloud cover. The code sorts images by cloud cover and selects the first image. It sorts the filtered Landsat image collection by cloud cover in ascending order using the sort function and selects the first (least cloudy) image using the first function.",
+        "Input": ["Filtered Landsat image collection"], 
+        "Output":["Image with the least cloud cover"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate NDWI",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Water Index (NDWI) for the selected image. The code calculates the NDWI by subtracting the Near-Infrared (B5) band from the Green (B3) band and dividing it by their sum. This is achieved using the normalizedDifference function on the selected Landsat image.",
+        "Input": ["Selected Landsat image"], 
+        "Output":["NDWI image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize NDWI on Map",
+        "Step description": "The purpose of this step is to visualize the NDWI image on the map. The code defines visualization parameters for the NDWI image (min: 0.5, max: 1, palette: ['00FFFF', '0000FF']) and adds the NDWI layer to the map using the addLayer function with the specified visualization parameters.",
+        "Input": ["NDWI image", "visualization parameters"], 
+        "Output":["NDWI layer displayed on the map"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step4"],
+        "reason": "The output 'Filtered Image Collection (collectionVH)' from Step1 is used as input in Step4 to select and process VH polarization data within a specific date range."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output 'Processed VH image for the specified date range (VH2)' from Step4 is used as input in Step5 to add the processed VH image to the map."
+    },
+    {
+        "relationship":["Step4", "Step6"],
+        "reason": "The output 'Processed VH image for the specified date range (VH2)' from Step4 is used as input in Step6 to export the processed VH image to Google Drive."
+    },
+    {
+        "relationship":["Step2", "None"],
+        "reason": "Step2 is an isolated step that centers the map view over the region of interest, but its output is not used as input in any other step."
+    },
+    {
+        "relationship":["Step3", "None"],
+        "reason": "Step3 calculates the median VH image, but its output is not used as input in any other step."
+    }
+]
+```
+
+Note that Step2 and Step3 do not have any connections with other steps, as their outputs are not used as inputs in any other steps.

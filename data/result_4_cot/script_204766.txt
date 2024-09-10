@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a polygon geometry object which is used in Step2 as part of the input for creating masks for hydrology and slope thresholds. The defined geometry is essential for filtering the datasets in Step2."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 outputs binary masks for hydrology and slope which are used in Step4. These masks are necessary to filter the Sentinel-1 GRD collection based on hydrology and slope conditions."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a smoothed Sentinel-1 image which is used in Step4. The processed Sentinel-1 image is essential for further analysis in Step4 after applying noise reduction."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a processed Sentinel-1 image which is used in Step5. This processed image is crucial for identifying water bodies based on the thresholds applied to the VH band."
+    },
+    {
+        "relationship": ["Step2", "Step6"],
+        "reason": "Step2 outputs binary masks for hydrology and slope which are used in Step6. These masks are necessary to update the mask for the NDWI calculation in Step6."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "Step7 outputs a cloud-free Sentinel-2 image which is used in Step8. The cloud-free image is essential for preparing the Sentinel-2 data for analysis, ensuring that the NDWI calculation is performed on clear imagery."
+    },
+    {
+        "relationship": ["Step8", "Step9"],
+        "reason": "Step8 outputs a processed Sentinel-2 image which is used in Step9. This processed image, which includes the NDWI band, is crucial for identifying water bodies based on the NDWI values."
+    }
+]
+```

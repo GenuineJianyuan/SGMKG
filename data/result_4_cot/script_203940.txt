@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered NPP dataset', which is used as input in Step2 along with the 'Riau region boundary'. Step2 filters the NPP dataset based on the bounds of the Riau region, resulting in the 'NPP dataset within the Riau region'."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the 'NPP dataset within the Riau region', which is not directly used in Step3. However, Step3 uses the 'Riau region boundary' to center the map view, which is a necessary visualization step after filtering the data."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a 'Map centered on the Riau region', which is a prerequisite for Step4. In Step4, the 'Riau region boundary' is added to the map for visualization, enhancing the context of the centered map."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs the 'Riau region boundary layer on the map', which provides context for the visualization. In Step5, the 'NPP dataset within the Riau region' is clipped and added to the map, allowing users to see the NPP data in relation to the Riau region boundary."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs the 'Clipped NPP layer on the map', which is a visual representation of the NPP data. In Step6, the 'Clipped NPP data' is exported to Google Drive, utilizing the export parameters specified in this step."
+    },
+    {
+        "relationship": ["Step4", "Step7"],
+        "reason": "Step4 outputs the 'Riau region boundary layer on the map', which is used again in Step7 to visualize the boundary of the Riau region. Step7 adds the boundary as a layer to the map, reinforcing the visualization of the region."
+    }
+]
+```

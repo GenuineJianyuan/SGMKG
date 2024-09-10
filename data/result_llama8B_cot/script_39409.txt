@@ -1,0 +1,29 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The filtered image collection based on the specified region of interest is used as input for filtering out cloudy scenes."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The image collection with cloudy scenes filtered out is used as input for selecting the necessary bands (B4, B3, B2) for creating the video."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The image collection with only the selected bands (B4, B3, B2) is used as input for converting the image data to 8-bit for video creation."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The image collection with data converted to 8-bit is used as input for exporting the processed image collection as a video to Google Drive."
+  }
+]
+```
+
+The relationships between the steps are as follows:
+
+1. Step1 filters the Landsat 5 image collection based on the specified region of interest, and the output is used as input for Step2, which filters out cloudy scenes.
+2. Step2 filters out cloudy scenes from the image collection, and the output is used as input for Step3, which selects the necessary bands (B4, B3, B2) for creating the video.
+3. Step3 selects the necessary bands, and the output is used as input for Step4, which converts the image data to 8-bit for video creation.
+4. Step4 converts the image data to 8-bit, and the output is used as input for Step5, which exports the processed image collection as a video to Google Drive.

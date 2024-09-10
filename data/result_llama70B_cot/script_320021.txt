@@ -1,0 +1,22 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Landsat 7 imagery with NDVI band added', is used as input in Step2 to build a quality mosaic using the NDVI values."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Quality mosaic image based on NDVI values', is used as input in Step3 to visualize the greenest pixels from the quality mosaic."
+    }
+]
+```
+
+Here's the explanation:
+
+1. Step1 loads Landsat 7 imagery for the year 2000 and calculates the NDVI, producing an output of "Landsat 7 imagery with NDVI band added".
+2. Step2 takes this output as input and builds a quality mosaic using the NDVI values, producing an output of "Quality mosaic image based on NDVI values".
+3. Step3 takes the output of Step2 as input and visualizes the greenest pixels from the quality mosaic, producing a final output of "Visualization of the greenest pixels on the map".
+
+The relationships between the steps are based on the output-input connections, where the output of one step is used as input in the next step.

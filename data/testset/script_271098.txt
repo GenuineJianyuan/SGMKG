@@ -1,0 +1,50 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code aims to replace snow-covered pixels in one Landsat 8 image with snow-free pixels from another Landsat 8 image. The script first loads two Landsat 8 images, one with snow cover and one without. It then calculates the Normalized Difference Snow Index (NDSI) and thresholds it at 0.35 to identify snow-covered pixels. Additionally, it separates water from snow using the Near-Infrared (NIR) reflectance at 0.2. The script then uses the '.where()' function to replace the snow pixels in the snow-covered image with the corresponding pixels from the snow-free image. Finally, it visualizes the original snow-free image, the original snow-covered image, the replaced image, the NDSI thresholded image, and the NIR reflectance thresholded image on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Landsat 8 images",
+        "Step description": "The purpose of this step is to load two Landsat 8 images, one with snow cover and one without. The ee.Image() function is used to load Landsat 8 images using their respective asset IDs.",
+        "Input": ["Landsat 8 image asset IDs"],
+        "Output":["Loaded Landsat 8 images"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NDSI and threshold",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Snow Index (NDSI) and threshold it at 0.35. The normalizedDifference() function is used to calculate NDSI using bands B3 and B6, and the gt() function is used to threshold NDSI at 0.35.",
+        "Input": ["Landsat 8 images"],
+        "Output":["NDSI image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Separate water from snow",
+        "Step description": "The purpose of this step is to separate water from snow using the Near-Infrared (NIR) reflectance at 0.2. The select() function is used to select the NIR band (B5), and the gt() function is used to threshold it at 0.2.",
+        "Input": ["Landsat 8 images"],
+        "Output":["Boolean image indicating water pixels"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Threshold NDSI for snow-covered pixels",
+        "Step description": "The purpose of this step is to threshold the NDSI at 0.35 to identify snow-covered pixels. The gt() function is used to threshold the NDSI image at 0.35.",
+        "Input": ["NDSI image"],
+        "Output":["Boolean image indicating snow-covered pixels"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Replace snow pixels",
+        "Step description": "The purpose of this step is to replace the snow pixels in the snow-covered image with the corresponding pixels from the snow-free image using the '.where()' function. The '.where()' function is used to replace snow pixels in the snow-covered image where both water and NDSI thresholds are met with pixels from the snow-free image.",
+        "Input": ["Snow-covered image", "Snow-free image", "Boolean images indicating snow-covered pixels and water pixels"],
+        "Output":["Replaced image with snow-free pixels"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Visualize images on the map",
+        "Step description": "The purpose of this step is to visualize the original snow-free image, the original snow-covered image, the replaced image, the NDSI thresholded image, and the NIR reflectance thresholded image on the map. The Map.centerObject() function is used to center the map on the snow-free image location, and the Map.addLayer() function is used to add layers for the different images and boolean images.",
+        "Input": ["Images and boolean images"],
+        "Output":["Visualization on the map"]
+        }
+       ] 
+}
+```

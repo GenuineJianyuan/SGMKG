@@ -1,0 +1,26 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps and create a JSON array with the required format.
+
+Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 (Loaded Landsat 5 images) is used as input for Step2 (Compute NDVI) to compute the NDVI values for each Landsat 5 image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 (NDVI values for the first Landsat image and NDVI values for the second Landsat image) is used as input for Step3 (Calculate NDVI difference) to calculate the difference in NDVI between the two Landsat images."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 (NDVI difference between the two Landsat images) is used as input for Step4 (Apply land mask) to apply a land mask to the NDVI difference."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 (Masked NDVI difference with non-land areas removed) is used as input for Step5 (Display on map) to display the masked NDVI difference on the map."
+    }
+]
+```
+
+Note that the relationships are based on the original sequence of the steps and the input/output relationships described in each step's description, input, and output.

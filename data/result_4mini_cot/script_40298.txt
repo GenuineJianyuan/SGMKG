@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered image collection', which is used as the input for Step2 to create mosaics for radar images before and after the flood event."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 consists of 'Mosaic images before and after the flood event', which serves as the input for Step3 to calculate the difference in radar intensities between the images before and after the flood event."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Difference in radar intensities', which is used as the input for Step4 to apply a threshold and identify flooded areas based on the calculated intensity differences."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is a 'Binary image indicating flooded areas', which is one of the inputs for Step5. Step5 also requires radar images and the difference in radar intensities to visualize the analysis results on a map."
+    }
+]
+```

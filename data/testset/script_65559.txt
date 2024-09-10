@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to perform a geo-analysis task using Google Earth Engine. The task involves analyzing Sentinel-2 satellite imagery before, during, and after specific time periods at a given location. The code retrieves Sentinel-2 images based on date and cloud cover percentage filters, calculates NDVI (Normalized Difference Vegetation Index) and NBR (Normalized Burn Ratio) for each image, and visualizes the results on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Retrieve Sentinel-2 Images",
+        "Step description": "The purpose of this step is to retrieve Sentinel-2 images for three different time periods (before, in time, after) at a specific location. The code filters images based on date and cloud cover percentage, using functions like ee.ImageCollection(), filterBounds(), filter(), and lt(). It then specifies the input as the location, date ranges, and cloud cover percentage threshold, and outputs ImageCollections s2_before, s2_inTime, s2_after containing Sentinel-2 images for the specified time periods.", 
+        "Input": ["Location (tochka)", "Date ranges", "Cloud cover percentage threshold"],
+        "Output":["ImageCollections s2_before", "ImageCollections s2_inTime", "ImageCollections s2_after"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Add NDVI Bands",
+        "Step description": "The purpose of this step is to calculate NDVI (Normalized Difference Vegetation Index) for each Sentinel-2 image. It involves functions like addNDVI(), normalizedDifference(), rename(), and addBands(). By using bands B8 (near-infrared) and B4 (red), the code calculates NDVI, renames the band as 'NDVI', and adds it to the image. The input for this step is Sentinel-2 images (s2_before, s2_inTime, s2_after), and the output is ImageCollections ndvi_before, ndvi_in, ndvi_after containing NDVI bands for each image.",
+        "Input": ["Sentinel-2 images (s2_before, s2_inTime, s2_after)"],
+        "Output":["ImageCollections ndvi_before", "ImageCollections ndvi_in", "ImageCollections ndvi_after"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Add NBR Bands",
+        "Step description": "The purpose of this step is to calculate NBR (Normalized Burn Ratio) for each Sentinel-2 image. It utilizes functions like addNBR(), normalizedDifference(), rename(), and addBands(). By using bands B8 (near-infrared) and B12 (shortwave infrared), the code calculates NBR, renames the band as 'NBR', and adds it to the image. The input for this step is Sentinel-2 images (s2_before, s2_inTime, s2_after), and the output is ImageCollections nbr_before, nbr_in, nbr_after containing NBR bands for each image.",
+        "Input": ["Sentinel-2 images (s2_before, s2_inTime, s2_after)"],
+        "Output":["ImageCollections nbr_before", "ImageCollections nbr_in", "ImageCollections nbr_after"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize Results",
+        "Step description": "The purpose of this step is to visualize the NDVI and NBR bands on the map. It uses the function Map.addLayer() to add layers for NDVI and NBR bands with specified visualization parameters like palette, min, and max. The input for this step is NDVI and NBR ImageCollections (ndvi_before, ndvi_in, ndvi_after, nbr_before, nbr_in, nbr_after), and the output is the visualization of NDVI and NBR bands on the map.",
+        "Input": ["NDVI and NBR ImageCollections (ndvi_before, ndvi_in, ndvi_after, nbr_before, nbr_in, nbr_after)"],
+        "Output":["Visualization of NDVI and NBR bands on the map"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,36 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the loaded image variable 'image', which is necessary for Step2 to define the bands for prediction. Step2 requires the image to select the relevant bands for classification."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output from Step2 is the defined bands variable 'bands', which is used in Step4 to sample pixel values. Step4 requires the bands to extract pixel values from the image based on the defined bands."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1 is the loaded image variable 'image', which is used in Step4 to sample pixel values. Step4 requires the image to obtain pixel values within the training polygons."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the FeatureCollection of training polygons variable 'polygons', which is used in Step4 to sample pixel values. Step4 requires the polygons to define the areas from which to sample pixel values."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the training data variable 'training', which is used in Step5 to train the SVM classifier. Step5 requires the training data to learn the classification patterns."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "The output from Step2 is the defined bands variable 'bands', which is used in Step5 to specify the bands for prediction during the training of the SVM classifier."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "The output from Step1 is the loaded image variable 'image', which is used in Step6 to classify the image. Step6 requires the image to apply the trained classifier."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the trained classifier variable 'trained', which is used in Step6 to classify the image. Step6 requires the trained classifier to perform the classification on the image."
+    }
+]
+```

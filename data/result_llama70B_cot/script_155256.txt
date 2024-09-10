@@ -1,0 +1,40 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output 'Loaded Landsat image' from Step1 is used as input in Step4 to create a training dataset by sampling the input image within the defined region."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output 'Geometry object representing the region' from Step2 is used as input in Step3 to display the region of interest on the map."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output 'Geometry object representing the region' from Step2 is used as input in Step4 to define the region of interest for sampling."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output 'Training dataset' from Step4 is used as input in Step5 to train the KMeans clustering algorithm."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output 'Trained KMeans clusterer' from Step5 is used as input in Step6 to apply the trained clusterer to the input image."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "The output 'Loaded Landsat image' from Step1 is used as input in Step6 to apply the trained clusterer to the input image."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output 'Clustered image' from Step6 is used as input in Step7 to visualize the clusters on the map with random colors."
+    },
+    {
+        "relationship": ["Step2", "Step7"],
+        "reason": "The output 'Geometry object representing the region' from Step2 is used as input in Step7 to define the region of interest for visualization."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the steps.

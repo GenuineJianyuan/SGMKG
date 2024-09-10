@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered and processed Landsat 8 image collection', which serves as the input for Step2. In Step2, the NDVI is calculated using the selected bands (NIR and RED) from the filtered Landsat 8 images."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'NDVI image', which is used as input in Step3. In Step3, the NDVI image is added to the map for visualization."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2, which is the 'NDVI image', is also used as input in Step4. In Step4, the visualization parameters for the NDVI layer are defined based on the NDVI image."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is the 'Visualization parameters for the NDVI layer', which is used as input in Step5. In Step5, the NDVI layer is added to the map with the defined color-coded visualization parameters."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output of Step3 is the 'Map with NDVI layer centered on Thailand', which is enhanced in Step5. In Step5, the NDVI layer is added to this map using the visualization parameters defined in Step4."
+    }
+]
+```

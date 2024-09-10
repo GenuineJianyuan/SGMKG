@@ -1,0 +1,12 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is the mean slope value contained in slopeDict, which is used in Step3 to visualize the slope layer on the map. The visualization in Step3 includes the slope layer along with the elevation and water occurrence layers."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the sum of water occurrence contained in waterDict, which is used in Step3 to visualize the water occurrence layer on the map. The visualization in Step3 includes the water occurrence layer along with the elevation and slope layers."
+    }
+]
+```

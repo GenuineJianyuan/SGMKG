@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 includes the 'Imported image' which represents the clustering result. This image is used as input in Step2 where it is added to the map for visualization. The visualization process in Step2 relies on the clustering result that was imported in Step1."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 includes the 'Imported image' which represents the clustering result. This image is used as input in Step3 where it is printed in the console. The printed result in Step3 provides a textual representation of the clustering result that was imported in Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Although Step2 visualizes the clustering result on the map, it does not directly provide output that is used as input in Step3. However, both steps utilize the same clustering result image from Step1. Therefore, there is no direct relationship based on output-input transfer between Step2 and Step3."
+    }
+]
+```

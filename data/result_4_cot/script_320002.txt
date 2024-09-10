@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'NDVI image', which is used as input in Step2. Step2 convolves the NDVI image with circular and square kernels to identify circular patterns representing center-pivot irrigation fields."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The outputs from Step2 are the 'Convolved images with circular and square kernels', which are used as input in Step3. Step3 finds the difference between these convolved images to highlight the differences between circular and square patterns."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Difference image', which is used as input in Step4. Step4 highlights the maximum differences in the difference image as 'Kernel Peaks', identifying key features that represent center-pivot irrigation systems."
+    },
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output from Step1 is the 'NDVI image', which is also used as input in Step5. Step5 applies the Canny edge detector to the NDVI image to detect the edges of the features, crucial for identifying boundaries of the irrigation fields."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the 'Edge image', which is used as input in Step6. Step6 creates a 'ring' kernel and convolves the Edge image with this kernel to highlight the feature edges, emphasizing the boundaries of the center-pivot irrigation fields."
+    }
+]
+```

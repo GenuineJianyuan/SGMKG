@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered Landsat 8 image collection', which is used as input in Step2 to create the 'Cloud-free composite image'."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Cloud-free composite image', which is used as input in Step3 to segment the image into regions, resulting in the 'Segmented image'."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Segmented image', which is used as input in Step4 to prepare 'Training data samples' based on predefined land cover classes."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Training data samples', which are used as input in Step5 to train the 'Trained Random Forest classifier'."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the 'Trained Random Forest classifier', which is used as input in Step6 to classify the 'Segmented image', resulting in the 'Classified image'."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is the 'Classified image', which is used as input in Step7 to visualize the 'Visualized LULC classification results on the map'."
+    }
+]
+```

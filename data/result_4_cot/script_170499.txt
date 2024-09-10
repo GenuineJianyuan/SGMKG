@@ -1,0 +1,12 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the filtered Sentinel-1 image collection (S1_1 and S1_2), which serves as the input for Step2. In Step2, the code calculates the Radar Vegetation Index (RVI) using the filtered Sentinel-1 images obtained from Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the image with the added RVI band (SR_1 and SR_2), which is used as part of the input for Step3. In Step3, the code visualizes the mean intensity of both the original Sentinel-1 images (S1_1 and S1_2) and the RVI-enhanced images (SR_1 and SR_2) on the map."
+    }
+]
+```

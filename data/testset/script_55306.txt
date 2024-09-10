@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to perform a geospatial analysis task using Google Earth Engine. The code starts by defining a study area and centering the map on it. It then creates a cloud-free Landsat 8 composite image for a specific date range within the study area. The script samples the image to create a training dataset, then uses a clustering algorithm (Weka KMeans) to cluster the pixels in the image. Finally, it visualizes the clustered image on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Define Study Area",
+        "Step description": "The purpose of this step is to define the study area and center the map on it. To implement this, the code loads a feature collection representing the study area and centers the map on the study area using the Map.centerObject function. This step ensures that the subsequent analysis is focused on the specified study area.",
+        "Input": ["Feature collection representing the study area"],
+        "Output":["Map centered on the study area"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Create Landsat 8 Composite Image",
+        "Step description": "This step aims to create a cloud-free Landsat 8 composite image. The code filters Landsat 8 images by the study area and generates a composite image for a specific date range using the ee.ImageCollection and ee.Algorithms.Landsat.simpleComposite functions. The output is a cloud-free Landsat 8 composite image ready for further analysis.",
+        "Input": ["Landsat 8 image collection", "Date range"],
+        "Output":["Cloud-free Landsat 8 composite image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Generate Training Dataset",
+        "Step description": "The purpose of this step is to generate a training dataset by sampling the composite image. The code samples pixels from the composite image within the study area using the image.sample function. This step is crucial for creating a dataset that will be used to train the clustering algorithm.",
+        "Input": ["Composite image", "Region of interest", "Sampling scale", "Number of pixels"],
+        "Output":["Training dataset"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Train Clustering Algorithm",
+        "Step description": "In this step, the code trains a clustering algorithm (Weka KMeans) using the training dataset. It instantiates the Weka KMeans clusterer and trains it using the training dataset. This step prepares the algorithm for clustering the pixels in the input image.",
+        "Input": ["Training dataset"],
+        "Output":["Trained clusterer"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Cluster Input Image",
+        "Step description": "The purpose of this step is to cluster the input image using the trained clusterer. The code applies the trained clusterer to the input image using the .cluster function. This step groups pixels in the image based on their similarity, creating distinct clusters for visualization.",
+        "Input": ["Composite image", "Trained clusterer"],
+        "Output":["Clustered image"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Visualize Clustered Image",
+        "Step description": "This step focuses on visualizing the clustered image on the map. The code adds the clustered image to the map with a specified color palette using the Map.addLayer function. By visualizing the clustered image, users can interpret the results of the clustering algorithm and understand the spatial patterns within the study area.",
+        "Input": ["Clustered image", "Region of interest", "Color palette"],
+        "Output":["Visual representation of clustered image on the map"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a 'Filtered Landsat image collection', which is necessary for Step2 to select the specific bands for compositing. Although Step2 does not directly use the output of Step1, it is logically dependent on the successful completion of Step1 to ensure that the bands selected are from the relevant images."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs 'Selected bands for compositing', which are used as input in Step3. Step3 requires these selected bands to create the composite image by calculating the mean of the specified bands."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a 'Composite image', which is then used as input in Step4. Step4 visualizes the composite image on the map, requiring the composite image generated in Step3."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a 'Visualized composite image on the map', but this output is not directly used in Step5. However, Step5 requires the 'Composite image' from Step3 to export it to Google Drive. Therefore, while there is no direct output-input relationship between Step4 and Step5, Step5 relies on the completion of Step3 to have the composite image ready for export."
+    }
+]
+```

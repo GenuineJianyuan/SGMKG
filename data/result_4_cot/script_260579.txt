@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is the 'Preprocessed SST image with normalized values', which is used as input in Step3 to sample SST values at random locations."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Geometry object representing the region of interest', which is used as input in Step3 to define the area within which the SST values will be sampled."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Feature collection with sampled SST values at random locations', which is used as input in Step4 for performing Kriging interpolation on the sampled SST values."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Interpolated SST values using Kriging', which is used as input in Step5 to visualize the interpolated SST values on the map."
+    },
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output from Step1 is the 'Preprocessed SST image with normalized values', which is used as input in Step5 to visualize the original SST layer alongside the interpolated SST values."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output from Step3 is the 'Feature collection with sampled SST values at random locations', which is used as input in Step5 to visualize the sample points on the map."
+    }
+]
+```

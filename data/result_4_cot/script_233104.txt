@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered Sentinel-1 GRD image collection with VV and VH bands selected', which serves as the input for Step2, where the RVI4S1 index is calculated using the selected VV and VH bands from the filtered image collection."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'RVI4S1 image with visualization parameters', which is used as part of the input for Step3. In Step3, the calculateRVI4S1 function is applied to each image in the Sentinel-1 GRD collection, which includes the RVI4S1 images calculated in Step2."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Collection of RVI4S1 images', which is used as input in Step4. In Step4, the first RVI4S1 image from this collection is added to the map for visualization."
+    }
+]
+```

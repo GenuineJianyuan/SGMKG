@@ -1,0 +1,26 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Filtered and selected MODIS data for the year 2001 with the 'BurnDate' band) is used as input for Step2 (Calculate Mean Burned Area) to calculate the mean burned area for the year 2001."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (Mean burned area image for the year 2001) is used as input for Step3 (Clip to Bolivia Extent) to clip the mean burned area image to the extent of Bolivia."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3 (Clipped mean burned area image for the year 2001) is used as input for Step4 (Reproject to EPSG:4326) to reproject the clipped burned area image to EPSG:4326 projection with a 500m resolution."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4 (Reprojected mean burned area image for the year 2001) is used as input for Step5 (Add to Map Visualization) to add the reprojected burned area image to the map visualization."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output of Step5 (Visualization of the burned area on the map) is not used as input for Step6 (Export to Google Drive). Instead, Step6 uses the output of Step4 (Reprojected mean burned area image for the year 2001) as input to export the reprojected burned area image to Google Drive."
+  }
+]
+```

@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered and selected MODIS data for the year 2001 with the 'BurnDate' band', is used as input in Step2 to calculate the mean burned area."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Mean burned area image for the year 2001', is used as input in Step3 to clip the mean burned area to the extent of Bolivia."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Clipped mean burned area image for the year 2001', is used as input in Step4 to reproject the clipped burned area image to EPSG:4326 projection."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Reprojected mean burned area image for the year 2001', is used as input in Step5 to add the reprojected burned area image to the map visualization."
+    },
+    {
+        "relationship":["Step4", "Step6"],
+        "reason": "The output of Step4, 'Reprojected mean burned area image for the year 2001', is used as input in Step6 to export the reprojected burned area image to Google Drive."
+    }
+]
+```
+
+These connections represent the sequential relationships between the steps, where the output of one step is used as input in the next step.

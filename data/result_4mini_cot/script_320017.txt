@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output from Step1 is the 'Remapped image', which is used as an input in Step5 along with the NDVI image and categorized slope image to create the final result for landslide detection."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "The output from Step2 is the 'NDVI image', which is used as an input in Step5 along with the remapped image and categorized slope image to create the final result for landslide detection."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Slope image', which is used as an input in Step4 to categorize the slope values into predefined categories."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Categorized slope image', which is used as an input in Step5 along with the NDVI image and remapped image to create the final result for landslide detection."
+    }
+]
+```

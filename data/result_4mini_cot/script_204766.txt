@@ -1,0 +1,36 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a polygon geometry object that defines the spatial extent of the analysis. This polygon geometry is used as input in Step2 to create masks for hydrology and slope thresholds within the defined area."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 outputs binary masks for hydrology and slope, which are used as inputs in Step4 to filter the Sentinel-1 GRD collection based on these thresholds, ensuring that only relevant areas are analyzed."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a smoothed Sentinel-1 image with VV and VH bands, which is used as input in Step4 to prepare the Sentinel-1 data for analysis, ensuring that the data is noise-reduced before further processing."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a processed Sentinel-1 image that is used as input in Step5 to identify water bodies. The processed image is analyzed using the thresholds applied to the VH band to determine water presence."
+    },
+    {
+        "relationship": ["Step2", "Step6"],
+        "reason": "Step2 outputs binary masks for hydrology and slope, which are used in Step6 to update the mask during the NDWI calculation on Sentinel-2 imagery, ensuring that only relevant areas are analyzed for water bodies."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "Step7 outputs a cloud-free Sentinel-2 image, which is used as input in Step8 to prepare the Sentinel-2 data for analysis. This ensures that the NDWI calculation is performed on imagery without cloud interference."
+    },
+    {
+        "relationship": ["Step6", "Step8"],
+        "reason": "Step6 outputs a Sentinel-2 image with an NDWI band, which is used as input in Step8 to further process the Sentinel-2 data for analysis, ensuring that NDWI values are calculated before identifying water bodies."
+    },
+    {
+        "relationship": ["Step8", "Step9"],
+        "reason": "Step8 outputs a processed Sentinel-2 image that includes the NDWI band, which is used as input in Step9 to identify water bodies. The NDWI values are analyzed to create a binary water mask for visualization."
+    }
+]
+```

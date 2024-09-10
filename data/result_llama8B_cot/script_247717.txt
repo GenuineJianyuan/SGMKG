@@ -1,0 +1,28 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The filtered CHIRPS dataset for 2017 is used as input to calculate the total rainfall."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The total rainfall image is used as input to visualize the total rainfall on the map."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The total rainfall image is used as input to calculate the average rainfall over India."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The total rainfall image is used as input to export the total rainfall image to Google Drive."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "The filtered CHIRPS dataset is used as input to export the filtered data to Google Drive."
+    }
+]
+```
+
+In this JSON array, each object represents a connection between two steps. The "relationship" key specifies the pair of steps, and the "reason" key explains the connection between them. The connections are based on the input-output relationships between the steps, as described in the "Step description" elements.

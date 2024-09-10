@@ -1,0 +1,29 @@
+﻿Based on the provided JSON summarization, I will analyze the workflow and identify the combination relationships between the steps. Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Feature collection of country boundaries', is used as input in Step2 to filter the Congo Republic feature."
+    },
+    {
+        "relationship":["Step2", "Step5"],
+        "reason": "The output of Step2, 'Feature collection containing only the Congo Republic feature', is used as input in Step5 to define the boundary for calculating the sum of forest loss pixels."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Forest loss image from the Hansen Global Forest Change dataset', is used as input in Step4 to select the loss band."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Image with only the loss band selected', is used as input in Step5 to calculate the sum of forest loss pixels within the Congo Republic boundary."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 and Step2 are connected because the output of Step1 (country features) is used as input in Step2 to filter the Congo Republic feature.
+2. Step2 and Step5 are connected because the output of Step2 (Congo Republic feature) is used as input in Step5 to define the boundary for calculating the sum of forest loss pixels.
+3. Step3 and Step4 are connected because the output of Step3 (forest loss image) is used as input in Step4 to select the loss band.
+4. Step4 and Step5 are connected because the output of Step4 (image with only the loss band selected) is used as input in Step5 to calculate the sum of forest loss pixels within the Congo Republic boundary.

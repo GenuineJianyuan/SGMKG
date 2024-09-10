@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is the 'Filtered Image Collection (collectionVH)', which is used as input in Step3 to calculate the median value of the VH polarization data."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1, 'Filtered Image Collection (collectionVH)', is also used as input in Step4 to select and process VH polarization data within a specific date range."
+    },
+    {
+        "relationship": ["Step4", "Step3"],
+        "reason": "The output from Step4 is the 'Processed VH image for the specified date range (VH2)', which is used as input in Step5 to add the processed VH image to the map."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the 'Displayed VH image on the map', which is not directly used as input in Step6. However, the processed image from Step4 ('Processed VH image for the specified date range (VH2)') is used in Step6 to export the image to Google Drive."
+    }
+]
+```

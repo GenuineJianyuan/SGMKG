@@ -1,0 +1,20 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps and create a JSON array with the required format.
+
+Here is the JSON array:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The filtered Sentinel-2 images for 'image_before' and 'image_after' are used as input to calculate the Normalized Burn Ratio (NBR) in Step2."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The NBR images 'image_NBR1' and 'image_NBR2' generated in Step2 are used as input to visualize the satellite images and NBR results on the map in Step3."
+  }
+]
+```
+
+In the first connection, Step1 filters Sentinel-2 images for a specific date range and location, and the output is used as input to calculate the NBR in Step2.
+
+In the second connection, Step2 generates NBR images, and the output is used as input to visualize the satellite images and NBR results on the map in Step3.

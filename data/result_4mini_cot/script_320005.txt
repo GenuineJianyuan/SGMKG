@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a feature collection representing the study area, which is necessary for Step2 to define the Landsat ImageCollection. The study area is required to filter the images relevant to the analysis."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a Landsat ImageCollection object, which is used as input in Step3. Step3 filters this ImageCollection for specific date ranges to generate images for winter and summer periods."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs binary images representing water presence for winter and summer, which are used as input in Step4. Step4 computes the difference in water extent between these two binary images."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a binary image representing the difference in water extent, which is used as input in Step5. Step5 visualizes this difference on the map to show the flooded areas."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "Step4 outputs a binary image representing the difference in water extent, which is also used as input in Step6. Step6 calculates the total flooded area based on this binary image."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "Step6 outputs the total flooded area in square kilometers, which is used as input in Step7. Step7 retrieves this value to print the total flooded area in the console."
+    }
+]
+```

@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 calculates the mean slope value and outputs it as 'slopeDict'. However, 'slopeDict' is not used as an input in Step2. Therefore, there is no direct relationship between Step1 and Step2."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 calculates the sum of water occurrence and outputs it as 'waterDict'. This output is used in Step3, where the water occurrence layer is visualized on the map along with the slope and elevation layers. The output from Step2 ('waterDict') is essential for visualizing the water occurrence in Step3."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "Step1 calculates the mean slope value and outputs it as 'slopeDict'. This output is used in Step3, where the slope layer is visualized on the map along with the elevation and water occurrence layers. The output from Step1 ('slopeDict') is essential for visualizing the slope in Step3."
+    }
+]
+```

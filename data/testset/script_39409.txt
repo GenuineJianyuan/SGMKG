@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a solution for a geo-analysis task that involves creating a video from Landsat 5 imagery over a specific region of interest. The code filters a Landsat 5 image collection based on location, cloud cover, and date range criteria. It then selects the necessary bands, converts the data to 8-bit, and exports the collection as a video to Google Drive. The video is exported with specified dimensions, frames per second, and over a defined region of interest.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter by Region of Interest",
+        "Step description": "The purpose of this step is to filter the Landsat 5 image collection based on the specified region of interest. This step implements by using the `filterBounds()` function with the specified geometry to filter the image collection. The `filterBounds()` function is called on the image collection with the specified geometry as input.",
+        "Input": ["Landsat 5 image collection", "geometry of the region of interest"],
+        "Output":["Filtered image collection based on the specified region of interest"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Cloudy Scenes",
+        "Step description": "The purpose of this step is to filter out cloudy scenes from the image collection. This step implements by using the `filter()` function with the condition to filter out images with cloud cover less than 15%. The `filter()` function is called on the image collection with the cloud cover condition as input.",
+        "Input": ["Filtered image collection from the previous step"],
+        "Output":["Image collection with cloudy scenes filtered out"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Select Necessary Bands",
+        "Step description": "The purpose of this step is to select the necessary bands (B4, B3, B2) for creating the video. This step implements by using the `select()` function to choose the bands needed for the video. The `select()` function is called on the filtered image collection to choose bands B4, B3, and B2.",
+        "Input": ["Image collection with cloudy scenes filtered out"],
+        "Output":["Image collection with only the selected bands (B4, B3, B2)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Convert Data to 8-bit",
+        "Step description": "The purpose of this step is to convert the image data to 8-bit for video creation. This step implements by using the `map()` function to apply the multiplication and conversion operations to each image in the collection. The `map()` function is called on the image collection to multiply each image by 512 and convert to uint8.",
+        "Input": ["Image collection with selected bands"],
+        "Output":["Image collection with data converted to 8-bit"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Export Video to Google Drive",
+        "Step description": "The purpose of this step is to export the processed image collection as a video to Google Drive. This step implements by using the `Export.video.toDrive()` function to export the image collection as a video to Google Drive. The `Export.video.toDrive()` function is called with the processed image collection, description, dimensions, frames per second, region, and folder specified.",
+        "Input": ["Processed image collection", "export parameters (description, dimensions, frames per second, region, folder)"],
+        "Output":["Video exported to Google Drive with the specified parameters"]
+        }
+       ] 
+}
+```

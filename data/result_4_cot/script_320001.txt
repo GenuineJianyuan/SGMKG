@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 includes the imported ImageCollections and Images for GPP, NPP, precipitation, and soil, which are used as input in Step3 to aggregate and clip the data."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The defined time range and spatial extent over Germany from Step2 are used as input in Step3 to aggregate and clip the data for GPP, NPP, precipitation, and soil."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The mean values of GPP, NPP, precipitation, and clipped soil data from Step3 are used as input in Step4 to visualize the layers on the map."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The mean GPP, NPP, precipitation, and soil data from Step3 are combined in Step5 to create a single combined dataset for further analysis."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The combined dataset with all variables included from Step5 is used as input in Step6 to perform the linear regression analysis."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The linear regression coefficients for the analysis from Step6 are printed in Step7 for interpretation, thus serving as input for the final output."
+    }
+]
+```

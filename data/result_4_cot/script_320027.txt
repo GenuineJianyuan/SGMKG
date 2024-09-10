@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a feature collection of uploaded samples, which is necessary for Step2 to define the spatial extent (Iowa geometry) for filtering Landsat 8 images. The sample points help in understanding the area of interest."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a Landsat 8 image collection filtered by time and location, which is required as input for Step3 to load the Landsat 8 images for the specified time range and spatial extent."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a median Landsat 8 image, which is used in Step4 to extract spectral values for each sample point. The Landsat image provides the necessary spectral data for the sample points."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs training data with spectral values for each sample point, which is essential for Step5 to train a random forest classifier. The training data provides the features needed for classification."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs a trained random forest classifier, which is applied in Step6 to classify the Landsat image. The classifier uses the trained model to categorize the image based on the spectral values."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "Step6 outputs a classified image, which is visualized in Step7. The classified image is the result of the classification process and is necessary for creating a visual representation on the map."
+    },
+    {
+        "relationship": ["Step6", "Step8"],
+        "reason": "Step6 outputs a classified image, which is used in Step8 to calculate the corn field area in Iowa. The classified image provides the necessary information to identify corn pixels for area calculation."
+    }
+]
+```

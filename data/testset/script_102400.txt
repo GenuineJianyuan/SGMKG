@@ -1,0 +1,43 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to analyze Landsat 8 satellite imagery for a specific region of interest. The code loads a Landsat 8 ImageCollection for the year 2019, creates a cloud-free composite image, and displays it on the map. It then clips the composite image to a defined study area polygon and displays the clipped image on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Landsat 8 ImageCollection",
+        "Step description": "The purpose of this step is to load a Landsat 8 ImageCollection for a specific time period. This step involves using the ee.ImageCollection() function to load the Landsat 8 ImageCollection and then filtering it by date using the filterDate() function. This operation results in a filtered Landsat 8 ImageCollection for the specified time period.",
+        "Input": ["Landsat 8 ImageCollection ID", "start and end dates for filtering"],
+        "Output":["Filtered Landsat 8 ImageCollection for the specified time period"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Create Cloud-Free Composite Image",
+        "Step description": "The purpose of this step is to create a cloud-free composite image from the ImageCollection. This step utilizes the ee.Algorithms.Landsat.simpleComposite() function to generate a cloud-free composite image using the Landsat simpleComposite algorithm. The input to this operation is the filtered Landsat 8 ImageCollection, and the output is a cloud-free composite image.",
+        "Input": ["Filtered Landsat 8 ImageCollection"],
+        "Output":["Cloud-free composite image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Display Composite Images",
+        "Step description": "This step aims to display the composite images on the map. It involves using the Map.addLayer() and Map.setCenter() functions to add the cloud-free composite images to the map with different band combinations for visualization. Additionally, the map center coordinates are set to a specific location. The output of this step is the visualization of the composite images on the map.",
+        "Input": ["Cloud-free composite images", "band combinations", "map center coordinates"],
+        "Output":["Visualization of the composite images on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Clip Composite Image",
+        "Step description": "The purpose of this step is to clip the cloud-free composite image to a specific study area polygon. This step utilizes the clip() function to clip the composite image to the study area polygon. The input to this operation is the cloud-free composite image and the study area polygon, and the output is the clipped composite image.",
+        "Input": ["Cloud-free composite image", "study area polygon"],
+        "Output":["Clipped composite image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Display Clipped Composite Image",
+        "Step description": "This step involves displaying the clipped composite image on the map for visualization. It uses the Map.addLayer() function to add the clipped composite image to the map. The output of this step is the visualization of the clipped composite image on the map.",
+        "Input": ["Clipped composite image"],
+        "Output":["Visualization of the clipped composite image on the map"]
+        }
+       ] 
+}
+```

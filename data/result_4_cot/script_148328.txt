@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a polygon representing Finland, which is necessary for Step2 to retrieve the relevant forest cover data specifically for Finland. However, since Step2 does not directly use the output of Step1, this relationship does not exist."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs images representing tree cover, forest loss, and forest gain, which are used as input in Step3 to calculate the area of these features in square kilometers. The images from Step2 are essential for the area calculations performed in Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs images representing area in square kilometers, which are then used in Step4 as input to compute the total area of forest loss and gain within the Finland polygon. The area calculations from Step3 are critical for the statistics computed in Step4."
+    }
+]
+```

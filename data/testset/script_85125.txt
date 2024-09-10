@@ -1,0 +1,92 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code analyzes the land surface temperature (LST) data from the MODIS satellite for the state of Bahia, Brazil. It processes LST data for daytime and nighttime, calculates the temperature difference between them, and visualizes the results on the map using Google Earth Engine platform.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Bahia boundary",
+        "Step description": "This step aims to load the boundary geometry of the state of Bahia. It uses the ee.FeatureCollection() function to load the feature collection using the specified asset ID 'users/Tarefa01_MAPBIOMAS/bahia'.",
+        "Input": ["'users/Tarefa01_MAPBIOMAS/bahia'"],
+        "Output":["redriver (FeatureCollection)"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Load MODIS LST daytime data",
+        "Step description": "This step loads the MODIS LST data for daytime. It utilizes the ee.ImageCollection() function to load the MODIS LST data and then selects the 'LST_Day_1km' band.",
+        "Input": ["'MODIS/MOD11A2'"],
+        "Output":["imagem (ImageCollection)"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Preprocess daytime LST data",
+        "Step description": "This step preprocesses the daytime LST data by multiplying the LST values by 0.02, subtracting 273.15 to convert from Kelvin to Celsius, and copying relevant properties. It uses the map(), multiply(), subtract(), and copyProperties() functions.",
+        "Input": ["imagem (ImageCollection)"],
+        "Output":["imagem (ImageCollection)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Filter LST data for 2010",
+        "Step description": "This step filters and selects the LST data for the year 2010. It utilizes the filterDate() function to filter the LST data for the year 2010.",
+        "Input": ["imagem (ImageCollection)"],
+        "Output":["collection10year (ImageCollection)"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Calculate mean LST for daytime",
+        "Step description": "This step calculates the mean LST for daytime and clips it to the boundary of Bahia. It uses the mean() and clip() functions to calculate the mean LST for the year 2010 and clip it to the boundary of Bahia.",
+        "Input": ["collection10year (ImageCollection)", "redriver (FeatureCollection)"],
+        "Output":["clipOC (Image)"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Visualize daytime LST data",
+        "Step description": "This step visualizes the daytime LST data on the map by adding the daytime LST data layer to the map with specified visualization parameters using the Map.addLayer() function.",
+        "Input": ["clipOC (Image)"],
+        "Output":["Visualization on the map"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Load MODIS LST nighttime data",
+        "Step description": "This step loads the MODIS LST data for nighttime. It uses the ee.ImageCollection() function to load the MODIS LST data and then selects the 'LST_Night_1km' band.",
+        "Input": ["'MODIS/MOD11A2'"],
+        "Output":["imagem2 (ImageCollection)"]
+        },
+        {
+        "Step name":"Step8", 
+        "Short Name":"Preprocess nighttime LST data",
+        "Step description": "This step preprocesses the nighttime LST data by multiplying the LST values by 0.02, subtracting 273.15 to convert from Kelvin to Celsius, and copying relevant properties. It uses the map(), multiply(), subtract(), and copyProperties() functions.",
+        "Input": ["imagem2 (ImageCollection)"],
+        "Output":["imagem2 (ImageCollection)"]
+        },
+        {
+        "Step name":"Step9", 
+        "Short Name":"Filter LST data for 2010 (nighttime)",
+        "Step description": "This step filters and selects the LST data for the year 2010 for nighttime. It utilizes the filterDate() function to filter the LST data for the year 2010.",
+        "Input": ["imagem2 (ImageCollection)"],
+        "Output":["collection10year2 (ImageCollection)"]
+        },
+        {
+        "Step name":"Step10", 
+        "Short Name":"Calculate mean LST for nighttime",
+        "Step description": "This step calculates the mean LST for nighttime and clips it to the boundary of Bahia. It uses the mean() and clip() functions to calculate the mean LST for the year 2010 and clip it to the boundary of Bahia.",
+        "Input": ["collection10year2 (ImageCollection)", "redriver (FeatureCollection)"],
+        "Output":["clipOC2 (Image)"]
+        },
+        {
+        "Step name":"Step11", 
+        "Short Name":"Calculate temperature difference",
+        "Step description": "This step calculates the temperature difference between daytime and nighttime LST. It uses the subtract() function to calculate the difference between daytime and nighttime LST.",
+        "Input": ["clipOC (Image)", "clipOC2 (Image)"],
+        "Output":["image3 (Image)"]
+        },
+        {
+        "Step name":"Step12", 
+        "Short Name":"Visualize temperature difference",
+        "Step description": "This step visualizes the temperature difference on the map by adding the temperature difference layer to the map with specified visualization parameters using the Map.addLayer() function. It also prints the output.",
+        "Input": ["image3 (Image)"],
+        "Output":["Visualization on the map, print output"]
+        }
+       ] 
+}
+```

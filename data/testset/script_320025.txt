@@ -1,0 +1,57 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code performs an unsupervised classification using Landsat satellite imagery. It loads a Landsat composite image for the year 2001, defines a region of interest, creates a training dataset by sampling the input image, trains a KMeans clusterer using the training data, and then applies the trained clusterer to cluster the input image. The resulting clusters are displayed on the map with random colors.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Landsat Image",
+        "Step description": "The purpose of this step is to load the Landsat composite image for the year 2001. This step is implemented by using the ee.Image() function to load the Landsat image with the image ID 'LANDSAT/LE7_TOA_1YEAR/2001'. The Google Earth Engine API is called to load the Landsat composite image.",
+        "Input": ["LANDSAT/LE7_TOA_1YEAR/2001"],
+        "Output":["Loaded Landsat composite image for the year 2001"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Define Region of Interest",
+        "Step description": "The purpose of this step is to define a region of interest for sampling. This step is implemented by creating a rectangular geometry representing the region of interest with specified coordinates using the ee.Geometry.Rectangle() function. The Google Earth Engine API is called to define the region of interest geometry.",
+        "Input": ["Coordinates of the region (29.7, 30, 32.5, 31.7)"],
+        "Output":["Defined region of interest geometry"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Display Region of Interest",
+        "Step description": "The purpose of this step is to display the defined region of interest on the map. This step is implemented by setting the center of the map to the specified coordinates and adding a layer to display the defined region of interest using the Map.setCenter() and Map.addLayer() functions. The Google Earth Engine API is called to display the region of interest on the map.",
+        "Input": ["Center coordinates (31.5, 31.0)", "Region of interest geometry"],
+        "Output":["Displayed region of interest on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Create Training Dataset",
+        "Step description": "The purpose of this step is to create a training dataset by sampling the input image. This step is implemented by sampling the input Landsat image within the defined region of interest with a specified scale and number of pixels using the input.sample() function. The Google Earth Engine API is called to create the training dataset for clustering.",
+        "Input": ["Input Landsat image", "Region of interest geometry", "Sampling scale (30)", "Number of pixels (5000)"],
+        "Output":["Training dataset for clustering"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Train KMeans Clusterer",
+        "Step description": "The purpose of this step is to train a KMeans clusterer using the training dataset. This step is implemented by instantiating a KMeans clusterer with 15 clusters and training the clusterer using the training dataset with the ee.Clusterer.wekaKMeans().train() function. The Google Earth Engine API is called to train the KMeans clusterer.",
+        "Input": ["Training dataset"],
+        "Output":["Trained KMeans clusterer"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Cluster Image",
+        "Step description": "The purpose of this step is to cluster the input image using the trained clusterer. This step is implemented by applying the trained KMeans clusterer to the input image to create clusters and clipping the clusters to the defined region of interest using the input.cluster() function. The Google Earth Engine API is called to cluster the image within the region of interest.",
+        "Input": ["Trained KMeans clusterer", "Input Landsat image", "Region of interest geometry"],
+        "Output":["Clustered image within the region of interest"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Display Clustered Image",
+        "Step description": "The purpose of this step is to display the clustered image on the map with random colors. This step is implemented by adding a layer to display the clustered image with random colors on the map using the Map.addLayer() function. The Google Earth Engine API is called to display the clustered image on the map.",
+        "Input": ["Clustered image"],
+        "Output":["Displayed clustered image on the map"]
+        }
+       ] 
+}
+```

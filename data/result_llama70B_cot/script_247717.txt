@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization, I will analyze the workflow and identify the combination relationships between the steps. Here is the output in the required JSON format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Filtered dataset for the year 2017' from Step1 is used as input in Step2 to calculate the total rainfall."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Total rainfall image' from Step2 is used as input in Step3 to visualize the total rainfall on the map."
+    },
+    {
+        "relationship":["Step2", "Step4"],
+        "reason": "The output 'Total rainfall image' from Step2 is used as input in Step4 to calculate the average rainfall over India."
+    },
+    {
+        "relationship":["Step2", "Step5"],
+        "reason": "The output 'Total rainfall image' from Step2 is used as input in Step5 to export the total rainfall image to Google Drive."
+    },
+    {
+        "relationship":["Step1", "Step6"],
+        "reason": "The output 'Filtered dataset for the year 2017' from Step1 is used as input in Step6 to export the filtered data to Google Drive."
+    }
+]
+```
+
+These connections are based on the input-output relationships between the steps, as described in the original sequence and step descriptions.

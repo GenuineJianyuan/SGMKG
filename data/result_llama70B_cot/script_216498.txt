@@ -1,0 +1,31 @@
+﻿Based on the provided JSON summarization, I will analyze the workflow and identify the combination relationships between the steps. Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'nightlights2017' from Step1 is used as input in Step2 to calculate the mean radiance."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'nightlights2017' from Step2 is used as input in Step3 to clip the image to the Tanzania boundary."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'nightlights2017' from Step3 is used as input in Step4 to select the average radiance band."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output 'Image with only the avg_rad band' from Step4 is used as input in Step5 to add the layer to the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 and Step2: The output 'nightlights2017' from Step1 (filtering image collection) is used as input in Step2 to calculate the mean radiance.
+2. Step2 and Step3: The output 'nightlights2017' from Step2 (calculating mean radiance) is used as input in Step3 to clip the image to the Tanzania boundary.
+3. Step3 and Step4: The output 'nightlights2017' from Step3 (clipping to Tanzania boundary) is used as input in Step4 to select the average radiance band.
+4. Step4 and Step5: The output 'Image with only the avg_rad band' from Step4 (selecting average radiance band) is used as input in Step5 to add the layer to the map.
+
+These connections illustrate the sequential workflow of the geospatial model, where each step builds upon the output of the previous step.

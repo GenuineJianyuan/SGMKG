@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a polygon representing Finland, which is necessary for Step2 to retrieve relevant data from the Hansen Global Forest Change dataset specifically for the area of Finland."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs images representing tree cover, forest loss, and forest gain, which are required as input for Step3 to calculate the area of these features in square kilometers."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs images representing area in square kilometers for tree cover, forest loss, and forest gain, which are used in Step4 to compute the total area of forest loss and gain within the Finland polygon."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 also provides images of forest loss and gain, which are directly used in Step4 along with the Finland polygon to compute the total area of forest loss and gain."
+    }
+]
+```

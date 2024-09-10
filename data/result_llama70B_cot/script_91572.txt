@@ -1,0 +1,21 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, which includes tree cover, loss image, and gain image variables, is used as input in Step2 to filter the feature collection for the study area."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, which includes filtered protected areas within the Congo, is used as input in Step3 to calculate the area of forest loss in the Republic of the Congo and its protected areas."
+    }
+]
+```
+
+Here's the explanation for each connection:
+
+1. The output of Step1, which includes tree cover, loss image, and gain image variables, is used as input in Step2 to filter the feature collection for the study area. This connection exists because the output of Step1 is used as input in Step2.
+2. The output of Step2, which includes filtered protected areas within the Congo, is used as input in Step3 to calculate the area of forest loss in the Republic of the Congo and its protected areas. This connection exists because the output of Step2 is used as input in Step3.
+
+Note that there are no other connections between the steps, as the output of each step is only used as input in the subsequent step.

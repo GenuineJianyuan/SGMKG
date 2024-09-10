@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Landsat 8 image', which is used as the input in Step2. Step1 retrieves the Landsat 8 image for the specified date range and location, and Step2 extracts the RGB and panchromatic bands from this image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 includes the 'RGB image', which is used as the input in Step3. Step2 extracts the RGB bands from the Landsat 8 image, and Step3 converts this RGB image into the HSV color space."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2 also includes the 'Panchromatic image', which is used as the input in Step4. Step2 extracts the panchromatic band from the Landsat 8 image, and Step4 replaces the saturation and value bands in the HSV image with this panchromatic band."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'HSV image', which is used as the input in Step4. Step3 converts the RGB image to HSV, and Step4 swaps the saturation and value bands in the HSV image with the panchromatic band to create the pansharpened RGB image."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is the 'Pansharpened RGB image', which is used as the input in Step5. Step4 generates the pansharpened RGB image by combining the panchromatic band with the HSV image, and Step5 visualizes both the original RGB image and the pansharpened RGB image on the map."
+    },
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output of Step1 is the 'Landsat 8 image', which is indirectly used in Step5 through the original RGB image. Step1 retrieves the Landsat 8 image, which is processed in Step2 to extract the RGB image that is then visualized in Step5."
+    }
+]
+```

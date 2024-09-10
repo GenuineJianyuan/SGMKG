@@ -1,0 +1,40 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs 'Loaded Landsat 8 images', which are used as input in Step2 to calculate the Normalized Difference Snow Index (NDSI)."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 outputs 'NDSI image', which is used as input in Step4 to threshold the NDSI at 0.35 to identify snow-covered pixels."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs 'NDSI image', which is indirectly related to Step3 as both steps utilize the same Landsat 8 images. However, Step3 specifically focuses on separating water from snow using NIR reflectance."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "Step3 outputs 'Boolean image indicating water pixels', which is used as input in Step5 to help determine which pixels to replace in the snow-covered image."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs 'Boolean image indicating snow-covered pixels', which is used as input in Step5 to identify the snow pixels that need to be replaced with pixels from the snow-free image."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs 'Replaced image with snow-free pixels', which is used as input in Step6 to visualize the replaced image along with other images on the map."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "Step1 outputs 'Loaded Landsat 8 images', which are used as input in Step6 to visualize the original snow-free image and the original snow-covered image on the map."
+    },
+    {
+        "relationship": ["Step2", "Step6"],
+        "reason": "Step2 outputs 'NDSI image', which is used as input in Step6 to visualize the NDSI thresholded image on the map."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "Step3 outputs 'Boolean image indicating water pixels', which is used as input in Step6 to visualize the NIR reflectance thresholded image on the map."
+    }
+]
+```

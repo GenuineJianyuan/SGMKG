@@ -1,0 +1,36 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code demonstrates the computation of a hillshade from terrain data using Google Earth Engine. The code defines functions to convert degrees to radians, compute hillshade based on sun azimuth and elevation, and compute terrain measures from SRTM DEM data. The final output is a hillshade layer displayed on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Convert degrees to radians",
+        "Step description": "The purpose of this step is to convert the input image from degrees to radians. This is achieved by calling the radians() function on the input image, which involves multiplying the input by π and dividing by 180. The function used in this step is radians(). This step utilizes the Google Earth Engine API to perform the conversion.",
+        "Input": ["Input image in degrees"],
+        "Output":["Image converted to radians"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Compute hillshade from terrain data",
+        "Step description": "The purpose of this step is to compute the hillshade from terrain data. This involves converting the sun azimuth and elevation to radians and then using the provided formulas to calculate the hillshade. The hillshade() function is called with sun azimuth, sun elevation, slope, and aspect as inputs. This step utilizes the Google Earth Engine API to compute the hillshade image.",
+        "Input": ["Sun azimuth", "Sun elevation", "Slope image", "Aspect image"],
+        "Output":["Hillshade image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Compute terrain measures from SRTM DEM",
+        "Step description": "The purpose of this step is to compute terrain measures such as slope and aspect from the SRTM DEM data. This is achieved by calling the ee.Algorithms.Terrain() function on the SRTM DEM image. The function provided by Google Earth Engine is used to calculate the terrain measures.",
+        "Input": ["SRTM DEM image"],
+        "Output":["Terrain measures images for slope and aspect"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Set map center and add hillshade layer",
+        "Step description": "The purpose of this step is to set the center of the map to specified coordinates and add the computed hillshade layer to the map. This involves calling the Map.setCenter() function with the center coordinates and the Map.addLayer() function with the hillshade layer. The Google Earth Engine API is used to display the map with the hillshade layer.",
+        "Input": ["Center coordinates", "Hillshade layer"],
+        "Output":["Displayed map with the hillshade layer"]
+        }
+       ] 
+}
+```

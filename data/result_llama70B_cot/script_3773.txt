@@ -1,0 +1,29 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Landsat 8 Surface Reflectance imagery based on the specified date range and spatial extent', is used as input in Step2 to mask out cloud and cloud shadow pixels."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Landsat 8 Surface Reflectance imagery with cloud and cloud shadow pixels masked out', is used as input in Step3 to set visualization parameters for displaying the Landsat imagery on the map."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Visualization parameters set for displaying the Landsat imagery on the map', is used in Step4 to add the filtered Landsat imagery layer to the map with the set visualization parameters."
+    },
+    {
+        "relationship":["Step2", "Step4"],
+        "reason": "The output of Step2, 'Landsat 8 Surface Reflectance imagery with cloud and cloud shadow pixels masked out', is used as input in Step4 to add the filtered Landsat imagery layer to the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 filters the Landsat imagery, and the output is used in Step2 to mask out cloud and cloud shadow pixels.
+2. The output of Step2 (masked imagery) is used in Step3 to set visualization parameters.
+3. The visualization parameters set in Step3 are used in Step4 to add the filtered Landsat imagery layer to the map.
+4. The output of Step2 (masked imagery) is also used directly in Step4 as the input for adding the layer to the map.

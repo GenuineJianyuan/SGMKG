@@ -1,0 +1,44 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "Step1 outputs 'redriver (FeatureCollection)', which is used as input in Step5 to clip the mean LST for daytime to the boundary of Bahia."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs 'imagem (ImageCollection)', which is used as input in Step3 for preprocessing the daytime LST data."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs 'imagem (ImageCollection)', which is used as input in Step4 to filter the LST data for the year 2010."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs 'collection10year (ImageCollection)', which is used as input in Step5 to calculate the mean LST for daytime."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs 'clipOC (Image)', which is used as input in Step6 to visualize the daytime LST data on the map."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "Step7 outputs 'imagem2 (ImageCollection)', which is used as input in Step8 for preprocessing the nighttime LST data."
+    },
+    {
+        "relationship": ["Step8", "Step9"],
+        "reason": "Step8 outputs 'imagem2 (ImageCollection)', which is used as input in Step9 to filter the LST data for the year 2010 for nighttime."
+    },
+    {
+        "relationship": ["Step9", "Step10"],
+        "reason": "Step9 outputs 'collection10year2 (ImageCollection)', which is used as input in Step10 to calculate the mean LST for nighttime."
+    },
+    {
+        "relationship": ["Step10", "Step11"],
+        "reason": "Step10 outputs 'clipOC2 (Image)', which is used as input in Step11 to calculate the temperature difference between daytime and nighttime LST."
+    },
+    {
+        "relationship": ["Step11", "Step12"],
+        "reason": "Step11 outputs 'image3 (Image)', which is used as input in Step12 to visualize the temperature difference on the map."
+    }
+]
+```

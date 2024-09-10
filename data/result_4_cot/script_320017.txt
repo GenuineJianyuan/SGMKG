@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output from Step1 is the 'Remapped image', which is used as an input in Step5 as 'Remapped land cover image'. This connection exists because the remapped land cover classes are combined with other factors for landslide detection."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "The output from Step2 is the 'NDVI image', which is used as an input in Step5 as 'NDVI image'. This connection exists because the NDVI values are combined with other factors to assess landslide risk."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Slope image', which is used as an input in Step4 as 'Slope image'. This connection exists because the slope values need to be categorized into different categories for further analysis."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Categorized slope image', which is used as an input in Step5 as 'Slope categories image'. This connection exists because the categorized slope values are combined with other factors to create the final result for landslide detection."
+    }
+]
+```

@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to detect corn fields in the state of Iowa using Landsat 8 imagery. It sets the study area to Iowa, specifies a time range, loads Landsat 8 images, calculates the NDVI index, identifies corn fields based on a NDVI threshold, visualizes the corn fields on the map, calculates the total area of corn fields in Iowa, and prints the result.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Set Study Area",
+        "Step description": "The purpose of this step is to define a rectangular geometry representing the boundaries of Iowa as the study area. The ee.Geometry.Rectangle() function is used to create a rectangle with the specified coordinates for Iowa.",
+        "Input": ["Coordinates for the rectangle defining Iowa's boundaries"],
+        "Output":["A geometry object representing the study area for Iowa"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Imagery",
+        "Step description": "The purpose of this step is to filter Landsat 8 imagery based on the study area and time range. The ee.ImageCollection() is used to load Landsat 8 imagery, filterBounds() to limit the data to Iowa, filterDate() to select images within the specified time range, and median() to create a composite image.",
+        "Input": ["Landsat 8 imagery", "Study area geometry", "Start and end dates"],
+        "Output":["A median composite image for the filtered Landsat 8 imagery"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate the NDVI index from Landsat 8 imagery. The normalizedDifference() function is used on the Landsat image to calculate NDVI and rename the band to 'NDVI'.",
+        "Input": ["Landsat 8 image"],
+        "Output":["An image with the NDVI band"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Identify Corn Fields",
+        "Step description": "The purpose of this step is to identify corn fields based on a NDVI threshold. The gt() function is used to create a binary image where NDVI values above the threshold are considered as corn fields.",
+        "Input": ["NDVI image"],
+        "Output":["Binary image representing corn fields"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Visualize Corn Fields",
+        "Step description": "The purpose of this step is to visualize the corn fields on the map. Map.centerObject() is used to focus the map on Iowa, addLayer() to display the corn fields binary image with a color palette.",
+        "Input": ["Iowa geometry", "Corn fields binary image"],
+        "Output":["Visualization of corn fields on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Calculate Total Area",
+        "Step description": "The purpose of this step is to calculate the total area of corn fields in Iowa. The corn fields binary image is multiplied by pixel area, then reduceRegion() with a sum reducer is used to calculate the total area within the Iowa geometry.",
+        "Input": ["Corn fields binary image", "Pixel area", "Iowa geometry"],
+        "Output":["Total area of corn fields in Iowa"]
+        }
+       ] 
+}
+```

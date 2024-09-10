@@ -1,0 +1,31 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output in the required JSON format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1 (ImageCollections s2_before, s2_inTime, s2_after) is used as input in Step2 to calculate NDVI bands."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output of Step1 (ImageCollections s2_before, s2_inTime, s2_after) is used as input in Step3 to calculate NBR bands."
+    },
+    {
+        "relationship":["Step2", "Step4"],
+        "reason": "The output of Step2 (ImageCollections ndvi_before, ndvi_in, ndvi_after) is used as input in Step4 to visualize NDVI bands on the map."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3 (ImageCollections nbr_before, nbr_in, nbr_after) is used as input in Step4 to visualize NBR bands on the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 outputs Sentinel-2 images, which are used as input in Step2 to calculate NDVI bands.
+2. Step1 outputs Sentinel-2 images, which are used as input in Step3 to calculate NBR bands.
+3. Step2 outputs NDVI bands, which are used as input in Step4 to visualize NDVI bands on the map.
+4. Step3 outputs NBR bands, which are used as input in Step4 to visualize NBR bands on the map.
+
+These connections illustrate the data flow between the steps, highlighting how the outputs of one step are used as inputs in subsequent steps.

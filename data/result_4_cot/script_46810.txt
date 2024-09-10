@@ -1,0 +1,64 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a 'Buffered geometry' which is used as an input in Step2. The buffered geometry defines the spatial area for which the aerosol index data is retrieved and visualized."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "Step1 outputs a 'Buffered geometry' which is used as an input in Step3. The buffered geometry defines the spatial area for which the carbon monoxide data is retrieved and visualized."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "Step1 outputs a 'Buffered geometry' which is used as an input in Step4. The buffered geometry defines the spatial area for which the nitrogen dioxide data is retrieved and visualized."
+    },
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "Step1 outputs a 'Buffered geometry' which is used as an input in Step5. The buffered geometry defines the spatial area for which the sulfur dioxide data is retrieved and visualized."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "Step1 outputs a 'Buffered geometry' which is used as an input in Step6. The buffered geometry defines the spatial area for which the total aerosol optical depth data is retrieved and visualized."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a 'Visualized layer on the map' which does not serve as an input for Step3. Therefore, there is no direct relationship between Step2 and Step3."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 outputs a 'Visualized layer on the map' which does not serve as an input for Step4. Therefore, there is no direct relationship between Step2 and Step4."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "Step2 outputs a 'Visualized layer on the map' which does not serve as an input for Step5. Therefore, there is no direct relationship between Step2 and Step5."
+    },
+    {
+        "relationship": ["Step2", "Step6"],
+        "reason": "Step2 outputs a 'Visualized layer on the map' which does not serve as an input for Step6. Therefore, there is no direct relationship between Step2 and Step6."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a 'Visualized layer on the map' which does not serve as an input for Step4. Therefore, there is no direct relationship between Step3 and Step4."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "Step3 outputs a 'Visualized layer on the map' which does not serve as an input for Step5. Therefore, there is no direct relationship between Step3 and Step5."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "Step3 outputs a 'Visualized layer on the map' which does not serve as an input for Step6. Therefore, there is no direct relationship between Step3 and Step6."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a 'Visualized layer on the map' which does not serve as an input for Step5. Therefore, there is no direct relationship between Step4 and Step5."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "Step4 outputs a 'Visualized layer on the map' which does not serve as an input for Step6. Therefore, there is no direct relationship between Step4 and Step6."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs a 'Visualized layer on the map' which does not serve as an input for Step6. Therefore, there is no direct relationship between Step5 and Step6."
+    }
+]
+```

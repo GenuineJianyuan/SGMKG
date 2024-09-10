@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output of Step1 is a 'Mosaic image with selected bands', which is used as input in Step4 to convert the bands of the mosaic image into a 2D array of pixel values."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 defines the arrays for urban, vegetation, and water endmembers, which are used as input in Step3 to compute the pseudo inverse of these endmembers."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output of Step3 is the 'Pseudo inverse matrix', which is used as input in Step5 to matrix multiply the pseudo inverse matrix by the pixel values array."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is a '2D array of pixel values', which is used as input in Step5 to perform matrix multiplication with the pseudo inverse matrix."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 is the 'Endmembers fractions array', which is used as input in Step6 to create a colored image of the endmember fractions."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output of Step6 is a 'Colored image showing urban, vegetation, and water fractions', which is used as input in Step7 to display the results on the map along with the hillshade layer."
+    }
+]
+```

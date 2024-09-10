@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered Landsat image collection', which is used as the input for Step2. In Step2, the code selects the image with the least cloud cover from this filtered collection."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Image with the least cloud cover', which serves as the input for Step3. In Step3, the NDWI is calculated using this selected image."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'NDWI image', which is used as the input for Step4. In Step4, the NDWI image is visualized on the map using the specified visualization parameters."
+    }
+]
+```

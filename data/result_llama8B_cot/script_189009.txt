@@ -1,0 +1,19 @@
+﻿Based on the provided JSON summarization, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Irr_rice1_1 dataset with a random column' from Step1 is used as input for Step2 to filter the dataset for training and testing accuracy."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The outputs 'trainingAccuracy_Irr_rice1_1', 'testingAccuracy_Irr_rice1_1', 'riceDataTrainingModel1', and 'riceDataTestingModel1 datasets' from Step2 are used as input for Step3 to print the filtered datasets for analysis."
+  }
+]
+```
+
+The combination relationship between the steps is as follows:
+
+* Step1 generates a random column for the test/train split, and the output is used as input for Step2 to filter the dataset for training and testing accuracy.
+* Step2 filters the dataset based on the random column values and outputs the filtered datasets, which are then used as input for Step3 to print the filtered datasets for analysis.

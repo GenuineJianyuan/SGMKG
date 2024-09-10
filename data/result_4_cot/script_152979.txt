@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the visualization of the Kajiado boundary on the map, which provides the spatial context necessary for Step2. In Step2, the CHIRPS dataset is retrieved and filtered for the specified date range, and the analysis is conducted specifically within the boundaries of Kajiado, as defined in Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a filtered and sorted image collection with the precipitation band selected, which serves as the input for Step3. In Step3, this precipitation data is visualized on the map, allowing users to see the precipitation information for the specified date range."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a visualization of precipitation data on the map, which is then used in Step4 as the colorized precipitation image. In Step4, this image is exported to Google Drive, along with the defined export parameters, thereby completing the analysis workflow."
+    }
+]
+```

@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'nightlights2017' ImageCollection, which is used as input in Step2 to calculate the average radiance of nighttime lights for the entire year."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'nightlights2017' Image, which is then used as input in Step3 to clip the image to the boundary of Tanzania."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the clipped 'nightlights2017' Image, which is used as input in Step4 to select the 'avg_rad' band for visualization."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Image with only the avg_rad band', which is used as input in Step5 to add the layer to the map for visualization of nighttime lights data."
+    }
+]
+```

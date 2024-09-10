@@ -1,0 +1,40 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The northeastern provinces boundary is used as input in Step2 to filter Landsat 8 data."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The start and end dates are used as input in Step3 to filter Landsat 8 data."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The filtered Landsat 8 data is used as input in Step4 to calculate NDVI."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The Landsat image with NDVI band is used as input in Step5 to apply NDVI calculation to all images."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "No direct relationship between these two steps."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "No direct relationship between these two steps."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "No direct relationship between these two steps."
+    },
+    {
+        "relationship": ["Step8", "Step9"],
+        "reason": "The clipped NDVI and soil moisture data are used as input in Step9 to visualize the data on the map."
+    }
+]
+```
+
+Note that there are no direct relationships between Steps 5, 6, 7, and 8, as they do not share any common inputs or outputs.

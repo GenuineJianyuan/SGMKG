@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a centered map on the study area, which is essential for Step2 to filter the Landsat 8 image collection by the defined study area. The output from Step1 ensures that the subsequent image processing in Step2 is focused on the correct geographical region."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 produces a cloud-free Landsat 8 composite image, which is used as input in Step3. The training dataset generated in Step3 is sampled from this composite image, making it crucial for the clustering analysis that follows."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The training dataset generated in Step3 is used as input in Step4 to train the clustering algorithm. This step relies on the output of Step3 to prepare the algorithm for clustering the pixels in the input image."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a trained clusterer, which is then used in Step5 to cluster the input image. The trained clusterer applies the learned patterns from the training dataset to group pixels in the composite image based on their similarity."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 produces a clustered image, which is visualized in Step6. The clustered image is added to the map with a specified color palette, allowing users to interpret the results of the clustering algorithm and understand the spatial patterns within the study area."
+    }
+]
+```

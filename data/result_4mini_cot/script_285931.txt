@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the initialized variables and imported datasets, which include the Global Forest Change dataset. This dataset is required as input in Step2 to calculate the tree cover area for the year 2000."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the tree cover area for the year 2000, which is used as input in Step3. Step3 calculates the tree cover area within specific altitude ranges using the tree cover area calculated in Step2."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a feature containing the object ID, SIS ID, and tree cover area for each sample image. This output is used as input in Step4 to export the calculated tree cover areas to a CSV file."
+    }
+]
+```

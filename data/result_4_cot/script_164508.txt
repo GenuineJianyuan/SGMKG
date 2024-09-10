@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered feature collection representing the boundary of Italy', which is necessary for Step2 to filter the NO2 values specifically for Italy. Step2 requires the geographical context provided by Step1 to accurately filter the Sentinel-5P NO2 image collection."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Filtered image collection containing NO2 values for the specified months', which is used as input in Step3. Step3 requires this filtered NO2 image collection to calculate the average NO2 values for the years 2019 and 2020."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Average NO2 image for 2019 and 2020 clipped to Italy', which is used as input in Step4. Step4 needs this average NO2 image to visualize the NO2 values on the map, applying the defined visualization parameters."
+    }
+]
+```

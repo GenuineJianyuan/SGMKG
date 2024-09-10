@@ -1,0 +1,28 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Filtered Landsat imagery dataset) is used as input for Step2 (Apply Scaling Factors) to apply scaling factors to the optical and thermal bands of the Landsat imagery."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (Landsat imagery with scaled optical and thermal bands) is used as input for Step3 (Visualize False Color Composite) to visualize a false color composite image on the map."
+  },
+  {
+    "relationship": ["Step2", "Step4"],
+    "reason": "The output of Step2 (Landsat imagery with scaled optical and thermal bands) is used as input for Step4 (Visualize Thermal Band) to visualize the thermal band image on the map."
+  },
+  {
+    "relationship": ["Step2", "Step5"],
+    "reason": "The output of Step2 (Landsat imagery with scaled optical and thermal bands) is used as input for Step5 (Identify and Visualize Hotspots) to identify and visualize hotspots in the thermal band."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output of Step5 (Hotspot visualization layer on the map) is used as input for Step6 (Set Map Options) to set map options and center the map on a specific location."
+  }
+]
+```
+
+Note that the relationship only exists if the output and its matched input exist.

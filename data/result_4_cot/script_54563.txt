@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Sentinel-1 image collection based on location and polarization', which is used as input in Step2 to filter the images by date. Step2 specifically requires the filtered image collection from Step1 to obtain images from the specified date ranges."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is 'Filtered Sentinel-1 images for the 'before' and 'after' periods', which serves as the input for Step3. Step3 requires these 'before' and 'after' images to calculate the difference between them."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is 'Image representing the difference between 'after' and 'before' images', which is used as input in Step4. Step4 applies thresholding to this difference image to identify potential oil spill areas."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is 'Binary image indicating potential oil spill areas', which is used as input in Step5 along with the other images. Step5 visualizes the results, including the identified spill areas from Step4."
+    }
+]
+```

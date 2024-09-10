@@ -1,0 +1,36 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Filtered NPP dataset) is used as input for Step2 (Filter data by region) to filter the NPP dataset based on the specified region (Riau)."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (NPP dataset within the Riau region) is not used as input for Step3 (Center the map on the region). Step3 uses the Riau region boundary as input, which is not an output of any previous step."
+  },
+  {
+    "relationship": ["Step2", "Step4"],
+    "reason": "The output of Step2 (NPP dataset within the Riau region) is not used as input for Step4 (Add region boundary to the map). Step4 uses the Riau region boundary as input, which is not an output of any previous step."
+  },
+  {
+    "relationship": ["Step2", "Step5"],
+    "reason": "The output of Step2 (NPP dataset within the Riau region) is used as input for Step5 (Add clipped NPP layer to the map) to add the clipped NPP data to the map for visualization."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output of Step5 (Clipped NPP layer on the map) is used as input for Step6 (Export the clipped NPP image to Google Drive) to export the clipped NPP data as an image to Google Drive."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3 (Map centered on the Riau region) is not used as input for Step4 (Add region boundary to the map). Step4 uses the Riau region boundary as input, which is not an output of any previous step."
+  },
+  {
+    "relationship": ["Step5", "Step7"],
+    "reason": "The output of Step5 (Clipped NPP layer on the map) is not used as input for Step7 (Add region boundary visualization to the map). Step7 uses the Riau region boundary as input, which is not an output of any previous step."
+  }
+]
+```
+
+Note that Steps 3 and 4 do not have any input-output relationship, as they use separate inputs (Riau region boundary) that are not outputs of any previous step. Similarly, Steps 5 and 7 do not have any input-output relationship, as they use separate inputs (Riau region boundary) that are not outputs of any previous step.

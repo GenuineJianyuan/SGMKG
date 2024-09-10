@@ -1,0 +1,21 @@
+﻿Based on the provided JSON summarization, I will analyze the workflow and identify the combination relationships between the steps. Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Irr_rice1_1 dataset with a random column' from Step1 is used as input in Step2 to filter the dataset for training and testing accuracy."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The outputs 'trainingAccuracy_Irr_rice1_1', 'testingAccuracy_Irr_rice1_1', 'riceDataTrainingModel1', and 'riceDataTestingModel1 datasets' from Step2 are used as inputs in Step3 to print the filtered datasets for analysis."
+    }
+]
+```
+
+Here's the explanation:
+
+1. The output from Step1, "Irr_rice1_1 dataset with a random column", is used as input in Step2 to filter the dataset for training and testing accuracy.
+2. The outputs from Step2, "trainingAccuracy_Irr_rice1_1", "testingAccuracy_Irr_rice1_1", "riceDataTrainingModel1", and "riceDataTestingModel1 datasets", are used as inputs in Step3 to print the filtered datasets for analysis.
+
+Note that there are only two connections between the steps, as the workflow is linear and each step builds upon the previous one.

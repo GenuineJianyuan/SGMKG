@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial analysis workflow that aims to find the least cloudy Landsat 8 image in 2015 for a specific point of interest. It then calculates the Normalized Difference Vegetation Index (NDVI) for that image and displays the result on a map. The code imports Landsat 8 TOA image collection, filters the images based on location and date, selects the least cloudy image, calculates NDVI using the NIR and red bands, and finally displays the NDVI image on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Import Landsat 8 TOA image collection",
+        "Step description": "The purpose of this step is to import the Landsat 8 TOA image collection. The code uses the ee.ImageCollection function to import the Landsat 8 TOA image collection identified by 'LANDSAT/LC08/C01/T1_TOA'.",
+        "Input": ["LANDSAT/LC08/C01/T1_TOA"],
+        "Output":["Landsat 8 TOA image collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter least cloudy image in 2015",
+        "Step description": "The purpose of this step is to filter the Landsat 8 image collection to find the least cloudy image in 2015 for a specific point. The code filters the image collection based on the specified point of interest, date range ('2015-01-01' to '2015-12-31'), and sorts the images by cloud cover to get the least cloudy image.",
+        "Input": ["Landsat 8 TOA image collection", "point of interest", "date range"],
+        "Output":["Filtered image collection with the least cloudy image in 2015"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Vegetation Index (NDVI) for the selected image. The code selects the NIR (B5) and red (B4) bands from the least cloudy image, calculates NDVI using the formula (NIR - red) / (NIR + red), and renames the output band as 'NDVI'.",
+        "Input": ["Least cloudy Landsat 8 image", "NIR and red bands"],
+        "Output":["NDVI image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Display NDVI image on map",
+        "Step description": "The purpose of this step is to display the NDVI image on the map. The code centers the map on the NDVI image, defines visualization parameters for the NDVI image (min: -1, max: 1, palette: ['blue', 'white', 'green']), adds the NDVI image layer to the map, and renames the NDVI band using the normalizedDifference function.",
+        "Input": ["NDVI image", "visualization parameters"],
+        "Output":["Displayed NDVI image on the map"]
+        }
+       ] 
+}
+```

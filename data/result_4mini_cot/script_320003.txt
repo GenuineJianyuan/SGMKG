@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is 'counties (FeatureCollection)', which is used as the input for Step2. In Step1, the TIGER boundaries dataset is loaded, resulting in a FeatureCollection of counties. This FeatureCollection is then processed in Step2 to calculate the area of each county."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is 'countiesWithArea (FeatureCollection)', which serves as the input for Step3. In Step2, the area of each county is calculated and added as a property to the FeatureCollection. Step3 then filters this FeatureCollection to retain only those counties with an area smaller than 3,000 square kilometers."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is 'smallCounties (FeatureCollection)', which is used as the input for Step4. In Step3, counties smaller than 3,000 square kilometers are filtered out, resulting in a FeatureCollection of smaller counties. Step4 then visualizes these smaller counties on the map."
+    }
+]
+```

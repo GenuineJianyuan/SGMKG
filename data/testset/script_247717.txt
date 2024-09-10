@@ -1,0 +1,50 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code aims to analyze the total and average rainfall in India for the year 2017 using the CHIRPS dataset. The script filters the CHIRPS dataset for the specified time period, calculates the total rainfall, visualizes it on the map, computes the average rainfall over India, and exports the total rainfall image and filtered data to Google Drive.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter CHIRPS dataset for 2017",
+        "Step description": "The purpose of this step is to extract rainfall data for the specified time period. To implement this step, the 'filter()' function is called. The operation involves filtering the CHIRPS dataset using the 'ee.Filter.date()' function to select data from January 1, 2017, to January 1, 2018.",
+        "Input": ["CHIRPS dataset"],
+        "Output":["Filtered dataset for the year 2017"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate total rainfall",
+        "Step description": "The purpose of this step is to calculate the total rainfall for the specified time period. To achieve this, the 'reduce()' function is utilized with the 'ee.Reducer.sum()' reducer. The operation involves calculating the total rainfall for the filtered dataset and clipping the result to the boundaries of India.",
+        "Input": ["Filtered dataset"],
+        "Output":["Total rainfall image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Visualize total rainfall",
+        "Step description": "The purpose of this step is to visualize the total rainfall data on the map. The 'addLayer()' function is called to add the total rainfall image to the map with specified visualization parameters such as min, max, and palette.",
+        "Input": ["Total rainfall image"],
+        "Output":["Visualization of total rainfall on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Calculate average rainfall over India",
+        "Step description": "The purpose of this step is to compute the average rainfall over India for the specified time period. The 'reduceRegion()' function is used with the 'ee.Reducer.mean()' reducer to calculate the average rainfall over the geometry of India.",
+        "Input": ["Total rainfall image", "India boundary"],
+        "Output":["Average rainfall value"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Export total rainfall image to Google Drive",
+        "Step description": "The purpose of this step is to export the total rainfall image to Google Drive for further analysis or sharing. The 'Export.image.toDrive()' function is employed to export the total rainfall image with specified parameters such as description, scale, region, and maximum number of pixels.",
+        "Input": ["Total rainfall image", "India boundary"],
+        "Output":["Exported total rainfall image on Google Drive"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Export filtered data to Google Drive",
+        "Step description": "The purpose of this step is to export the filtered CHIRPS dataset to Google Drive for external use. The 'Export.table.toDrive()' function is used to export the filtered dataset as a CSV file with specified parameters like description, folder, file name prefix, and file format.",
+        "Input": ["Filtered dataset"],
+        "Output":["Exported CSV file of filtered data on Google Drive"]
+        }
+       ] 
+}
+```

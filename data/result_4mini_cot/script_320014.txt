@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the defined ROI geometry, which is used as input in Step2 to filter the Landsat 8 image collection based on the geographic area specified."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the filtered Landsat 8 image collection, which is used as input in Step3 to select a representative Landsat image for LAI calculation."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs the selected Landsat image, which is used as input in Step4 to calculate the NDVI from the Landsat image bands."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs the NDVI image, which is used as input in Step5 to derive the Leaf Area Index (LAI) values from the NDVI."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs the LAI image, which is used as input in Step6 to visualize the calculated LAI values on the map."
+    },
+    {
+        "relationship": ["Step5", "Step7"],
+        "reason": "Step5 outputs the LAI image, which is used as input in Step7 to calculate the mean and standard deviation statistics of LAI values within the ROI."
+    }
+]
+```

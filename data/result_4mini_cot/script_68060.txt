@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is a 'Filtered ImageCollection containing images for the specified time frame', which is used as the input for Step2. In Step2, this filtered dataset is utilized to visualize the burned areas by selecting the 'BurnDate' band."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is a 'Visualization of burned areas on the map', which includes the burned area image. This image is then used as input in Step3, where it is clipped to the specified study area boundaries."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is a 'Clipped burned area image within the study area boundaries', which is not directly used in Step4. However, Step4 uses the 'study area boundaries' to set the map center, which is relevant to the visualization context established in the previous steps."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is a 'Map centered on the study area', which sets the context for adding layers. In Step5, the 'study area boundaries' and the 'clipped burned area image' are added to the map, utilizing the centered map context established in Step4."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 is 'Study area and burned area layers added to the map', which provides the visual context for the final output. In Step6, the 'Clipped burned area image' is exported to Google Drive as a GeoTIFF file, which is a final step that does not directly depend on the output of Step5 but completes the workflow by saving the processed data."
+    }
+]
+```

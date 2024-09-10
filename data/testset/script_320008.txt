@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code demonstrates the process of HSV-based Pan-Sharpening using Google Earth Engine. It retrieves a Landsat 8 image, extracts the RGB and panchromatic bands, converts the RGB image to HSV, swaps in the panchromatic band, and converts it back to RGB. The code then displays the original RGB image and the pansharpened image on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Retrieve Landsat 8 image",
+        "Step description": "The purpose of this step is to obtain a Landsat 8 image for the specified time period and location. It involves filtering Landsat 8 images by date and location, sorting by cloud cover, and selecting the first image. The functions used include ee.ImageCollection(), filterDate(), filterBounds(), sort(), and first(). These functions are called to filter the Landsat 8 images by the specified date range and location coordinates, sort them by cloud cover, and select the first image as the output.",
+        "Input": ["Date range", "Location coordinates"], 
+        "Output":["Landsat 8 image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Extract RGB and panchromatic bands",
+        "Step description": "The purpose of this step is to separate the RGB bands (B4, B3, B2) and the panchromatic band (B8) from the Landsat 8 image. The select() function is used to select the RGB and panchromatic bands from the Landsat 8 image. By applying this function, the RGB image and panchromatic image are extracted as the output.",
+        "Input": ["Landsat 8 image"], 
+        "Output":["RGB image", "Panchromatic image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Convert RGB image to HSV",
+        "Step description": "The purpose of this step is to convert the RGB image to the HSV color space. The rgbToHsv() function is called to perform this conversion. By applying this function, the RGB image is transformed into the HSV color space, resulting in the HSV image as the output.",
+        "Input": ["RGB image"], 
+        "Output":["HSV image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Swap in the panchromatic band",
+        "Step description": "The purpose of this step is to replace the saturation and value bands in the HSV image with the panchromatic band. The select() and hsvToRgb() functions are used to select the hue and saturation bands from the HSV image, concatenate them with the panchromatic band, and convert back to RGB. As a result, the pansharpened RGB image is generated as the output.",
+        "Input": ["HSV image", "Panchromatic image"], 
+        "Output":["Pansharpened RGB image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Display original and pansharpened images on the map",
+        "Step description": "The purpose of this step is to visualize the original RGB image and the pansharpened RGB image on the map. The Map.setCenter() and Map.addLayer() functions are used to set the map center, add the original RGB image layer with specified visualization parameters, and add the pansharpened RGB image layer with the same visualization parameters. This step results in the visualization of the original RGB image and the pansharpened RGB image on the map.",
+        "Input": ["Original RGB image", "Pansharpened RGB image"], 
+        "Output":["Visualization on the map"]
+        }
+       ] 
+}
+```

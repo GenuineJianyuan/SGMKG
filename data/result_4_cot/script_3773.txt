@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Landsat 8 Surface Reflectance imagery based on the specified date range and spatial extent', which is used as input in Step2 to mask out cloud and cloud shadow pixels."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Landsat 8 Surface Reflectance imagery with cloud and cloud shadow pixels masked out', which is used as input in Step3 to set visualization parameters for displaying the masked Landsat imagery on the map."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is 'Visualization parameters set for displaying the Landsat imagery on the map', which is used in Step4 to add the filtered Landsat imagery layer to the map with the specified visualization parameters."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output of Step1, 'Filtered Landsat 8 Surface Reflectance imagery based on the specified date range and spatial extent', is also used in Step4 to add the filtered Landsat imagery layer to the map."
+    }
+]
+```

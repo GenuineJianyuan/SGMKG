@@ -1,0 +1,49 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to classify cropland in a specific region based on Landsat imagery and manually created training polygons. The script loads an image, defines bands for prediction, creates a FeatureCollection of training polygons, samples pixel values within these polygons, trains a Support Vector Machine (SVM) classifier, classifies the image, and displays the results on a map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Landsat Image",
+        "Step description": "The purpose of this step is to load the Landsat image for the specified region. This step involves loading an image using its asset ID. The function used is to load an image, and the Google Earth Engine API called is ee.Image().", 
+        "Input": ["Landsat image asset ID"],
+        "Output":["Loaded image variable 'image'"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Define Bands",
+        "Step description": "The purpose of this step is to define the bands to be used for prediction. This step involves specifying the bands to be used for classification by defining an array of band names. The function used is to define an array, and the Google Earth Engine API called is ee.Image.select().", 
+        "Input": ["Array of band names"],
+        "Output":["Defined bands variable 'bands'"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Create Training Polygons",
+        "Step description": "The purpose of this step is to create a FeatureCollection of manually created training polygons. This step involves loading a FeatureCollection of training polygons using its asset ID. The function used is to load a FeatureCollection, and the Google Earth Engine API called is ee.FeatureCollection().", 
+        "Input": ["Training polygons asset ID"],
+        "Output":["FeatureCollection of training polygons variable 'polygons'"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Sample Pixel Values",
+        "Step description": "The purpose of this step is to sample pixel values within training polygons. This step involves sampling pixel values from the image within the polygons for training data. The function used is to sample regions, and the Google Earth Engine API called is ee.Image.sampleRegions().", 
+        "Input": ["Image", "Polygons", "Properties to keep", "Scale for sampling"],
+        "Output":["Training data variable 'training'"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Train SVM Classifier",
+        "Step description": "The purpose of this step is to train a Support Vector Machine (SVM) classifier. This step involves training an SVM classifier with custom parameters using the training data, target property, and bands. The function used is to train the classifier, and the Google Earth Engine API called is ee.Classifier.svm().", 
+        "Input": ["Training data", "Target property", "Bands for prediction"],
+        "Output":["Trained classifier variable 'trained'"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Classify Image",
+        "Step description": "The purpose of this step is to classify the image using the trained classifier. This step involves classifying the image based on the trained SVM classifier. The function used is to classify the image, and the Google Earth Engine API called is ee.Image.classify().", 
+        "Input": ["Image", "Trained classifier"],
+        "Output":["Classified image variable 'classified'"]
+        }
+       ] 
+}
+```

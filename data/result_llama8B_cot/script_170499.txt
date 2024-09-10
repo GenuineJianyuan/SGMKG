@@ -1,0 +1,20 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship of these steps.
+
+Here is the combination relationship of the steps:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The filtered Sentinel-1 image collection (S1_1 and S1_2) from Step1 is used as input to calculate the Radar Vegetation Index (RVI) in Step2."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The image with the added RVI band (SR_1 and SR_2) from Step2 is used as input to visualize the mean intensity of original and RVI-enhanced images on the map in Step3."
+  }
+]
+```
+
+In the first connection, the output of Step1 (filtered Sentinel-1 image collection) is used as input to Step2 (calculating Radar Vegetation Index). This is because Step2 requires the Sentinel-1 image as input to calculate the RVI.
+
+In the second connection, the output of Step2 (image with the added RVI band) is used as input to Step3 (visualizing images on the map). This is because Step3 requires the mean intensity images as input to visualize the images on the map, and the output of Step2 (image with the added RVI band) is used to calculate the mean intensity images.

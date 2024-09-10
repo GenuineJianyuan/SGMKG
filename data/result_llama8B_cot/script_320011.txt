@@ -1,0 +1,25 @@
+﻿The final JSON array of connections is:
+```json
+[
+  {
+    "relationship": ["Step1", "Step3"],
+    "reason": "The composite image with the mean methane concentration band is used as input for Step3 to sample the methane data within the area of interest."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The area of interest polygon geometry is used as input for Step3 to sample the methane data within the defined area."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The FeatureCollection with latitude, longitude, and methane concentration properties is used as input for Step4 to calculate the global mean and standard deviation of methane concentrations."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The global mean and standard deviation of methane concentrations are used as input for Step5 to perform IDW interpolation."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The interpolated methane concentrations are used as input for Step6 to visualize the methane data on a map."
+  }
+]
+```

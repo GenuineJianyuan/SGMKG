@@ -1,0 +1,12 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is 'Landsat 7 imagery with NDVI band added', which serves as the input for Step2. Step2 requires this modified Landsat imagery to build a quality mosaic based on the NDVI values calculated in Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is 'Quality mosaic image based on NDVI values', which is used as the input for Step3. Step3 visualizes the greenest pixels from the quality mosaic created in Step2, thus relying on the output of Step2 to perform its function."
+    }
+]
+```

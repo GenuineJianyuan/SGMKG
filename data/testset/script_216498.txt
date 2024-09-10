@@ -1,0 +1,43 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code aims to analyze nighttime lights data for the country of Tanzania in the year 2017. It utilizes satellite imagery datasets from NOAA/DMSP-OLS and NOAA/VIIRS/DNB to calculate the average radiance of nighttime lights for the specified time period. The code clips the data to the boundary of Tanzania and visualizes the results on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Image Collection",
+        "Step description": "The purpose of this step is to extract the images within the specified time range. To implement this, the filterDate() function is called on the 'imageCollection2' ImageCollection using the start and end dates. This operation filters the images to create the 'nightlights2017' ImageCollection.", 
+        "Input": ["imageCollection2", "start date", "end date"], 
+        "Output":["nightlights2017"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate Mean Radiance",
+        "Step description": "This step aims to calculate the average radiance of nighttime lights for the entire year. The mean() function is applied to compute the mean value of radiance for all images in the 'nightlights2017' ImageCollection.", 
+        "Input": ["nightlights2017"], 
+        "Output":["nightlights2017"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Clip to Tanzania Boundary",
+        "Step description": "The purpose of this step is to focus the analysis on the area of interest by clipping the 'nightlights2017' Image to the boundary of Tanzania. The clip() function is used with inputs of the mean nighttime lights Image 'nightlights2017' and the Tanzania boundary 'table'. The output is the clipped Image 'nightlights2017'.", 
+        "Input": ["nightlights2017", "Tanzania boundary 'table'"], 
+        "Output":["nightlights2017"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Select Avg Radiance Band",
+        "Step description": "In this step, the purpose is to isolate the average radiance band for visualization. The select() function is called to select the 'avg_rad' band from the 'nightlights2017' Image.", 
+        "Input": ["nightlights2017"], 
+        "Output":["Image with only the 'avg_rad' band"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Add Layer to Map",
+        "Step description": "The final step is to visualize the results on the map by adding the 'nightlights2017' Image with only the 'avg_rad' band. The addLayer() function is used to display the visualization of nighttime lights data on the map.", 
+        "Input": ["Image with only the 'avg_rad' band"], 
+        "Output":["Visualization of nighttime lights data on the map"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization, I will identify the combination relationships between the steps. Here is the output in the required JSON array format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Filtered Sentinel-2 image (SE2_2019)' from Step1 is used as input in Step2 to calculate the Normalized Difference Vegetation Index (NDVI)."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'Image with NDVI band (SE2_2019WithNDVI)' from Step2 is used as input in Step3 to sample training data from labeled examples."
+    },
+    {
+        "relationship":["Step2", "Step5"],
+        "reason": "The output 'Image with NDVI band (SE2_2019WithNDVI)' from Step2 is used as input in Step5 to classify the image into different land cover classes."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'Training data (training)' from Step3 is used as input in Step4 to train a Random Forest classifier."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output 'Trained Random Forest classifier (classifier)' from Step4 is used as input in Step5 to classify the image into different land cover classes."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the two steps.

@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'counties (FeatureCollection)' from Step1 is used as input in Step2 to calculate the area of each county."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'countiesWithArea (FeatureCollection)' from Step2 is used as input in Step3 to filter out counties that are smaller than 3,000 square kilometers."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'smallCounties (FeatureCollection)' from Step3 is used as input in Step4 to visualize the smaller counties on the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 and Step2: The output `counties (FeatureCollection)` from Step1 is used as input in Step2 to calculate the area of each county.
+2. Step2 and Step3: The output `countiesWithArea (FeatureCollection)` from Step2 is used as input in Step3 to filter out counties that are smaller than 3,000 square kilometers.
+3. Step3 and Step4: The output `smallCounties (FeatureCollection)` from Step3 is used as input in Step4 to visualize the smaller counties on the map.
+
+These connections exist because the output of one step is used as input in the subsequent step, as indicated by the `Input` and `Output` fields in each step's description.

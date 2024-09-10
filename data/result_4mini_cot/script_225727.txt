@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered Landsat 8 image', which is used as input in Step2 to calculate the NDVI. Step1 filters the Landsat 8 image collection based on location and date range, providing the necessary images for NDVI calculation in Step2."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Image with NDVI band', which is used as input in Step3. Step2 calculates the NDVI for a single image, and Step3 maps this calculation across the entire Landsat 8 image collection, adding the NDVI band to each image."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Landsat 8 image collection with NDVI band added to each image', which is used as input in Step4. Step3 prepares the collection by adding NDVI bands, and Step4 uses this collection to create a greenest pixel composite based on the NDVI values."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Greenest pixel composite image', which is used as input in Step5. Step4 generates the composite image representing the greenest pixels, and Step5 displays this composite on the map for visualization."
+    }
+]
+```

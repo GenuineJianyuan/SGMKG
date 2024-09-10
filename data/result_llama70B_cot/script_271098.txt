@@ -1,0 +1,46 @@
+﻿Here is the JSON array representing the combination relationships between the steps:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Loaded Landsat 8 images' from Step1 is used as input in Step2 to calculate NDSI and threshold."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'Loaded Landsat 8 images' from Step1 is used as input in Step3 to separate water from snow."
+    },
+    {
+        "relationship":["Step2", "Step4"],
+        "reason": "The output 'NDSI image' from Step2 is used as input in Step4 to threshold NDSI for snow-covered pixels."
+    },
+    {
+        "relationship":["Step3", "Step5"],
+        "reason": "The output 'Boolean image indicating water pixels' from Step3 is used as input in Step5 to replace snow pixels."
+    },
+    {
+        "relationship":["Step2", "Step5"],
+        "reason": "The output 'NDSI image' from Step2 is used as input in Step5 to replace snow pixels."
+    },
+    {
+        "relationship":["Step1", "Step5"],
+        "reason": "The output 'Loaded Landsat 8 images' from Step1 is used as input in Step5 to replace snow pixels."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output 'Replaced image with snow-free pixels' from Step5 is used as input in Step6 to visualize images on the map."
+    },
+    {
+        "relationship":["Step2", "Step6"],
+        "reason": "The output 'NDSI image' from Step2 is used as input in Step6 to visualize images on the map."
+    },
+    {
+        "relationship":["Step3", "Step6"],
+        "reason": "The output 'Boolean image indicating water pixels' from Step3 is used as input in Step6 to visualize images on the map."
+    },
+    {
+        "relationship":["Step1", "Step6"],
+        "reason": "The output 'Loaded Landsat 8 images' from Step1 is used as input in Step6 to visualize images on the map."
+    }
+]
+```

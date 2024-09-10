@@ -1,0 +1,21 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output in the required JSON format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Sentinel-1 image collection (S1_1 and S1_2)', is used as input in Step2 to calculate the Radar Vegetation Index (RVI)."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Image with added RVI band (SR_1 and SR_2)', is used as input in Step3 to visualize the mean intensity of RVI-enhanced images on the map."
+    }
+]
+```
+
+Here's the explanation for each connection:
+
+1. The output of Step1, which is the filtered Sentinel-1 image collection (S1_1 and S1_2), is used as input in Step2 to calculate the Radar Vegetation Index (RVI).
+2. The output of Step2, which is the image with the added RVI band (SR_1 and SR_2), is used as input in Step3 to visualize the mean intensity of RVI-enhanced images on the map.
+
+Note that there is no direct connection between Step1 and Step3, as the output of Step1 is not directly used in Step3. Instead, the output of Step1 is processed in Step2, and the resulting output is then used in Step3.

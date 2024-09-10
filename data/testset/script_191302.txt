@@ -1,0 +1,43 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling script that processes Landsat 8 satellite imagery within a specific area of interest (AOI) and time frame. It filters the Landsat image collection based on date and cloud cover percentage, applies scaling factors to the optical and thermal bands, and visualizes the true color composite image. The final output is a map layer showing the true color composite image centered on a specific location.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Landsat Images",
+        "Step description": "The purpose of this step is to filter the Landsat image collection based on date and cloud cover percentage. This is achieved by using the `filterDate()` function to specify the date range and the `filter()` function to filter images based on cloud cover percentage. These functions are called to process the Landsat image collection and output a filtered Landsat image collection.",
+        "Input": ["Landsat image collection"],
+        "Output":["Filtered Landsat image collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Apply Scaling Factors",
+        "Step description": "The purpose of this step is to apply scaling factors to the optical and thermal bands of the Landsat images. This is done by selecting the optical and thermal bands, multiplying them by the respective scaling factors, and adding offsets. These operations are carried out to process the Landsat image collection and output a Landsat image collection with scaled bands.",
+        "Input": ["Landsat image collection"],
+        "Output":["Landsat image collection with scaled bands"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Add Scaled Bands",
+        "Step description": "The purpose of this step is to add the scaled optical and thermal bands back to the Landsat images. This is achieved by adding the scaled bands to the Landsat image collection. The operation is performed to process the Landsat image collection with scaled bands and output a Landsat image collection with additional scaled bands.",
+        "Input": ["Landsat image collection with scaled bands"],
+        "Output":["Landsat image collection with additional scaled bands"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize True Color Composite",
+        "Step description": "The purpose of this step is to visualize the true color composite image using the scaled bands. This is done by adding the image to the map with specified visualization parameters (bands, min, max) and setting the map center. These functions are called to process the Landsat image collection with scaled bands and output a true color composite image displayed on the map.",
+        "Input": ["Landsat image collection with scaled bands"],
+        "Output":["True color composite image displayed on the map"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Set Map Center",
+        "Step description": "The purpose of this step is to set the map center to a specific location. This is achieved by setting the map center coordinates to the specified location. The operation is performed to process the specific location coordinates and output a map centered on the specified location.",
+        "Input": ["Specific location coordinates"],
+        "Output":["Map centered on the specified location"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1 is the 'Loaded Landsat composite image for the year 2001', which is used as the input in Step4 to create a training dataset by sampling the input image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Defined region of interest geometry', which is used as the input in Step3 to display the defined region of interest on the map."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output from Step2, 'Defined region of interest geometry', is used as an input in Step4 to create a training dataset by sampling the input image within the defined region of interest."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "The output from Step3 is the 'Displayed region of interest on the map', which indicates the area of interest. This area is used in Step6 as the 'Region of interest geometry' to cluster the input image."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Training dataset for clustering', which is used as the input in Step5 to train the KMeans clusterer."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the 'Trained KMeans clusterer', which is used as the input in Step6 to cluster the input image."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is the 'Clustered image within the region of interest', which is used as the input in Step7 to display the clustered image on the map."
+    }
+]
+```

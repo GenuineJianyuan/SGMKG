@@ -1,0 +1,22 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps and create a JSON array with the required format.
+
+Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The NDVI image computed in Step1 is used as input for the Canny edge detector algorithm in Step2."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The Canny edge detection result from Step2 is used as input for the Hough Transform algorithm in Step3."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The Hough transform result from Step3 is used to display the results on a map in Step4."
+  }
+]
+```
+
+In this JSON array, each object represents a connection between two steps. The "relationship" key specifies the pair of steps, and the "reason" key explains the reason for the connection, including the output-input relationship between the two steps.

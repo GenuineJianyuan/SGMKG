@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the 'Loaded Landsat image', which is necessary for Step2 to define the region of interest. However, since Step2 does not directly use the output of Step1, this relationship does not exist."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the 'Geometry object representing the region', which is used as input in Step3 to visualize the defined region of interest on the map."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 does not produce an output that is used as input in Step4, so this relationship does not exist."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs the 'Training dataset', which is used as input in Step5 to instantiate and train the KMeans clustering algorithm."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs the 'Trained KMeans clusterer', which is used as input in Step6 to apply the trained clusterer to the input image and generate clusters."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "Step6 outputs the 'Clustered image', which is used as input in Step7 to visualize the clustered image on the map with random colors."
+    }
+]
+```

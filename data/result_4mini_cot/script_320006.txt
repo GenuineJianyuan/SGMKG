@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is a feature collection of country boundaries, which is used as input in Step2 to filter the specific feature for the Congo Republic."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a feature collection containing only the Congo Republic feature, which is not directly used as input in Step3. However, the context of the analysis is established, leading to the retrieval of relevant data in Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the forest loss image from the Hansen Global Forest Change dataset, which is used as input in Step4 to select the 'loss' band from this image."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs an image with only the 'loss' band selected, which is used as input in Step5 to calculate the sum of forest loss pixels within the Congo Republic boundary."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "While Step2 does not directly feed into Step5, the output from Step2 (Congo Republic boundary) is essential for Step5, as it defines the area over which the sum of forest loss pixels is calculated."
+    }
+]
+```

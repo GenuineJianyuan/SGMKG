@@ -1,0 +1,21 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'slopeDict' from Step1 is used as input in Step3 to visualize the slope layer on the map."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'waterDict' from Step2 is used as input in Step3 to visualize the water occurrence layer on the map."
+    }
+]
+```
+
+Here's the explanation for each connection:
+
+1. The output `slopeDict` from Step1 is used as input in Step3 to visualize the slope layer on the map. This connection exists because Step3 requires the slope data to add the slope layer to the map.
+2. The output `waterDict` from Step2 is used as input in Step3 to visualize the water occurrence layer on the map. This connection exists because Step3 requires the water occurrence data to add the water occurrence layer to the map.
+
+There is no direct connection between Step1 and Step2 because they operate on different datasets (SRTM and Global Surface Water) and produce independent outputs.

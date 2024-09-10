@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a solution for a specific geo-analysis task using Google Earth Engine. The code aims to mask out cloud and cloud shadow pixels from Landsat 8 Surface Reflectance imagery within a specified time period and spatial extent. It then visualizes the resulting image on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Landsat Imagery",
+        "Step description": "The purpose of this step is to filter the Landsat 8 Surface Reflectance imagery based on date and spatial extent. This is achieved by using the `filterDate` and `filterBounds` functions to filter the Landsat imagery for the date range '2018-01-01' to '2018-01-16' and the specified geometry. The code filters the Landsat 8 Surface Reflectance imagery from the 'LANDSAT/LC08/C01/T1_SR' collection for the specified date range and spatial extent.",
+        "Input": ["Landsat 8 Surface Reflectance imagery from the 'LANDSAT/LC08/C01/T1_SR' collection", "Date range '2018-01-01' to '2018-01-16'", "Specified geometry"],
+        "Output":["Filtered Landsat 8 Surface Reflectance imagery based on the specified date range and spatial extent"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Mask Cloud and Cloud Shadow Pixels",
+        "Step description": "The purpose of this step is to mask out cloud and cloud shadow pixels from the Landsat 8 Surface Reflectance imagery. This is achieved by defining a function `maskL8sr` that masks out cloud and cloud shadow pixels by checking the pixel quality assessment (QA) band for cloud shadow and cloud bits. The image mask is then updated based on these conditions.",
+        "Input": ["Landsat 8 Surface Reflectance imagery"],
+        "Output":["Landsat 8 Surface Reflectance imagery with cloud and cloud shadow pixels masked out"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Set Visualization Parameters",
+        "Step description": "The purpose of this step is to set visualization parameters for displaying the Landsat imagery on the map. This is achieved by defining visualization parameters including bands to display (B4, B3, B2), minimum and maximum pixel values for display, and gamma correction for brightness.",
+        "Input": ["Landsat 8 Surface Reflectance imagery"],
+        "Output":["Visualization parameters set for displaying the Landsat imagery on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Center Map and Add Layer",
+        "Step description": "The purpose of this step is to center the map on a specific location and add the filtered Landsat imagery layer to the map. This is achieved by centering the map on coordinates (114.0079, -26.0765) using the `Map.setCenter` function, and adding the filtered Landsat 8 Surface Reflectance imagery layer to the map with the visualization parameters set earlier using the `Map.addLayer` function.",
+        "Input": ["Center coordinates (114.0079, -26.0765)", "Filtered Landsat 8 Surface Reflectance imagery"],
+        "Output":["Map centered on the specified location with the Landsat imagery layer added for visualization"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,56 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code performs array-based spectral unmixing using Landsat 5 images from June through September 2007. It creates a mosaic of Landsat 5 images, selects specific bands, computes representative endmembers, calculates the pseudo inverse, and then unmixes the image to show the fractions of urban, vegetation, and water. The final result is displayed as a colored image on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Create Mosaic Image",
+        "Step description": "The purpose of this step is to create a mosaic of Landsat 5 images from June through September 2007. This is achieved by using the ee.ImageCollection() function to create a collection of Landsat 5 images, then filtering the images by date range using the filterDate() function. Specific bands are selected using the select() function, and the median value for each pixel is computed using the median() function. The sequence of operations includes filtering images by date, selecting specific bands, and computing the median value.",
+        "Input": ["Landsat 5 image collection"],
+        "Output":["Mosaic image with selected bands"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Define Endmembers",
+        "Step description": "The purpose of this step is to define representative endmembers for urban, vegetation, and water. This step involves defining arrays for urban, vegetation, and water endmembers. There are no specific functions used in this step.",
+        "Input": ["None"],
+        "Output":["Arrays for urbanEndmember, vegEndmember, waterEndmember"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Compute Pseudo Inverse",
+        "Step description": "The purpose of this step is to compute the pseudo inverse of the endmembers. This is done by creating an array of endmembers, calculating the pseudo inverse using the matrixPseudoInverse() function, and then transposing the result. The input for this step is the arrays for endmembers, and the output is the pseudo inverse matrix.",
+        "Input": ["Arrays for endmembers"],
+        "Output":["Pseudo inverse matrix"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Convert to 2D Array",
+        "Step description": "The purpose of this step is to convert the bands to a 2D array. This is achieved by using the toArray() function to convert bands to a 1D vector per pixel, and then concatenating the bands along axis 1 to form a 2D array.",
+        "Input": ["Mosaic image"],
+        "Output":["2D array of pixel values"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Matrix Multiply",
+        "Step description": "The purpose of this step is to matrix multiply the pseudo inverse of the endmembers by the pixels. This involves multiplying the pseudo inverse matrix by the pixel values array using the matrixMultiply() function.",
+        "Input": ["Pseudo inverse matrix", "Pixel values array"],
+        "Output":["Endmembers fractions array"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Create Colored Image",
+        "Step description": "The purpose of this step is to create a colored image of the endmember fractions. This is achieved by projecting the 3x1 array to 1D vectors at each pixel using the arrayProject() function, and then flattening the array to a regular scalar image with the arrayFlatten() function.",
+        "Input": ["Endmembers fractions array"],
+        "Output":["Colored image showing urban, vegetation, and water fractions"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Display Results on Map",
+        "Step description": "The purpose of this step is to display the results on the map. This involves setting the center of the map using Map.setCenter(), and adding layers for the colored image and a hillshade layer using Map.addLayer(). The inputs for this step are the colored image and hillshade layer, and the output is the displayed map with the results.",
+        "Input": ["Colored image", "Hillshade layer"],
+        "Output":["Displayed map with the results"]
+        }
+       ] 
+}
+```

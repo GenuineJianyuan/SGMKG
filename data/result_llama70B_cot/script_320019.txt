@@ -1,0 +1,36 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Landsat 8 image collection', is used as input in Step2 to create a cloud-free composite image."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Cloud-free composite image', is used as input in Step3 to segment the image using the SNIC algorithm."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Segmented image', is used as input in Step4 to prepare training samples by sampling regions based on predefined land cover classes."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Training data samples', is used as input in Step5 to train a Random Forest classifier."
+    },
+    {
+        "relationship":["Step3", "Step6"],
+        "reason": "The output of Step3, 'Segmented image', is used as input in Step6 to classify the segmented image using the trained Random Forest classifier."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output of Step5, 'Trained Random Forest classifier', is used as input in Step6 to classify the segmented image."
+    },
+    {
+        "relationship":["Step6", "Step7"],
+        "reason": "The output of Step6, 'Classified image', is used as input in Step7 to visualize the Land Use and Land Cover (LULC) classification results on the map."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the two steps.

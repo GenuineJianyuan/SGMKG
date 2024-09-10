@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Landsat 8 image', is used as input in Step2 to calculate the NDVI."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Image with NDVI band', is not directly used in Step3. However, the process of calculating NDVI is applied to all images in the collection in Step3."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output of Step1, 'Filtered Landsat 8 image collection', is used as input in Step3 to add the NDVI band to all images."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Landsat 8 image collection with NDVI band added to each image', is used as input in Step4 to create the greenest pixel composite."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Greenest pixel composite image', is used as input in Step5 to display the greenest pixel composite on the map."
+    }
+]
+```
+
+Note that I did not connect Step2 directly to Step4 or Step5 because the output of Step2 is not directly used in those steps. Instead, the process of calculating NDVI is applied to all images in the collection in Step3, and then the output of Step3 is used in Step4.

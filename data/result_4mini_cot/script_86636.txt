@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is 'Image with the occurrence band selected', which is used as input in Step2 to visualize the 'occurrence' band on the map."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is 'Image with the transition band selected', which is used as input in Step4 to visualize the 'transition' band on the map."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output from Step3 is 'Image with the transition band selected', which is used as input in Step5 to calculate the pixel area with transition classes."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is 'Image with pixel area and transition classes', which is used as input in Step6 to reduce the pixel values within the region of interest."
+    },
+    {
+        "relationship": ["Step3", "Step7"],
+        "reason": "The output from Step3 is 'Image with the transition band selected', which is used as input in Step7 to export the 'transition' image to Google Drive."
+    }
+]
+```

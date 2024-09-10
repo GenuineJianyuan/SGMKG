@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The NDVI image calculated in Step1 is used as input for Step2, where it is convolved with circular and square kernels to identify circular patterns in the image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The convolved images with circles and squares in Step2 are used as input for Step3, where the difference between the convolved images is calculated to highlight the differences between the circular and square patterns."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The difference image in Step3 is used as input for Step4, where the local maxima in the difference image are identified and highlighted as 'Kernel Peaks' to identify the key features in the image."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The highlighted peaks image in Step4 is not used as input for any subsequent steps, so there is no connection."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The NDVI image in Step5 is used as input for Step6, where the Canny edge detector is applied to detect the edges of the features, and the edges are highlighted using a ring kernel."
+    }
+]
+```
+
+Note that Step4 does not have a direct connection to any subsequent steps, as its output is not used as input for any other steps.

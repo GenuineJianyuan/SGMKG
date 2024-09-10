@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is a filtered image collection containing images from the specified date range. This output serves as the input for Step2, which further filters this collection based on cloud cover percentage to obtain less cloudy granules."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is a further filtered image collection with less cloudy granules. This output is used as the input for Step3, where a cloud and cirrus masking function is applied to this collection to mask out clouds and cirrus."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is an image collection with clouds and cirrus masked out. This processed image collection is used as the input for Step4, where the RGB composite of these images is visualized over the Sharqiya Governorate boundary."
+    }
+]
+```

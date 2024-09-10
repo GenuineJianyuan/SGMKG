@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Landsat 5 image with NDVI band added (L5wNDVI)', which is not directly used as input in Step2. However, Step2 limits the training data to a specific feature collection (Irr) and remaps classes, which is a preparatory step for the subsequent sampling and training process."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is 'Remapped training data (training)', which is used as input in Step3 along with the 'Landsat image with NDVI band (L5wNDVI)'. Step3 samples the data based on the remapped training data, preparing it for training."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is 'Sampled training sites (training_sites)', which is used as input in Step4. In Step4, the SVM classifier is trained using these sampled training sites."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is 'Trained SVM classifier (trained)', which is used as input in Step5. In Step5, the Landsat image with the NDVI band (L5wNDVI) is classified using this trained SVM classifier."
+    }
+]
+```

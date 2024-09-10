@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationship of these steps.
+
+Here is the list of connections in JSON format:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The processed Sentinel-2 Surface Reflectance data from Step1 is used as input to calculate NDVI and EVI indices in Step2."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The NDVI and EVI indices calculated in Step2 are used as input to calculate the Drought Ratio Index (DRI) in Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The Drought Ratio Index (DRI) calculated in Step3 is used as input to visualize the DRI on the map in Step4."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The Drought Ratio Index (DRI) visualized in Step4 is used as input to export the DRI as a GeoTIFF file in Step5."
+    }
+]
+```
+
+These connections illustrate the sequence of steps and the data flow between them. Each connection explains the reason why the output of one step is used as input for the next step.

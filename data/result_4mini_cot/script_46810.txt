@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Buffered geometry', which is used as input in Step2. Step2 retrieves and visualizes the aerosol index data by clipping it to the buffered geometry created in Step1."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is the 'Buffered geometry', which is used as input in Step3. Step3 retrieves and visualizes the carbon monoxide data by clipping it to the buffered geometry created in Step1."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1 is the 'Buffered geometry', which is used as input in Step4. Step4 retrieves and visualizes the nitrogen dioxide data by clipping it to the buffered geometry created in Step1."
+    },
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output from Step1 is the 'Buffered geometry', which is used as input in Step5. Step5 retrieves and visualizes the sulfur dioxide data by clipping it to the buffered geometry created in Step1."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "The output from Step1 is the 'Buffered geometry', which is used as input in Step6. Step6 retrieves and visualizes the total aerosol optical depth data, although it does not directly use the buffered geometry, it is still part of the overall analysis context initiated by Step1."
+    }
+]
+```

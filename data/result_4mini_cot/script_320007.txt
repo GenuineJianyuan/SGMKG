@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1 is the 'Start and end dates in seconds', which is used as input in Step4 to create a binary layer for the year 2012 in the FORMA dataset."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is a geometry object representing the region, which is necessary for Step3 to load the FORMA dataset within the defined region of interest."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the FORMA dataset as an image object, which is used in Step4 to create a binary layer indicating deforestation in 2012 based on the FORMA dataset."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the Hansen dataset as an image object, which is used in Step6 to generate an image showing deforestation in 2012 where both datasets indicate loss."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The output from Step4 is the binary layer indicating deforestation in 2012, which is used as input in Step6 along with the Hansen dataset to create an image showing deforestation in 2012."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output from Step6 is the image showing deforestation in 2012, which is used as input in Step7 to display the deforestation data on the map for visualization."
+    }
+]
+```

@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to perform a geo-analysis task focusing on Thailand using Landsat 8 satellite imagery. The script filters Landsat 8 images by date, cloud cover, and location within Thailand. It calculates the Normalized Difference Vegetation Index (NDVI) from the selected bands (NIR and RED) and visualizes the NDVI on the map. The final output is a color-coded NDVI map of Thailand.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load and Filter Landsat 8 Images",
+        "Step description": "The purpose of this step is to load Landsat 8 images and filter them based on specific criteria. This is achieved by loading Landsat 8 images, filtering by date range, selecting specific bands, filtering by cloud cover, filtering by location, and calculating the median value. The functions involved include loading Landsat 8 images, filtering by date, selecting specific bands, filtering by cloud cover, filtering by location, and calculating the median. The Google Earth Engine (GEE) APIs used are ee.ImageCollection, filterDate, select, filterMetadata, filterBounds, and reduce. ",
+        "Input": ["Landsat 8 image collection","date range","cloud cover threshold","Thailand's geometry"], 
+        "Output":["Filtered and processed Landsat 8 image collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to calculate the Normalized Difference Vegetation Index (NDVI) from the Landsat 8 images. This is done by applying the NDVI formula (NIR-RED/NIR+RED) to the Landsat 8 images. The function involved is calculating NDVI. The GEE API used is normalizedDifference.",
+        "Input": ["Landsat 8 image collection with selected bands (NIR and RED)"], 
+        "Output":["NDVI image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Set Map Center and Add NDVI Layer",
+        "Step description": "The purpose of this step is to set the center of the map and add the NDVI layer for visualization. This is achieved by setting the map center coordinates and adding the NDVI layer with specified visualization parameters. The functions involved include setting map center and adding NDVI layer to the map. The GEE API used is Map.addLayer.",
+        "Input": ["NDVI image"], 
+        "Output":["Map with NDVI layer centered on Thailand"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Define NDVI Visualization Parameters",
+        "Step description": "The purpose of this step is to define the visualization parameters for the NDVI layer. This is done by defining the color palette and range for the NDVI visualization. The function involved is defining visualization parameters.",
+        "Input": ["NDVI image"], 
+        "Output":["Visualization parameters for the NDVI layer"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Add NDVI Layer to Map",
+        "Step description": "The purpose of this step is to add the NDVI layer with color-coded visualization to the map. This is achieved by adding the NDVI layer to the map with the defined visualization parameters. The function involved is adding NDVI layer with color-coded visualization. The GEE API used is Map.addLayer.",
+        "Input": ["NDVI image","visualization parameters"], 
+        "Output":["Map with NDVI layer displayed in color-coded format"]
+        }
+       ] 
+}
+```

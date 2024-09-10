@@ -1,0 +1,44 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is 'elev (elevation image)', which is used as input in Step3 to add the elevation data to the map."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output from Step1 is 'elev (elevation image)', which is used as input in Step4 to compute the hillshade from the elevation data."
+    },
+    {
+        "relationship": ["Step1", "Step5"],
+        "reason": "The output from Step1 is 'elev (elevation image)', which is used as input in Step5 to create a sea mask based on elevation values."
+    },
+    {
+        "relationship": ["Step4", "Step9"],
+        "reason": "The output from Step4 is 'shade (hillshade image)', which is used as input in Step9 to normalize the hillshade values to the range [0, 1]."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is 'sea (sea mask image)', which is used as input in Step6 to visualize the elevation data while masking the sea areas."
+    },
+    {
+        "relationship": ["Step6", "Step8"],
+        "reason": "The output from Step6 is 'Visualized elevation data', which is used as input in Step8 to convert the visualized elevation data to HSV color space."
+    },
+    {
+        "relationship": ["Step8", "Step10"],
+        "reason": "The output from Step8 is 'HSV image', which is used as input in Step10 to create a styled visualization image by combining it with the normalized hillshade."
+    },
+    {
+        "relationship": ["Step9", "Step10"],
+        "reason": "The output from Step9 is 'v (normalized hillshade image)', which is used as input in Step10 to create a styled visualization image by combining it with the HSV image."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is 'Centered map view', which is a prerequisite for visualizing the elevation data in Step3, although it does not directly serve as input."
+    },
+    {
+        "relationship": ["Step3", "Step7"],
+        "reason": "The output from Step3 is 'Displayed elevation data on the map', which is part of the visual context needed to create a mosaic of land and sea visualizations in Step7."
+    }
+]
+```

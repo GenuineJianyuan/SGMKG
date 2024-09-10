@@ -1,0 +1,43 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code focuses on resampling a Landsat image over San Francisco, California, USA. The code first loads the Landsat image, sets display parameters, and displays the original image using nearest neighbor resampling. It then forces the next reprojection to use bicubic resampling and displays the resampled image.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Landsat Image",
+        "Step description": "The purpose of this step is to load a Landsat image over San Francisco, California, USA. The function used is to load the Landsat image using its ID 'LANDSAT/LC08/C02/T1_TOA/LC08_044034_20160323'. This operation loads the Landsat image by specifying its ID as input and outputs the loaded Landsat image.", 
+        "Input": ["LANDSAT/LC08/C02/T1_TOA/LC08_044034_20160323"], 
+        "Output":["Loaded Landsat image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Set Display Parameters",
+        "Step description": "The purpose of this step is to set display and visualization parameters. The function used is to set the center of the map to San Francisco coordinates (-122.37383, 37.6193) and define visualization parameters for bands B4, B3, and B2 with a maximum value of 0.3. This operation takes map center coordinates and visualization parameters as input and updates the display settings as output.", 
+        "Input": ["Map center coordinates", "Visualization parameters"], 
+        "Output":["Updated display settings"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Display Original Image",
+        "Step description": "The purpose of this step is to display the original Landsat image using nearest neighbor resampling. The function used is to add the original Landsat image to the map. This operation adds the Landsat image to the map using the defined visualization parameters and default nearest neighbor resampling. It takes Landsat image and visualization parameters as input and displays the original Landsat image on the map as output.", 
+        "Input": ["Landsat image", "Visualization parameters"], 
+        "Output":["Displayed original Landsat image on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Bicubic Resampling",
+        "Step description": "The purpose of this step is to force the next reprojection to use bicubic resampling. The function used is to resample the Landsat image using bicubic interpolation. This operation resamples the Landsat image using bicubic interpolation method to improve image quality. It takes the original Landsat image as input and outputs the resampled Landsat image using bicubic interpolation.", 
+        "Input": ["Original Landsat image"], 
+        "Output":["Resampled Landsat image using bicubic interpolation"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Display Resampled Image",
+        "Step description": "The purpose of this step is to display the resampled Landsat image using bicubic resampling. The function used is to add the resampled Landsat image to the map. This operation adds the resampled Landsat image to the map using the same visualization parameters as the original image but with bicubic resampling. It takes the resampled Landsat image and visualization parameters as input and displays the resampled Landsat image on the map as output.", 
+        "Input": ["Resampled Landsat image", "Visualization parameters"], 
+        "Output":["Displayed resampled Landsat image on the map"]
+        }
+       ] 
+}
+```

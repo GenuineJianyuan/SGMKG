@@ -1,0 +1,56 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial analysis workflow using Google Earth Engine to analyze surface water occurrence and transition classes within a specified region of interest. The code loads the Global Surface Water dataset, selects the 'occurrence' and 'transition' bands, calculates the pixel area with transition classes, reduces the pixel values within the region of interest, and exports the transition classes image to Google Drive. The spatial scope is the Mekong River Basin in Southeast Asia, and the time scope is from 1984 to 2015.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Global Surface Water dataset and select 'occurrence' band",
+        "Step description": "The purpose of this step is to load the Global Surface Water dataset and select the 'occurrence' band. This step involves loading the 'JRC/GSW1_0/GlobalSurfaceWater' image and selecting the 'occurrence' band. The function called in this step is to load the image and select a specific band. The Google Earth Engine API used is ee.Image.load and ee.Image.select.", 
+        "Input": ["Global Surface Water dataset"], 
+        "Output":["Image with the 'occurrence' band selected"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Visualize 'occurrence' band on the map",
+        "Step description": "The purpose of this step is to visualize the 'occurrence' band on the map. This step involves adding the 'occurrence' band as a layer to the map. The function called in this step is to add a layer to the map. The Google Earth Engine API used is Map.addLayer.", 
+        "Input": ["Image with the 'occurrence' band selected"], 
+        "Output":["Visualization of the 'occurrence' band on the map"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Select 'transition' band from Global Surface Water dataset",
+        "Step description": "The purpose of this step is to select the 'transition' band from the Global Surface Water dataset. This step involves selecting the 'transition' band from the Global Surface Water dataset. The function called in this step is to select a specific band. The Google Earth Engine API used is ee.Image.select.", 
+        "Input": ["Global Surface Water dataset"], 
+        "Output":["Image with the 'transition' band selected"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize 'transition' band on the map",
+        "Step description": "The purpose of this step is to visualize the 'transition' band on the map. This step involves adding the 'transition' band as a layer to the map. The function called in this step is to add a layer to the map. The Google Earth Engine API used is Map.addLayer.", 
+        "Input": ["Image with the 'transition' band selected"], 
+        "Output":["Visualization of the 'transition' band on the map"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Calculate pixel area with transition classes",
+        "Step description": "The purpose of this step is to calculate the pixel area with transition classes. This step involves adding bands to the image and calculating the pixel area with transition classes. The function called in this step is to add bands and calculate pixel area. The Google Earth Engine API used is ee.Image.addBands and ee.Image.reduceRegion.", 
+        "Input": ["Image with the 'transition' band selected"], 
+        "Output":["Image with pixel area and transition classes"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Reduce pixel values within region of interest",
+        "Step description": "The purpose of this step is to reduce the pixel values within the region of interest. This step involves reducing the pixel values within the specified region of interest, grouping by transition class values. The function called in this step is to reduce region. The Google Earth Engine API used is ee.Image.reduceRegion.", 
+        "Input": ["Image with pixel area and transition classes", "Region of interest"], 
+        "Output":["Reduction results grouped by transition class values"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Export 'transition' image to Google Drive",
+        "Step description": "The purpose of this step is to export the 'transition' image to Google Drive. This step involves exporting the 'transition' image to Google Drive with specified parameters. The function called in this step is to export image to Drive. The Google Earth Engine API used is ee.Image.getDownloadURL.", 
+        "Input": ["Image with the 'transition' band selected", "Export parameters"], 
+        "Output":["Exported image to Google Drive"]
+        }
+       ] 
+}
+```

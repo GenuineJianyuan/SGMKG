@@ -1,0 +1,24 @@
+﻿Based on the provided JSON summarization, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Loaded Landsat image) is used as input for Step2 (Set Display Parameters) to set the display and visualization parameters."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (Updated display settings) is used to update the display settings for Step3 (Display Original Image) to display the original Landsat image."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3 (Displayed original Landsat image on the map) is not used as input for Step4 (Bicubic Resampling). Instead, Step4 uses the original Landsat image as input, which is loaded in Step1."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4 (Resampled Landsat image using bicubic interpolation) is used as input for Step5 (Display Resampled Image) to display the resampled Landsat image."
+  }
+]
+```
+
+Note that there is no direct connection between Step1 and Step3, as Step2 is used to set the display parameters before displaying the original image. Similarly, Step3 does not provide any output that is used as input for Step4.

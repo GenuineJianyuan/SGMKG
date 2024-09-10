@@ -1,0 +1,32 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output 'Mosaic image with selected bands' from Step1 is used as input in Step4 to convert the bands to a 2D array."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output 'Arrays for urbanEndmember, vegEndmember, waterEndmember' from Step2 is used as input in Step3 to compute the pseudo inverse of the endmembers."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output 'Pseudo inverse matrix' from Step3 is used as input in Step5 to matrix multiply the pseudo inverse of the endmembers by the pixels."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output '2D array of pixel values' from Step4 is used as input in Step5 to matrix multiply the pseudo inverse of the endmembers by the pixels."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output 'Endmembers fractions array' from Step5 is used as input in Step6 to create a colored image of the endmember fractions."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "The output 'Colored image showing urban, vegetation, and water fractions' from Step6 is used as input in Step7 to display the results on the map."
+    }
+]
+```
+
+These connections represent the flow of data between the steps, where the output of one step is used as input in the next step.

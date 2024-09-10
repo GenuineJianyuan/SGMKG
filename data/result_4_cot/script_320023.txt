@@ -1,0 +1,48 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "Step1 outputs a geometry object representing the northeastern provinces, which is used as input in Step3 to filter the Landsat 8 data by location."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the start and end date variables, which are used as input in Step3 to filter the Landsat 8 data by date."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs the filtered Landsat 8 data, which is used as input in Step4 to calculate NDVI for the Landsat images."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a Landsat image with an additional NDVI band, which is used as input in Step5 to apply the NDVI calculation to all images in the Landsat ImageCollection."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "Step3 outputs the filtered Landsat 8 data, which is not directly used in Step6, but both steps are parallel in the workflow. Step6 focuses on loading and filtering soil moisture data, which is a separate dataset."
+    },
+    {
+        "relationship": ["Step2", "Step6"],
+        "reason": "Step2 outputs the start and end date variables, which are used as input in Step6 to filter the soil moisture data by date."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "Step1 outputs a geometry object representing the northeastern provinces, which is used as input in Step6 to filter the soil moisture data by location."
+    },
+    {
+        "relationship": ["Step7", "Step8"],
+        "reason": "Step7 outputs visualization parameter objects for NDVI and soil moisture, which are used as input in Step8 to clip the NDVI and soil moisture data to the northeastern provinces boundary."
+    },
+    {
+        "relationship": ["Step4", "Step8"],
+        "reason": "Step4 outputs NDVI data, which is used as input in Step8 to clip the NDVI data to the northeastern provinces boundary."
+    },
+    {
+        "relationship": ["Step6", "Step8"],
+        "reason": "Step6 outputs filtered soil moisture data, which is used as input in Step8 to clip the soil moisture data to the northeastern provinces boundary."
+    },
+    {
+        "relationship": ["Step8", "Step9"],
+        "reason": "Step8 outputs clipped NDVI and soil moisture data, which are used as input in Step9 to visualize the data on the map."
+    }
+]
+```

@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is a geometry object representing the study area for Iowa, which is used as input in Step2 to filter the Landsat 8 imagery based on the defined study area."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is a median composite image for the filtered Landsat 8 imagery, which is used as input in Step3 to calculate the NDVI index from the Landsat 8 imagery."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is an image with the NDVI band, which is used as input in Step4 to identify corn fields based on the NDVI threshold."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is a binary image representing corn fields, which is used as input in Step5 to visualize the corn fields on the map."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is the visualization of corn fields on the map, which indirectly supports the analysis in Step6. However, the primary input for Step6 is the corn fields binary image from Step4, which is also related to the visualization process."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The output from Step4 is a binary image representing corn fields, which is used as input in Step6 to calculate the total area of corn fields in Iowa."
+    }
+]
+```

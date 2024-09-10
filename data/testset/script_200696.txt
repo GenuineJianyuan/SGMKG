@@ -1,0 +1,29 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process using Google Earth Engine to analyze the normalized burn ratio (NBR) before and after a specific date range for a given point location. The code filters Sentinel-2 satellite images for two different date ranges, calculates the NBR using different band combinations, and visualizes the results on the map. The purpose of this script is to assess the change in burn severity in the specified area over time.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Sentinel-2 Images",
+        "Step description": "The purpose of this step is to filter Sentinel-2 satellite images for a specific date range and location. This is achieved by using the 'ee.ImageCollection.filterDate()' and 'ee.ImageCollection.filterBounds()' functions to filter images for 'image_before' and 'image_after'. These operations help in selecting the relevant satellite images based on the specified criteria.",
+        "Input": ["Sentinel-2 image collection","date range","point location"], 
+        "Output":["Filtered Sentinel-2 images for 'image_before'","Filtered Sentinel-2 images for 'image_after'"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate NBR",
+        "Step description": "The purpose of this step is to calculate the Normalized Burn Ratio (NBR) using different band combinations. This is done by utilizing the 'ee.Image.normalizedDifference()' function with different band combinations ('B8'-'B11' and 'B8'-'B12') to derive NBR for 'image_after'. By performing these operations, NBR images 'image_NBR1' and 'image_NBR2' are generated.",
+        "Input": ["Sentinel-2 image for 'image_after'"], 
+        "Output":["NBR images 'image_NBR1'","NBR images 'image_NBR2'"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Visualize Images and NBR",
+        "Step description": "The purpose of this step is to visualize the satellite images and NBR results on the map. This is accomplished by adding image layers to the map for visualization using the 'Map.addLayer()' function. The layers added include 'image_after' with RGB and fire-enhanced bands, 'image_before' with RGB, and 'image_NBR1' with a specific color palette. This step provides a visual representation of the satellite images and NBR results on the map.",
+        "Input": ["Satellite images","NBR images","visualization parameters"], 
+        "Output":["Visual representation of satellite images and NBR results on the map"]
+        }
+       ] 
+}
+```

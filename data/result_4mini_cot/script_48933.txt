@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Landsat imagery dataset', which is used as input in Step2 to apply scaling factors to the optical and thermal bands."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is 'Landsat imagery with scaled optical and thermal bands', which is used as input in Step3 to visualize a false color composite image."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2 is 'Landsat imagery with scaled optical and thermal bands', which is also used as input in Step4 to visualize the thermal band image."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "The output of Step2 is 'Landsat imagery with scaled optical and thermal bands', which is used as input in Step5 to identify and visualize hotspots in the thermal band."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "The output of Step3 is 'False color composite image layer on the map', which contributes to the overall visualization displayed in Step6 when setting map options."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The output of Step4 is 'Thermal band image layer on the map', which also contributes to the overall visualization displayed in Step6 when setting map options."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 is 'Hotspot visualization layer on the map', which is included in the overall visualization displayed in Step6 when setting map options."
+    }
+]
+```

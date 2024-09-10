@@ -1,0 +1,32 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The filtered dataset for the year 2018 is used as input to select the 'BurnDate' band."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The image with only the 'BurnDate' band selected is used as input to visualize the burned area."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The image with burned areas is used as input to clip the burned area image to the study area."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The clipped image of burned areas within the study area is used as input to set the study area as the center of the map."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The map centered on the study area is used as input to export the clipped burned area image to Google Drive."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The filtered dataset for the year 2018 is used as input to clip the burned area image to the study area."
+    }
+]
+```
+
+Note that there are two connections between Step1 and Step4, as Step1 provides the filtered dataset for the year 2018, which is used as input to filter the dataset again in Step4.

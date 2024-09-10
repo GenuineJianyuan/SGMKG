@@ -1,0 +1,64 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code aims to analyze land use cover change in the Beijing region using Landsat 8 satellite imagery. The code defines the geographic boundary of Beijing, sets time ranges for 2020 and 2021, loads Landsat 8 image collection, calculates NDVI (Normalized Difference Vegetation Index), filters and composites images for 2020 and 2021, computes NDVI difference between the two years, visualizes the NDVI difference on the map, and sets the map center to Beijing.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Define Beijing boundary",
+        "Step description": "The purpose of this step is to define the spatial scope of the analysis to the Beijing region. To implement this step, the ee.Geometry.Rectangle() function is used to create a rectangle geometry representing the boundary of Beijing. The operations involve defining the rectangle using the coordinates for the western, southern, eastern, and northern boundaries of Beijing.",
+        "Input": ["Coordinates for the boundaries of Beijing"],
+        "Output":["Geometry object representing the boundary of Beijing"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Set time ranges",
+        "Step description": "The purpose of this step is to specify the time period for filtering Landsat images to 2020 and 2021. The start and end dates for 2020 and 2021 are defined by assigning specific dates to variables. This step involves setting the time ranges for the analysis.",
+        "Input": ["Start and end dates for 2020 and 2021"],
+        "Output":["Variables storing the time ranges"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Load Landsat images",
+        "Step description": "The purpose of this step is to access Landsat 8 satellite imagery for analysis. The ee.ImageCollection() function is used to load Landsat 8 images by specifying the Landsat 8 image collection identifier.",
+        "Input": ["Landsat 8 image collection identifier"],
+        "Output":["Landsat 8 image collection object"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Calculate NDVI",
+        "Step description": "The purpose of this step is to compute the Normalized Difference Vegetation Index (NDVI) for each image. A function is defined to calculate NDVI using the normalizedDifference() function, which is applied to Landsat images to calculate NDVI.",
+        "Input": ["Landsat image"],
+        "Output":["NDVI image"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Filter and composite images",
+        "Step description": "The purpose of this step is to select and combine images for the specified time periods. Landsat images are filtered based on location and date within the Beijing region and for 2020/2021, then composited using the median.",
+        "Input": ["Landsat image collection", "Time range", "Geographic boundary"],
+        "Output":["Composite NDVI image for 2020 and 2021"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Compute NDVI difference",
+        "Step description": "The purpose of this step is to calculate the difference in NDVI between 2021 and 2020. This is achieved by subtracting the NDVI image for 2020 from the NDVI image for 2021.",
+        "Input": ["NDVI images for 2020 and 2021"],
+        "Output":["NDVI difference image"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Visualize NDVI difference",
+        "Step description": "The purpose of this step is to display the NDVI difference on the map for visual analysis. The NDVI difference layer is added to the map by setting visualization parameters and adding the layer to the map.",
+        "Input": ["NDVI difference image", "Visualization parameters", "Geographic boundary"],
+        "Output":["Map visualization showing NDVI difference"]
+        },
+        {
+        "Step name":"Step8", 
+        "Short Name":"Set map center to Beijing",
+        "Step description": "The purpose of this step is to center the map view on the Beijing region. The Map.centerObject() function is used to set the map center by specifying the Beijing region geometry and zoom level for centering the map.",
+        "Input": ["Beijing region geometry"],
+        "Output":["Map centered on the Beijing region"]
+        }
+       ] 
+}
+```

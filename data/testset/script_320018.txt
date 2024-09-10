@@ -1,0 +1,43 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a geospatial analysis task that focuses on calculating the difference in Normalized Difference Vegetation Index (NDVI) between two Landsat 5 images taken 20 years apart. The code loads the two images, computes NDVI for each image, calculates the difference in NDVI, applies a land mask from the SRTM DEM to the difference, and finally displays the masked NDVI difference on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Landsat 5 images",
+        "Step description": "The purpose of this step is to load Landsat 5 images for two different time periods. This is achieved by using the ee.Image() function to load the Landsat images for June 4, 1990, and June 11, 2010. Two ee.Image() functions are called with the respective image IDs as input to load the Landsat 5 images for the specified time periods.",
+        "Input": ["Landsat image ID for June 4, 1990","Landsat image ID for June 11, 2010"],
+        "Output":["Loaded Landsat 5 image for June 4, 1990","Loaded Landsat 5 image for June 11, 2010"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Compute NDVI",
+        "Step description": "The purpose of this step is to compute the Normalized Difference Vegetation Index (NDVI) for each Landsat 5 image. This is done by using the image.normalizedDifference() function to calculate the NDVI values by taking the normalized difference between Band 4 (NIR) and Band 3 (Red) for each Landsat image.",
+        "Input": ["Landsat 5 images"],
+        "Output":["NDVI values for the first Landsat image","NDVI values for the second Landsat image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate NDVI difference",
+        "Step description": "The purpose of this step is to calculate the difference in NDVI between the two Landsat images. This is achieved by using the .subtract() function to subtract the NDVI values of the second image from the first image, resulting in the NDVI difference between the two images.",
+        "Input": ["NDVI values of the first Landsat image","NDVI values of the second Landsat image"],
+        "Output":["NDVI difference between the two Landsat images"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Apply land mask",
+        "Step description": "The purpose of this step is to apply a land mask to the NDVI difference. This is done by using the .updateMask() function to update the NDVI difference by masking out areas that are not land using the SRTM DEM land mask.",
+        "Input": ["NDVI difference","Land mask from SRTM DEM"],
+        "Output":["Masked NDVI difference with non-land areas removed"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Display on map",
+        "Step description": "The purpose of this step is to display the masked NDVI difference on the map. This is achieved by using the Map.setCenter() function to set the center of the map and then using the Map.addLayer() function to add the masked NDVI difference layer to the map with specified visualization parameters.",
+        "Input": ["Masked NDVI difference","Visualization parameters"],
+        "Output":["Displayed map with the masked NDVI difference layer"]
+        }
+       ] 
+}
+```

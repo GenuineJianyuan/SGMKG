@@ -1,0 +1,24 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Polygon representing Finland' from Step1 is used as input to retrieve the tree cover, forest loss, and forest gain data in Step2."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output 'Images representing tree cover, forest loss, and forest gain' from Step2 is used as input to calculate the area of tree cover, forest loss, and forest gain in Step3."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output 'Images representing area in square kilometers' from Step3 is used as input to compute forest loss and gain within the Finland polygon in Step4."
+  }
+]
+```
+
+The combination relationship of the steps is as follows:
+
+1. Step1 creates a polygon representing Finland, and the output is used as input to retrieve tree cover, forest loss, and forest gain data in Step2.
+2. Step2 retrieves tree cover, forest loss, and forest gain data, and the output is used as input to calculate the area of tree cover, forest loss, and forest gain in Step3.
+3. Step3 calculates the area of tree cover, forest loss, and forest gain, and the output is used as input to compute forest loss and gain within the Finland polygon in Step4.

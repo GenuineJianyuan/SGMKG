@@ -1,0 +1,28 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Loaded Landsat 8 images' from Step1 is used as input for Step2 to calculate the NDSI and threshold."
+  },
+  {
+    "relationship": ["Step2", "Step4"],
+    "reason": "The output 'NDSI image' from Step2 is used as input for Step4 to threshold the NDSI at 0.35 and identify snow-covered pixels."
+  },
+  {
+    "relationship": ["Step3", "Step5"],
+    "reason": "The output 'Boolean image indicating water pixels' from Step3 is used as input for Step5 to separate water from snow and replace snow pixels."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output 'Boolean image indicating snow-covered pixels' from Step4 is used as input for Step5 to identify snow-covered pixels and replace them with snow-free pixels."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output 'Replaced image with snow-free pixels' from Step5 is used as input for Step6 to visualize the replaced image on the map."
+  }
+]
+```
+
+Note that the connections only exist if the output and its matched input exist.

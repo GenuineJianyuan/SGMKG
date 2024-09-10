@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the imported datasets (MODIS GPP and NPP data, precipitation data, and soil data), which are necessary for Step2 to define the time range and spatial extent over Germany. The input for Step2 includes the Germany FeatureCollection, which is used to filter the spatial extent."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the defined time range and spatial extent over Germany, which are essential inputs for Step3. Step3 requires this information to aggregate and clip the data for GPP, NPP, precipitation, and soil."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs the mean values of GPP, NPP, precipitation, and clipped soil data, which are used as inputs in Step4. Step4 visualizes these mean values on the map."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs the visual representation of GPP, NPP, precipitation, and soil layers, which are not directly used in Step5. However, Step5 requires the mean datasets from Step3 (GPP, NPP, precipitation, soil data) as inputs to combine them into a single dataset."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "Step3 outputs the mean values of GPP, NPP, precipitation, and clipped soil data, which are used as inputs in Step5 to create a combined dataset that includes all variables."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs the combined dataset with all variables included, which is necessary for Step6 to perform the linear regression analysis. Step6 uses this combined dataset to analyze the relationship between GPP, NPP, precipitation, soil, and carbon storage."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "Step6 outputs the linear regression coefficients for the analysis, which are used as inputs in Step7. Step7 prints and interprets these coefficients to understand the relationships between the variables in the analysis."
+    }
+]
+```

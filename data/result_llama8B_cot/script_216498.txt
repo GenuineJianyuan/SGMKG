@@ -1,0 +1,24 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1, 'nightlights2017', is used as input for Step2 to calculate the mean radiance of nighttime lights."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2, 'nightlights2017', is used as input for Step3 to clip the data to the boundary of Tanzania."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3, 'nightlights2017', is used as input for Step4 to select the average radiance band for visualization."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4, 'Image with only the 'avg_rad' band', is used as input for Step5 to add the layer to the map and visualize the results."
+  }
+]
+```
+
+Note that the relationships are based on the original sequence of steps and the input/output relationships described in each step's description, input, and output.

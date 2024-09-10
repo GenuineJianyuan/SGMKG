@@ -1,0 +1,24 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output in the required JSON format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Sentinel-1 image collection based on location and polarization', is used as input in Step2 to filter images by date."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Filtered Sentinel-1 images for the 'before' and 'after' periods', is used as input in Step3 to calculate the difference between 'before' and 'after' images."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Image representing the difference between 'after' and 'before' images', is used as input in Step4 to apply thresholding and identify potential oil spill areas."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Binary image indicating potential oil spill areas', is used as input in Step5 to visualize the results on the map."
+    }
+]
+```
+
+These connections are based on the output-input relationships between each pair of steps, as described in the "Step description" and "Input"/"Output" elements of the original JSON summarization.

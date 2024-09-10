@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered dataset for the year 2018', which is used as input in Step2 to select the 'BurnDate' band from this filtered dataset."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Image with only the BurnDate band selected', which is used as input in Step3 to visualize the burned area using a color palette."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Visual representation of burned areas on the map', which is not directly used as input in Step4. However, the burned area image from Step3 is implicitly referenced in Step4 as it clips the burned area image to the study area."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Clipped image of burned areas within the study area', which is not directly used as input in Step5. However, Step5 uses the 'Study Area shapefile' to center the map on the study area, which is related to the output of Step4."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The output from Step4 is the 'Clipped image of burned areas within the study area', which is used as input in Step6 to export this clipped image to Google Drive as a GeoTIFF file."
+    }
+]
+```

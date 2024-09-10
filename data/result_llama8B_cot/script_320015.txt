@@ -1,0 +1,36 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Geometry object representing the boundary of Beijing' from Step1 is used as input for Step2 to set the time ranges for the analysis."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output 'Variables storing the time ranges' from Step2 is not used as input for Step3. Instead, Step3 loads Landsat 8 image collection identifier, which is not related to the previous steps."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output 'Landsat 8 image collection object' from Step3 is used as input for Step4 to calculate NDVI for each image."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output 'NDVI image' from Step4 is used as input for Step5 to filter and composite images for the specified time periods."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output 'Composite NDVI image for 2020 and 2021' from Step5 is used as input for Step6 to compute NDVI difference between 2021 and 2020."
+  },
+  {
+    "relationship": ["Step6", "Step7"],
+    "reason": "The output 'NDVI difference image' from Step6 is used as input for Step7 to visualize NDVI difference on the map."
+  },
+  {
+    "relationship": ["Step7", "Step8"],
+    "reason": "The output 'Map visualization showing NDVI difference' from Step7 is not used as input for Step8. Instead, Step8 sets the map center to Beijing region geometry, which is not related to the previous steps."
+  }
+]
+```
+
+Note that Step2 is not directly connected to Step3, as Step3 loads Landsat 8 image collection identifier, which is not related to the previous steps.

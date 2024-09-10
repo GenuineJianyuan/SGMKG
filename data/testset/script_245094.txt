@@ -1,0 +1,50 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling script using Google Earth Engine to analyze Sentinel-1 SAR data. The script focuses on filtering and processing SAR data for a specific region of interest (ROI) in Thailand. It filters the Sentinel-1 Image Collection for VH polarization, selects images within a certain date range, clips the data to the ROI, and then exports the processed image to Google Drive.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter Image Collection",
+        "Step description": "The purpose of this step is to filter the Sentinel-1 Image Collection for VH polarization and a specific region of interest. To implement this step, the script uses the ee.ImageCollection.filter() function with filter parameters for instrument mode, polarization, and spatial bounds. This step ensures that only the relevant data is retained for further processing.",
+        "Input": ["Sentinel-1 Image Collection","filter parameters (instrument mode, polarization, spatial bounds)"], 
+        "Output":["Filtered Image Collection (collectionVH)"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Center Map View",
+        "Step description": "The purpose of this step is to center the map view over the region of interest. This step is implemented by using the Map.centerObject() function with the ROI and zoom level as parameters. By centering the map view on the ROI, it allows for a focused visualization of the area of interest.",
+        "Input": ["Region of interest (roi)"], 
+        "Output":["Map view centered on the ROI"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate Median VH",
+        "Step description": "The purpose of this step is to calculate the median value of the VH polarization data. This is achieved by using the ee.ImageCollection.median() function on the filtered Image Collection. Calculating the median helps in obtaining a representative value for the VH polarization data.",
+        "Input": ["Filtered Image Collection (collectionVH)"], 
+        "Output":["Median VH image (VH)"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Select and Process Data",
+        "Step description": "The purpose of this step is to select and process VH polarization data within a specific date range. The script filters the Image Collection for a specific date range and clips the data to the ROI. This is done using the ee.ImageCollection.filterDate() function to select images within the specified date range and the ee.Image.clip() function to clip the selected image to the ROI.",
+        "Input": ["Filtered Image Collection (collectionVH)","date range ('2020-05-01' to '2020-07-31')","ROI (roi)"], 
+        "Output":["Processed VH image for the specified date range (VH2)"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Add Processed Image to Map",
+        "Step description": "The purpose of this step is to add the processed VH image to the map. This is achieved by using the Map.addLayer() function to display the processed VH image on the map with specified visualization parameters. By adding the processed image to the map, it allows for visual inspection and analysis of the data.",
+        "Input": ["Processed VH image (VH2)","visualization parameters"], 
+        "Output":["Displayed VH image on the map"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Export Image to Google Drive",
+        "Step description": "The purpose of this step is to export the processed VH image to Google Drive. This is done by using the Export.image.toDrive() function with parameters for the image, description, scale, and region. Exporting the image to Google Drive enables further analysis or storage of the processed data.",
+        "Input": ["Processed VH image (VH2)","export parameters (description, scale, region)"], 
+        "Output":["Exported image file to Google Drive"]
+        }
+       ] 
+}
+```

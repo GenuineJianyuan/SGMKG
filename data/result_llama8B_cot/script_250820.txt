@@ -1,0 +1,22 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps and create a JSON array with the required format.
+
+Here is the JSON array:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Image object 'image'' from Step1 is used as input for Step2 to define the region of interest."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output 'Region geometry object 'poly'' from Step2 is used as input for Step3 to reduce the image within the specified region."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output 'Dictionary containing the computed maximum pixel value 'max'' from Step3 is used as input for Step4 to print the result."
+  }
+]
+```
+
+In this JSON array, each JSON object represents the connection between a pair of steps. The "relationship" key specifies the combination of steps, and the "reason" key explains the reason for the connection, including the output-input relationship between the two steps.

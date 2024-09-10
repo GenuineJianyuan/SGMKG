@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 converts the input image from degrees to radians, which is necessary for Step2. The output of Step1, which is the image converted to radians, is used as input for the sun azimuth and sun elevation in Step2, allowing for the accurate computation of hillshade based on the terrain data."
+    },
+    {
+        "relationship": ["Step3", "Step2"],
+        "reason": "Step3 computes terrain measures such as slope and aspect from the SRTM DEM image. The outputs from Step3, which are the terrain measures images for slope and aspect, are required as inputs for Step2 to calculate the hillshade image. Thus, the terrain measures directly inform the hillshade computation."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 produces the hillshade image, which is essential for Step4. The output from Step2, the hillshade image, is used as input in Step4 to add the computed hillshade layer to the map, allowing for visualization of the terrain shading."
+    }
+]
+```

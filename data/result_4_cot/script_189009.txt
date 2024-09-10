@@ -1,0 +1,12 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Irr_rice1_1 dataset with a random column', which is used as input in Step2. In Step2, the 'Irr_rice1_1 dataset' is filtered based on the random column values to create training and testing datasets."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The outputs from Step2 are 'trainingAccuracy_Irr_rice1_1', 'testingAccuracy_Irr_rice1_1', 'riceDataTrainingModel1', and 'riceDataTestingModel1 datasets', which are used as inputs in Step3. In Step3, these filtered datasets are printed for analysis."
+    }
+]
+```

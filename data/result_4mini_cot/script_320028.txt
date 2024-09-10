@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the 'India region geometry variable (indiaRegion)', which is necessary for Step2 to define the area for loading the MODIS land cover data specific to India."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs the 'MODIS land cover image collection variable (modisLandCover)', which is required in Step3 to select the 'LC_Type1' band from the MODIS land cover dataset."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs the 'Land cover image variable (landCover)', which is used in Step4 to identify corn areas by comparing the land cover values to the specific corn land cover type value."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs the 'Binary image indicating corn areas (cornAreas)', which is utilized in Step5 to visualize the corn areas on the map."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "Step4 outputs the 'Binary image indicating corn areas (cornAreas)', which is needed in Step6 to calculate the total corn field area by multiplying it by pixel area and reducing the region."
+    },
+    {
+        "relationship": ["Step6", "Step5"],
+        "reason": "Step6 calculates the 'Total corn field area in the India region', which can be visualized in Step5, although Step5 does not directly use this output, it is a logical continuation of the analysis."
+    }
+]
+```

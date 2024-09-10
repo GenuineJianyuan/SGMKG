@@ -1,0 +1,20 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Filtered Sentinel-2 image collection) is used as input for Step2 (Mask clouds in Sentinel-2 imagery) to apply cloud masking function to the Sentinel-2 image collection."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (Cloud-masked Sentinel-2 image collection) is used as input for Step3 (Calculate NDCI for water quality assessment) to calculate the Normalized Difference Chlorophyll Index (NDCI) for water quality assessment."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3 (NDCI image collection) is used as input for Step4 (Visualize results on the map) to visualize the NDCI results on the map."
+  }
+]
+```
+
+Note that the relationships are based on the original sequence of steps and the input/output relationships described in each step.

@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output from Step1 is the image object 'image', which is used as an input in Step3 to perform the reduction operation to compute the maximum pixel value."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the region geometry object 'poly', which is used as an input in Step3 to define the area over which the maximum pixel value is computed."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the dictionary containing the computed maximum pixel value 'max', which is used as an input in Step4 to print the maximum pixel value to the console."
+    }
+]
+```

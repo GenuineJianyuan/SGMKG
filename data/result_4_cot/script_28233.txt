@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Landsat 8 TOA image collection', which is used as input in Step2 to filter the images based on location and date to find the least cloudy image in 2015."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Filtered image collection with the least cloudy image in 2015', which is used as input in Step3 to calculate the NDVI for the selected least cloudy image."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'NDVI image', which is used as input in Step4 to display the NDVI image on the map with specified visualization parameters."
+    }
+]
+```

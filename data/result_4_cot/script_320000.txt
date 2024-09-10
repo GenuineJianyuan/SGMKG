@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the NDVI image, which is used as the input for Step2. In Step1, the NDVI image is computed from the Landsat image, and in Step2, this NDVI image is processed to detect edges using the Canny Edge Detector algorithm."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the edge-detected image, which is used as the input for Step3. In Step2, edges are detected in the NDVI image, and in Step3, this edge-detected image is masked to remove areas with no edges."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the masked edge-detected image, which is used as the input for Step4. In Step3, the edge-detected image is masked to focus on areas with edges, and in Step4, both the NDVI image and the masked edge-detected image are visualized on the map."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output of Step1, which is the NDVI image, is also used as an input in Step4. In Step4, the NDVI image is displayed alongside the masked edge-detected image on the map."
+    }
+]
+```

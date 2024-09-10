@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Filtered ImageCollection for the year 2017', which is used as input in Step2. Step2 requires the filtered dataset to select the land cover type representing water bodies."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Image with the selected land cover band', which is used as input in Step3. Step3 applies a mask to this image to isolate only the water bodies."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Masked image with only water bodies visible', which is used as input in Step4. Step4 calculates the number of water pixels using this masked image within the specified Gansu region."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is the 'Dictionary containing the count of water pixels', which is not directly used as input in Step5. However, Step5 uses the results of the previous steps to visualize the water bodies on the map, indicating the overall workflow progression."
+    }
+]
+```

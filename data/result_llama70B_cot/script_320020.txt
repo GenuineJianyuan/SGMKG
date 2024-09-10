@@ -1,0 +1,31 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Mosaic image clipped to the region of interest', is used as input in Step2 for band selection."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Image with selected bands', is used as input in Step3 to calculate the mean values of each band."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Mean values of each band as an image', is used as input in Step4 to perform Principal Component Analysis."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Image containing the first 13 principal components', is used as input in Step5 to visualize the first three principal components on the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 produces a mosaic image, which is then used in Step2 for band selection.
+2. The output of Step2 (image with selected bands) is used in Step3 to calculate the mean values of each band.
+3. The mean values output from Step3 are used in Step4 to perform Principal Component Analysis.
+4. The principal components image output from Step4 is used in Step5 to visualize the first three principal components on the map.
+
+These connections are based on the input-output relationships between each step, as described in the original JSON summarization.

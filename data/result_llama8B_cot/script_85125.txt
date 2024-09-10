@@ -1,0 +1,48 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the list of connections:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The boundary geometry of Bahia is loaded and used as input for the MODIS LST daytime data loading step."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The MODIS LST daytime data is preprocessed by multiplying the LST values by 0.02, subtracting 273.15 to convert from Kelvin to Celsius, and copying relevant properties."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The preprocessed daytime LST data is filtered and selected for the year 2010, and the output is used as input for the mean LST calculation step."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The filtered daytime LST data is used to calculate the mean LST for daytime and clip it to the boundary of Bahia."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The mean LST for daytime is visualized on the map by adding the daytime LST data layer to the map with specified visualization parameters."
+  },
+  {
+    "relationship": ["Step7", "Step8"],
+    "reason": "The MODIS LST nighttime data is preprocessed by multiplying the LST values by 0.02, subtracting 273.15 to convert from Kelvin to Celsius, and copying relevant properties."
+  },
+  {
+    "relationship": ["Step8", "Step9"],
+    "reason": "The preprocessed nighttime LST data is filtered and selected for the year 2010, and the output is used as input for the mean LST calculation step."
+  },
+  {
+    "relationship": ["Step9", "Step10"],
+    "reason": "The filtered nighttime LST data is used to calculate the mean LST for nighttime and clip it to the boundary of Bahia."
+  },
+  {
+    "relationship": ["Step10", "Step11"],
+    "reason": "The mean LST for nighttime is used to calculate the temperature difference between daytime and nighttime LST."
+  },
+  {
+    "relationship": ["Step11", "Step12"],
+    "reason": "The temperature difference is visualized on the map by adding the temperature difference layer to the map with specified visualization parameters, and the output is printed."
+  }
+]
+```
+
+Note that the connections only exist if the output and its matched input exist.

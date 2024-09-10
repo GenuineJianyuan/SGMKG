@@ -1,0 +1,21 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship of these steps.
+
+Here is the combination relationship in JSON format:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 (slopeDict) is used as input for Step2 (water occurrence statistics calculation). The mean slope value calculated in Step1 is used to filter the water occurrence values in Step2."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 (waterDict) is not used as input for Step3 (visualization). Instead, the input for Step3 is the SRTM dataset, slope, and the Global Surface Water dataset, which are used to visualize the elevation, slope, and water occurrence layers on the map."
+    }
+]
+```
+
+The combination relationship is as follows:
+
+1. Step1 calculates the mean slope, and its output (slopeDict) is used as input for Step2, which calculates the sum of water occurrence above 90%.
+2. Step2 does not use its output (waterDict) as input for Step3. Instead, Step3 uses the SRTM dataset, slope, and the Global Surface Water dataset as input to visualize the elevation, slope, and water occurrence layers on the map.

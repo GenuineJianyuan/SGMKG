@@ -1,0 +1,24 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "The output 'Landsat 5 image with NDVI band added (L5wNDVI)' from Step1 is used as input in Step3 to sample the data and prepare it for training."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output 'Remapped training data (training)' from Step2 is used as input in Step3 to sample the data and prepare it for training."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output 'Sampled training sites (training_sites)' from Step3 is used as input in Step4 to train the SVM classifier."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output 'Trained SVM classifier (trained)' from Step4 is used as input in Step5 to classify the Landsat image."
+    }
+]
+```
+
+These connections are based on the output-input relationships between the steps, as described in the "Step description" and "Input"/"Output" elements.

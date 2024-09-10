@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization, I will analyze the workflow and identify the combination relationships between the steps. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Filtered Sentinel-2 images for image_after' from Step1 is used as input in Step2 to calculate the Normalized Burn Ratio (NBR)."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'NBR images image_NBR1' and 'NBR images image_NBR2' from Step2 are used as input in Step3 to visualize the NBR results on the map."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'Filtered Sentinel-2 images for image_before' and 'Filtered Sentinel-2 images for image_after' from Step1 are used as input in Step3 to visualize the satellite images on the map."
+    }
+]
+```
+
+Here's a brief explanation for each connection:
+
+1. The output from Step1 (filtered Sentinel-2 images for `image_after`) is used as input in Step2 to calculate the NBR.
+2. The output from Step2 (NBR images `image_NBR1` and `image_NBR2`) is used as input in Step3 to visualize the NBR results on the map.
+3. The output from Step1 (filtered Sentinel-2 images for `image_before` and `image_after`) is used as input in Step3 to visualize the satellite images on the map.
+
+These connections illustrate the flow of data between the steps, highlighting how the outputs from one step are used as inputs in subsequent steps.

@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Landsat imagery dataset', which is used as the input for Step2. Step2 applies scaling factors to the optical and thermal bands of the filtered Landsat imagery, thus relying on the output from Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is 'Landsat imagery with scaled optical and thermal bands', which serves as the input for Step3. Step3 visualizes a false color composite image using the scaled bands from Step2."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2, 'Landsat imagery with scaled optical and thermal bands', is also used as the input for Step4. Step4 visualizes the thermal band image using the scaled thermal band from Step2."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "The output of Step2, 'Landsat imagery with scaled optical and thermal bands', is utilized as the input for Step5. Step5 identifies and visualizes hotspots based on the thermal band from the scaled imagery produced in Step2."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "While Step3 does not directly feed into Step6, the visualization of the false color composite image from Step3 contributes to the overall map display. Step6 sets the map options and centers the map, which includes the visualizations from previous steps."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "Similar to Step3, Step4's output (the thermal band image layer) contributes to the overall map display. Step6 sets the map options and centers the map, which includes the visualizations from previous steps."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 produces the 'Hotspot visualization layer on the map', which is part of the overall map display. Step6 sets the map options and centers the map, incorporating the hotspot visualization from Step5."
+    }
+]
+```

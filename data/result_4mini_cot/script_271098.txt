@@ -1,0 +1,44 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs 'Loaded Landsat 8 images', which are used as input in Step2 to calculate the Normalized Difference Snow Index (NDSI)."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "Step2 outputs 'NDSI image', which is used as input in Step4 to threshold the NDSI at 0.35 to identify snow-covered pixels."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs 'NDSI image', which is used as input in Step3 to help in separating water from snow using the Near-Infrared (NIR) reflectance."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "Step3 outputs 'Boolean image indicating water pixels', which is used as input in Step5 to ensure that only snow pixels that are not water are replaced with snow-free pixels."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs 'Boolean image indicating snow-covered pixels', which is used as input in Step5 to identify which pixels in the snow-covered image should be replaced with pixels from the snow-free image."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs 'Replaced image with snow-free pixels', which is used as input in Step6 to visualize the replaced image along with other images on the map."
+    },
+    {
+        "relationship": ["Step1", "Step6"],
+        "reason": "Step1 outputs 'Loaded Landsat 8 images', which are used as input in Step6 for visualization purposes, allowing the original images to be displayed alongside the replaced image."
+    },
+    {
+        "relationship": ["Step2", "Step6"],
+        "reason": "Step2 outputs 'NDSI image', which is used as input in Step6 for visualization, allowing the NDSI thresholded image to be displayed on the map."
+    },
+    {
+        "relationship": ["Step3", "Step6"],
+        "reason": "Step3 outputs 'Boolean image indicating water pixels', which is used as input in Step6 for visualization, allowing the NIR reflectance thresholded image to be displayed on the map."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "Step4 outputs 'Boolean image indicating snow-covered pixels', which is used as input in Step6 for visualization, allowing the snow-covered pixels to be displayed on the map."
+    }
+]
+```

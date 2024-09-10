@@ -1,0 +1,16 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a FeatureCollection of counties, which is used as input in Step2 to calculate the area of each county. The output from Step1, 'counties (FeatureCollection)', is the required input for Step2."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs a FeatureCollection with added area property, which is used as input in Step3 to filter out counties based on their area. The output from Step2, 'countiesWithArea (FeatureCollection)', serves as the input for Step3."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs a FeatureCollection of smaller counties, which is used as input in Step4 to visualize these counties on the map. The output from Step3, 'smallCounties (FeatureCollection)', is the input needed for Step4."
+    }
+]
+```

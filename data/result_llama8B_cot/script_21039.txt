@@ -1,0 +1,38 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Filtered Landsat image collection) is used as input for Step2 (Landsat image collection for the year 2014) to filter the images for the year 2014."
+  },
+  {
+    "relationship": ["Step1", "Step3"],
+    "reason": "The output of Step1 (Filtered Landsat image collection) is used as input for Step3 (Landsat image collection for the year 2022) to filter the images for the year 2022."
+  },
+  {
+    "relationship": ["Step1", "Step4"],
+    "reason": "The output of Step1 (Filtered Landsat image collection) is used as input for Step4 (Landsat image collection for the year 2018) to filter the images for the year 2018."
+  },
+  {
+    "relationship": ["Step2", "Step5"],
+    "reason": "The output of Step2 (Landsat image collection for the year 2014) is used as input for Step5 (Image with NDSI band) to calculate the NDSI for each image in the collection."
+  },
+  {
+    "relationship": ["Step3", "Step5"],
+    "reason": "The output of Step3 (Landsat image collection for the year 2022) is used as input for Step5 (Image with NDSI band) to calculate the NDSI for each image in the collection."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4 (Landsat image collection for the year 2018) is used as input for Step5 (Image with NDSI band) to calculate the NDSI for each image in the collection."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output of Step5 (Image with NDSI band) is used as input for Step6 (Minimum composite NDSI images for 2014, 2018, and 2022) to create a minimum composite of NDSI images for the years 2014, 2018, and 2022."
+  },
+  {
+    "relationship": ["Step6", "Step7"],
+    "reason": "The output of Step6 (Minimum composite NDSI images for 2014, 2018, and 2022) is used as input for Step7 (Visualization of snow cover for 2014, 2018, and 2022 on the map) to visualize the results on the map."
+  }
+]
+```

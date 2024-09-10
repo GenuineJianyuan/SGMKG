@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 includes the 'Filtered FireCCI51 dataset', which is used as input in Step2. In Step2, the 'Filtered FireCCI51 dataset' is processed to select the 'BurnDate' band and define visualization parameters."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 includes the 'BurnDate' band, which is used as input in Step3. In Step3, the 'BurnDate' band is utilized to calculate the maximum burned area image, which is then clipped to the study area boundary."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3 is the 'Clipped burned area image', which is used as input in Step4. In Step4, the 'Clipped burned area image' is visualized along with the study area boundary on the map."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output from Step3, which is the 'Clipped burned area image', is also used as input in Step5. In Step5, this image is exported to Google Drive as a GeoTIFF file."
+    }
+]
+```

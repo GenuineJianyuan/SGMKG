@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to analyze oil spill areas in Balikpapan, Indonesia in April 2018 using Sentinel-1 C-band SAR Ground Range imagery. The script loads the Sentinel-1 images, filters them by date, calculates the difference between two dates, applies thresholding to identify potential spill areas, and visualizes the results on a map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load and Filter Sentinel-1 Images",
+        "Step description": "The purpose of this step is to load the Sentinel-1 C-band SAR Ground Range collection and filter it by location and polarization. This step involves loading Sentinel-1 images and filtering them by location and polarization. The script first defines the point geometry for the location, then loads the Sentinel-1 image collection, filters it by the specified location (point geometry) and selects images with VV polarization. This step calls the functions for loading Sentinel-1 images and filtering by location and polarization. The Google Earth Engine (GEE) APIs used in this step are ee.ImageCollection.load() and ee.ImageCollection.filter().", 
+        "Input": ["Sentinel-1 image collection","point geometry"], 
+        "Output":["Filtered Sentinel-1 image collection based on location and polarization"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Images by Date",
+        "Step description": "The purpose of this step is to filter Sentinel-1 images by date to get images before and after the potential oil spill. This step involves filtering images by date. The script filters the collection to get images from March 10 to March 29 for the 'before' period and from March 31 to April 6 for the 'after' period. This step calls the function for filtering images by date. The GEE API used in this step is ee.ImageCollection.filterDate().", 
+        "Input": ["Sentinel-1 image collection"], 
+        "Output":["Filtered Sentinel-1 images for the 'before' and 'after' periods"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Calculate Image Difference",
+        "Step description": "The purpose of this step is to calculate the difference between 'before' and 'after' images. This step involves image differencing by subtracting the 'before' image from the 'after' image. The script calculates the difference between the 'after' and 'before' images. This step calls the function for image differencing. The GEE API used in this step is ee.Image.subtract().", 
+        "Input": ["'Before' and 'after' Sentinel-1 images"], 
+        "Output":["Image representing the difference between 'after' and 'before' images"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Apply Thresholding",
+        "Step description": "The purpose of this step is to apply thresholding to identify potential oil spill areas. This step involves thresholding the smoothed radar intensities to identify potential spill areas. The script applies a threshold to the smoothed radar intensity difference to identify potential oil spill areas. This step calls the function for thresholding. There is no specific GEE API mentioned for this step, but it likely involves mathematical operations on image pixels.",
+        "Input": ["Smoothed radar intensity difference"], 
+        "Output":["Binary image indicating potential oil spill areas"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Visualize Results on Map",
+        "Step description": "The purpose of this step is to visualize the results on the map. This step involves map visualization by adding layers to the map for visualization. The script visualizes the 'before' and 'after' images, composite image, difference image, smoothed difference image, and identified spill areas on the map. This step calls the function for map visualization. The GEE API used in this step is likely related to adding layers and visualizing images on the map.",
+        "Input": ["Images and binary mask"], 
+        "Output":["Visualization of the 'before' and 'after' images, difference images, and identified spill areas on the map"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,34 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship between the steps and list the connections using a JSON array.
+
+Here is the output:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'Filtered FireCCI51 dataset' from Step1 is used as input in Step2 to select the 'BurnDate' band."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output 'BurnDate' band from Step2 is used as input in Step3 to clip the maximum burned area image to the study area boundary."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output 'Loaded study area boundary' from Step1 is used as input in Step3 to clip the maximum burned area image to the study area boundary."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'Clipped burned area image' from Step3 is used as input in Step4 to visualize the study area boundary and burned area."
+    },
+    {
+        "relationship":["Step1", "Step4"],
+        "reason": "The output 'Loaded study area boundary' from Step1 is used as input in Step4 to visualize the study area boundary and burned area."
+    },
+    {
+        "relationship":["Step3", "Step5"],
+        "reason": "The output 'Clipped burned area image' from Step3 is used as input in Step5 to export the clipped burned area image to Google Drive as a GeoTIFF file."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between a pair of steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the steps.

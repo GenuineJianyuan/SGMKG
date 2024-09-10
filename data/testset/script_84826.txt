@@ -1,0 +1,35 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code is a geospatial modeling process that focuses on Landsat 8 imagery. The code first defines functions to mask clouds and perform pan-sharpening on Landsat 8 images. It then creates a composite image by filtering Landsat 8 TOA data for a specific time period, applying the masking and pan-sharpening functions, and taking the median. Finally, it visualizes the original and pan-sharpened images on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Mask Clouds",
+        "Step description": "The purpose of this step is to mask clouds in Landsat 8 images. The maskL8 function is called within the map function applied to the Landsat 8 ImageCollection. The maskL8 function selects the quality band (BQA) from the input image, creates a mask to filter out cloudy pixels based on the cloud bit in the quality band, and updates the image mask.",
+        "Input": ["Landsat 8 TOA image"],
+        "Output":["Cloud-masked Landsat 8 image"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Pan-sharpening",
+        "Step description": "The purpose of this step is to perform HSV-based pan-sharpening on Landsat 8 images. The panSharpenL8 function is called within the map function applied to the Landsat 8 ImageCollection after masking clouds. The panSharpenL8 function selects the RGB bands (B4, B3, B2) and the panchromatic band (B8) from the input image, converts the RGB image to HSV, swaps in the panchromatic band, and converts back to RGB.",
+        "Input": ["Cloud-masked Landsat 8 image"],
+        "Output":["Pan-sharpened Landsat 8 image"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Create Composite Image",
+        "Step description": "The purpose of this step is to create a composite image from Landsat 8 TOA data for a specific time period. The ee.ImageCollection, filterDate, map(maskL8), map(panSharpenL8), and median functions are chained together. The operations involve retrieving Landsat 8 TOA data for the year 2016, filtering the data by date, applying the cloud masking and pan-sharpening functions to each image in the collection, and calculating the median composite image.",
+        "Input": ["Landsat 8 TOA ImageCollection"],
+        "Output":["Median composite image for the specified time period"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize Images",
+        "Step description": "The purpose of this step is to visualize the original and pan-sharpened images on the map. The Map.setCenter and Map.addLayer functions are called to set the center of the map to a specific location, add the original Landsat 8 image layer with RGB bands visualization parameters, and add the pan-sharpened image layer with RGB bands visualization parameters.",
+        "Input": ["Median composite image"],
+        "Output":["Visualization of original and pan-sharpened images on the map"]
+        }
+       ] 
+}
+```

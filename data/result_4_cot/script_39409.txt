@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is a 'Filtered image collection based on the specified region of interest', which serves as the input for Step2. Step2 filters this collection further to remove cloudy scenes, utilizing the filtered image collection from Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is an 'Image collection with cloudy scenes filtered out', which is used as the input for Step3. Step3 selects the necessary bands (B4, B3, B2) from this filtered collection, ensuring that only the relevant bands are included for video creation."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is an 'Image collection with only the selected bands (B4, B3, B2)', which is then used as the input for Step4. Step4 converts the data of this selected band collection to 8-bit format, preparing it for video export."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is an 'Image collection with data converted to 8-bit', which serves as the input for Step5. Step5 takes this processed image collection and exports it as a video to Google Drive, completing the workflow."
+    }
+]
+```

@@ -1,0 +1,36 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is designed to calculate the Radar Vegetation Index for Sentinel-1 GRD images within a specific time frame and spatial extent. The code filters the Sentinel-1 image collection for the year 2021, selects the VV and VH bands, calculates the RVI4S1 index, and visualizes the result on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Sentinel-1 GRD image collection",
+        "Step description": "The purpose of this step is to load the Sentinel-1 GRD image collection, filter the images for the year 2021, filter them based on a specific geometry, and select the VV and VH bands. This step involves loading the image collection, filtering it by date and geometry, and selecting the VV and VH bands. The function used in this step is to load the Sentinel-1 GRD image collection using the 'COPERNICUS/S1_GRD' dataset, filter the images for the year 2021, filter them based on a specific geometry, and select the VV and VH bands. The Google Earth Engine (GEE) API used in this step is ee.ImageCollection.filter().", 
+        "Input": ["Sentinel-1 GRD image collection","date range","geometry"], 
+        "Output":["Filtered Sentinel-1 GRD image collection with VV and VH bands selected"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Calculate RVI4S1 index",
+        "Step description": "The purpose of this step is to define the function to calculate the Radar Vegetation Index (RVI4S1), calculate the RVI4S1 index using the formula provided in the code, and set visualization parameters for the output image. This step involves selecting the VV and VH bands from the input image, calculating the degree of polarization, calculating the RVI4S1 index, and setting visualization parameters. The function used in this step is to calculate the RVI4S1 index using the formula provided in the code and set visualization parameters. The GEE API used in this step is ee.Image.select().", 
+        "Input": ["Sentinel-1 GRD image"], 
+        "Output":["RVI4S1 image with visualization parameters"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Map RVI4S1 calculation function",
+        "Step description": "The purpose of this step is to map the RVI4S1 calculation function over the image collection. This step involves applying the calculateRVI4S1 function to each image in the Sentinel-1 GRD collection. The function used in this step is to apply the calculateRVI4S1 function to each image in the Sentinel-1 GRD collection. The GEE API used in this step is ee.ImageCollection.map().", 
+        "Input": ["Sentinel-1 GRD image collection"], 
+        "Output":["Collection of RVI4S1 images"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Display RVI4S1 image on map",
+        "Step description": "The purpose of this step is to display the RVI4S1 image on the map. This step involves adding the first RVI4S1 image from the collection to the map for visualization. The function used in this step is to add the first RVI4S1 image from the collection to the map. The GEE API used in this step is Map.addLayer().", 
+        "Input": ["RVI4S1 image"], 
+        "Output":["Visualization of the RVI4S1 image on the map"]
+        }
+       ] 
+}
+```

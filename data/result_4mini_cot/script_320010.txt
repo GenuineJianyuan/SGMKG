@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the NDVI image, which is used as the input for Step2. In Step1, the NDVI image is computed from the Landsat image, and in Step2, this NDVI image is processed by the Canny edge detector to identify edges."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the Canny edge detection result, which serves as the input for Step3. In Step2, the edges are detected in the NDVI image, and in Step3, these edges are analyzed using the Hough Transform to identify linear features."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the Hough transform result, which is used as input in Step4. In Step3, the linear features are extracted from the Canny edge detection result, and in Step4, this Hough transform result is visualized on the map along with the original image and the Canny edge detection result."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "The output of Step1 (NDVI image) is indirectly related to Step4 as it is one of the layers displayed on the map. In Step4, the original Landsat image (which is the source of the NDVI image) is displayed alongside the Canny edge detection result and the Hough transform result."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output of Step2 (Canny edge detection result) is directly used in Step4 as one of the layers displayed on the map. In Step4, the Canny edge detection result is visualized along with the original image and the Hough transform result."
+    }
+]
+```

@@ -1,0 +1,22 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationship of these steps.
+
+Here is the list of connections in JSON format:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Clipped image of the dataset within the Amazon Basin region) is used as input for Step2 (Calculate NDVI and NDWI) to calculate NDVI and NDWI using the Hansen dataset."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2 (NDWI and NDVI images) is used as input for Step3 (Define Visualization Parameters) to define visualization parameters for NDVI and NDWI images."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3 (Customized visualization of NDVI and NDWI images on the map) is used as input for Step4 (Add Layers to Map) to add NDVI and NDWI layers to the map for visualization."
+  }
+]
+```
+
+The connections are based on the original sequence of steps, and the relationship between each step is explained by the "reason" field. The output of each step is used as input for the next step, as described in the "Step description" and "Input" and "Output" relationships.

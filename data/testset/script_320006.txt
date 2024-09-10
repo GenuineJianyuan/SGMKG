@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to analyze forest loss in the Congo Republic using Google Earth Engine. It loads country features from the LSIB dataset, filters the Congo Republic feature, retrieves the forest loss image from the Hansen Global Forest Change dataset, selects the loss band, and calculates the sum of forest loss pixels within the Congo Republic boundary.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Country Features",
+        "Step description": "The purpose of this step is to load country features from the LSIB dataset. To implement this step, the ee.FeatureCollection() function is used to create a feature collection. The operation involves loading the 'USDOS/LSIB_SIMPLE/2017' dataset using ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017').",
+        "Input": ["'USDOS/LSIB_SIMPLE/2017'"],
+        "Output":["Feature collection of country boundaries"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Filter Congo Republic Feature",
+        "Step description": "The purpose of this step is to filter the Congo Republic feature from the loaded country features. The filter() function is used along with ee.Filter.eq() to include only the feature with the country name 'Rep of the Congo'. The sequence involves filtering the feature collection with countries.filter(ee.Filter.eq('country_na', 'Rep of the Congo')).",
+        "Input": ["Feature collection of country boundaries"],
+        "Output":["Feature collection containing only the Congo Republic feature"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Retrieve Forest Loss Image",
+        "Step description": "The purpose of this step is to retrieve the forest loss image from the Hansen Global Forest Change dataset. The ee.Image() function is used to load the 'UMD/hansen/global_forest_change_2015' image by calling ee.Image('UMD/hansen/global_forest_change_2015').",
+        "Input": ["'UMD/hansen/global_forest_change_2015'"],
+        "Output":["Forest loss image from the Hansen Global Forest Change dataset"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Select Loss Band",
+        "Step description": "The purpose of this step is to select the loss band from the forest loss image. The select() function is used to choose the 'loss' band from the forest loss image, resulting in an image with only the 'loss' band selected.",
+        "Input": ["Forest loss image"],
+        "Output":["Image with only the 'loss' band selected"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Calculate Sum of Forest Loss Pixels",
+        "Step description": "The purpose of this step is to calculate the sum of forest loss pixels within the Congo Republic boundary. The reduceRegion() function is used along with ee.Reducer.sum() to reduce the forest loss image by summing the pixel values within the Congo Republic boundary. The sequence involves calling lossImage.reduceRegion({ reducer: ee.Reducer.sum(), geometry: congo, scale: 30 }).",
+        "Input": ["Forest loss image", "Congo Republic boundary"],
+        "Output":["Statistics object containing the sum of forest loss pixels within the Congo Republic"]
+        }
+       ] 
+}
+```

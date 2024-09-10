@@ -1,0 +1,29 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the output in the required JSON format:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Sentinel-1 GRD image collection with VV and VH bands selected', is used as input in Step2 to calculate the RVI4S1 index."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'RVI4S1 image with visualization parameters', is not directly used in Step3. However, the calculateRVI4S1 function defined in Step2 is applied to each image in the Sentinel-1 GRD collection in Step3."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output of Step1, 'Filtered Sentinel-1 GRD image collection with VV and VH bands selected', is used as input in Step3 to map the RVI4S1 calculation function over the image collection."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Collection of RVI4S1 images', is used as input in Step4 to display the RVI4S1 image on the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 and Step2 are connected because the filtered image collection from Step1 is used to calculate the RVI4S1 index in Step2.
+2. Step2 and Step3 are connected because the calculateRVI4S1 function defined in Step2 is applied to each image in the collection in Step3.
+3. Step1 and Step3 are connected because the filtered image collection from Step1 is used as input in Step3 to map the RVI4S1 calculation function.
+4. Step3 and Step4 are connected because the collection of RVI4S1 images from Step3 is used to display the RVI4S1 image on the map in Step4.

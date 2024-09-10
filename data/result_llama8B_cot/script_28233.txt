@@ -1,0 +1,24 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1, 'Landsat 8 TOA image collection', is used as input for Step2 to filter the images based on location and date."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2, 'Filtered image collection with the least cloudy image in 2015', is used as input for Step3 to calculate the NDVI for the selected image."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output of Step3, 'NDVI image', is used as input for Step4 to display the NDVI image on the map."
+  }
+]
+```
+
+The relationships between the steps are as follows:
+
+1. Step1 imports the Landsat 8 TOA image collection, and the output is used as input for Step2 to filter the images based on location and date.
+2. Step2 filters the images and outputs the filtered image collection with the least cloudy image in 2015, which is used as input for Step3 to calculate the NDVI for the selected image.
+3. Step3 calculates the NDVI image and outputs it, which is used as input for Step4 to display the NDVI image on the map.

@@ -1,0 +1,36 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output 'FeatureCollection of the Karnataka district polygon' from Step1 is used as input in Step2 to add the polygon to the map."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output 'Filtered MODIS image collection for the specified date range' from Step3 is used as input in Step4 to select the daytime land surface temperature band."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output 'Image collection containing only the daytime land surface temperature band' from Step4 is used as input in Step5 to calculate the mean land surface temperature."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output 'Image representing the mean land surface temperature' from Step5 is used as input in Step6 to clip the mean temperature image to the Karnataka district polygon."
+    },
+    {
+        "relationship":["Step1", "Step6"],
+        "reason": "The output 'FeatureCollection of the Karnataka district polygon' from Step1 is used as input in Step6 to clip the mean temperature image to the polygon boundaries."
+    },
+    {
+        "relationship":["Step6", "Step7"],
+        "reason": "The output 'Clipped land surface temperature image for the Karnataka district' from Step6 is used as input in Step7 to visualize the land surface temperature data on the map."
+    },
+    {
+        "relationship":["Step6", "Step8"],
+        "reason": "The output 'Clipped land surface temperature image for the Karnataka district' from Step6 is used as input in Step8 to export the processed image to Google Drive."
+    }
+]
+```
+
+These connections represent the flow of data between the steps, where the output of one step is used as input in the subsequent step.

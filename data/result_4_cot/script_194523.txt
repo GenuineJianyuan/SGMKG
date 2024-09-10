@@ -1,0 +1,32 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the filtered Landsat 8 ImageCollection (`Data1`), which is used as the input for Step2 to create a composite image. Step2 relies on the filtered images obtained from Step1 to generate the composite image (`Data_Collection`)."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the composite image (`Data_Collection`), which is used as the input for Step3 to calculate the Normalized Difference Water Index (NDWI). Step3 computes the NDWI image (`NDWI`) based on the composite image generated in Step2."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the NDWI image (`NDWI`), which is used as an input in Step4 to mask out non-water areas in the composite image. Step4 updates the mask of the composite image (`Data_Collection`) using the NDWI values to create the masked composite image (`Collection_mask`)."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output of Step3 is the NDWI image (`NDWI`), which is used as an input in Step5 to classify water and ice based on elevation from the Digital Elevation Model (DEM). Step5 uses the NDWI values to classify areas as water or ice, resulting in the classified ice image (`ice`)."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 is the classified ice image (`ice`), which is used as an input in Step6 to visualize the data layers on the map. Step6 adds the classified ice image along with the masked composite image and NDWI image to the map for visualization."
+    },
+    {
+        "relationship": ["Step4", "Step6"],
+        "reason": "The output of Step4 is the masked composite image (`Collection_mask`), which is used as an input in Step6 to visualize the data layers on the map. Step6 includes the masked composite image in the visualizations along with the NDWI and classified ice images."
+    },
+    {
+        "relationship": ["Step3", "Step7"],
+        "reason": "The output of Step3 is the NDWI image (`water`), which is used as an input in Step7 to export the water image to Google Drive. Step7 takes the NDWI image and exports it with specified parameters."
+    }
+]
+```

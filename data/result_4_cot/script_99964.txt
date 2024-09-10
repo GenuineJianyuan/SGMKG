@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered Landsat ImageCollection', which is used as the input for Step2. Step2 requires the Landsat ImageCollection to calculate NDVI, so it directly utilizes the filtered imagery obtained from Step1."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'Landsat ImageCollection with NDVI bands added', which serves as the input for Step3. Step3 needs the NDVI bands to identify the maximum NDVI value across all images, thus it relies on the results from Step2."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The output of Step3 is the 'Image with the maximum NDVI value', which is used as input in Step5. Step5 calculates the mean NDVI values within the defined region, and it requires the maximum NDVI image produced in Step3 to perform this calculation."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is the 'Image representing elevation zones', which is also used as input in Step5. Step5 needs both the maximum NDVI image from Step3 and the elevation zones from Step4 to compute the mean NDVI values for the specified region."
+    }
+]
+```

@@ -1,0 +1,70 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to extract the 50% start of season (sos) and end of season (eos) values for six cities from the MCD12Q2 dataset for the year 2010. The cities are defined by a region of interest (roi) feature collection. The code filters the MCD12Q2 dataset by the roi and date range, selects the 'MidGreenup_1' and 'MidGreendown_1' bands for sos and eos respectively, clips the images to the roi, adds the layers to the map, and exports the clipped images to Google Drive.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filtering Dataset",
+        "Step description": "The purpose of this step is to filter the MCD12Q2 dataset by the region of interest (roi) and the specified date range (2010-01-01 to 2010-12-31). The function ee.ImageCollection().filterBounds() is used to filter the dataset by the roi, and ee.ImageCollection().filterDate() is used to filter by the specified date range. The operations performed in this step are filtering the dataset by the roi and date range. The operations are called in sequence by chaining the functions together.",
+        "Input": ["MCD12Q2 dataset","roi","start and end date"],
+        "Output":["filtered ImageCollection containing the sos data"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Selecting SOS Band",
+        "Step description": "The purpose of this step is to select the 'MidGreenup_1' band from the filtered ImageCollection for start of season (sos). The function ee.ImageCollection().select() is used to select the 'MidGreenup_1' band. The operation performed in this step is selecting the 'MidGreenup_1' band. The operation is called in sequence after filtering the dataset.",
+        "Input": ["filtered ImageCollection"],
+        "Output":["ImageCollection containing only the 'MidGreenup_1' band data"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Clipping SOS Image",
+        "Step description": "The purpose of this step is to clip the first image in the sos ImageCollection to the region of interest (roi). The function ee.Image().clip() is used to clip the image to the roi. The operation performed in this step is clipping the image to the roi. The operation is called after selecting the 'MidGreenup_1' band.",
+        "Input": ["first image in the sos ImageCollection","roi"],
+        "Output":["clipped image for start of season (sos) for one city"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Adding SOS Image to Map",
+        "Step description": "The purpose of this step is to add the clipped sos image to the map with specified visualization parameters. The function Map.addLayer() is used to add the sos image to the map. The operation performed in this step is adding the sos image to the map. The operation is called after clipping the sos image.",
+        "Input": ["clipped sos image","visualization parameters"],
+        "Output":["visualization of the sos image on the map"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Exporting SOS Image",
+        "Step description": "The purpose of this step is to export the clipped sos image to Google Drive. The function Export.image.toDrive() is used to export the image. The operation performed in this step is exporting the image to Google Drive. The operation is called after adding the sos image to the map.",
+        "Input": ["clipped sos image","export parameters","region of interest (roi)"],
+        "Output":["exported image for start of season (sos) for one city"]
+        },
+        {
+        "Step name":"Step6", 
+        "Short Name":"Selecting EOS Band",
+        "Step description": "The purpose of this step is to select the 'MidGreendown_1' band from the filtered ImageCollection for end of season (eos). The function ee.ImageCollection().select() is used to select the 'MidGreendown_1' band. The operation performed in this step is selecting the 'MidGreendown_1' band. The operation is called after filtering the dataset.",
+        "Input": ["filtered ImageCollection"],
+        "Output":["ImageCollection containing only the 'MidGreendown_1' band data"]
+        },
+        {
+        "Step name":"Step7", 
+        "Short Name":"Clipping EOS Image",
+        "Step description": "The purpose of this step is to clip the first image in the eos ImageCollection to the region of interest (roi). The function ee.Image().clip() is used to clip the image to the roi. The operation performed in this step is clipping the image to the roi. The operation is called after selecting the 'MidGreendown_1' band.",
+        "Input": ["first image in the eos ImageCollection","roi"],
+        "Output":["clipped image for end of season (eos) for one city"]
+        },
+        {
+        "Step name":"Step8", 
+        "Short Name":"Adding EOS Image to Map",
+        "Step description": "The purpose of this step is to add the clipped eos image to the map with specified visualization parameters. The function Map.addLayer() is used to add the eos image to the map. The operation performed in this step is adding the eos image to the map. The operation is called after clipping the eos image.",
+        "Input": ["clipped eos image","visualization parameters"],
+        "Output":["visualization of the eos image on the map"]
+        },
+        {
+        "Step name":"Step9", 
+        "Short Name":"Exporting EOS Image",
+        "Step description": "The purpose of this step is to export the clipped eos image to Google Drive. The function Export.image.toDrive() is used to export the image. The operation performed in this step is exporting the image to Google Drive. The operation is called after adding the eos image to the map.",
+        "Input": ["clipped eos image","export parameters","region of interest (roi)"],
+        "Output":["exported image for end of season (eos) for one city"]
+        }
+       ] 
+}
+```

@@ -1,0 +1,20 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1, 'Image containing tree cover data for the year 2000 within the specified region', is used as input for Step2 to calculate the forest area in 2000."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output of Step2, 'Total forest area in hectares for the year 2000 within the specified region', is used as input for Step3 to print the total tree cover in 2000 meeting specific criteria."
+  }
+]
+```
+
+The relationship between Step1 and Step2 is that the output of Step1, which is the tree cover data for the year 2000, is used as input for Step2 to calculate the forest area in 2000.
+
+The relationship between Step2 and Step3 is that the output of Step2, which is the total forest area in hectares for the year 2000, is used as input for Step3 to print the total tree cover in 2000 meeting specific criteria.
+
+Note that Step4 is not fully implemented in the provided code snippet, so there is no connection between Step3 and Step4.

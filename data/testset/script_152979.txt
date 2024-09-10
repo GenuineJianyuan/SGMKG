@@ -1,0 +1,36 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code focuses on conducting a geo-analysis task related to precipitation using Google Earth Engine. The code retrieves daily precipitation data from the CHIRPS dataset for a specific date range in 2018. It then visualizes the precipitation data on the map and exports the colorized image to Google Drive. The spatial scope of the analysis is within the boundaries of Kajiado, and the temporal scope is from May 1, 2018, to May 3, 2018.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load Kajiado Boundary",
+        "Step description": "The purpose of this step is to load the boundary of Kajiado and visualize it on the map. To implement this step, the code first loads the Kajiado boundary feature collection using ee.FeatureCollection, then extracts its geometry using the geometry() function. Next, it centers the map on the boundary using Map.centerObject() and adds the boundary layer to the map with a red color using Map.addLayer().",
+        "Input": ["Kajiado boundary feature collection"], 
+        "Output":["Visualization of the Kajiado boundary on the map"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Retrieve and Filter CHIRPS Dataset",
+        "Step description": "The purpose of this step is to retrieve and filter the CHIRPS dataset for daily precipitation data. The code uses ee.ImageCollection to load the CHIRPS dataset, then filters it for the specified date range (May 1, 2018, to May 3, 2018) using the filter() function. It further sorts the collection in descending order based on time with the sort() function, gets the latest image from the sorted collection using first(), and selects the 'precipitation' band from the image using select().",
+        "Input": ["CHIRPS dataset"], 
+        "Output":["Filtered and sorted image collection with precipitation band selected"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Visualize Precipitation Data",
+        "Step description": "The purpose of this step is to visualize the precipitation data on the map. To achieve this, the code sets the center of the map to specific coordinates using Map.setCenter() and adds the precipitation layer to the map with a color palette for visualization using Map.addLayer().",
+        "Input": ["Precipitation data"], 
+        "Output":["Visualization of precipitation data on the map"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Export Colorized Image to Google Drive",
+        "Step description": "The purpose of this step is to export the colorized precipitation image to Google Drive. The code defines export parameters including the colorized precipitation image, description, folder location in Google Drive, scale, and region of interest (Kajiado boundary). It then exports the image to Google Drive using Export.image.toDrive().",
+        "Input": ["Colorized precipitation image, export parameters"], 
+        "Output":["Exported colorized precipitation image to Google Drive"]
+        }
+       ] 
+}
+```

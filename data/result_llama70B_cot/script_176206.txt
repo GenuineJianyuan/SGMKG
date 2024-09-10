@@ -1,0 +1,28 @@
+﻿Based on the provided JSON summarization and steps, I will analyze the combination relationship between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered image collection for the year 1981', is used as input in Step2 to calculate the average temperature from the 'tmmn' and 'tmmx' bands."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'New image with the 'tempave' band representing average temperature', is used as input in Step3 to join the temperature average band to the image as a new band."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Image with the temperature average band added', is used as input in Step4 to mask out zero values in the data."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Masked image data without zero values', is used as input in Step5 to display the final image on the map."
+    },
+    {
+        "relationship":["Step4", "Step6"],
+        "reason": "The output of Step4, 'Masked image data without zero values', is used as input in Step6 to export the final image to Google Drive."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and the "reason" key explaining the output-input relationship between the two steps.

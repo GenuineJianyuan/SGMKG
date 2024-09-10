@@ -1,0 +1,28 @@
+﻿Based on the provided JSON data, I will analyze the combination relationship of the steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output of Step1 (Filtered Image Collection) is used as input for Step2 (Center Map View) to center the map view over the region of interest."
+  },
+  {
+    "relationship": ["Step1", "Step3"],
+    "reason": "The output of Step1 (Filtered Image Collection) is used as input for Step3 (Calculate Median VH) to calculate the median value of the VH polarization data."
+  },
+  {
+    "relationship": ["Step2", "Step4"],
+    "reason": "The output of Step2 (Map view centered on the ROI) is not used as input for Step4 (Select and Process Data). Instead, Step4 uses the output of Step1 (Filtered Image Collection) as input."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output of Step4 (Processed VH image for the specified date range) is used as input for Step5 (Add Processed Image to Map) to add the processed VH image to the map."
+  },
+  {
+    "relationship": ["Step5", "Step6"],
+    "reason": "The output of Step5 (Displayed VH image on the map) is not used as input for Step6 (Export Image to Google Drive). Instead, Step6 uses the output of Step4 (Processed VH image for the specified date range) as input."
+  }
+]
+```
+
+Note that Step2 does not use the output of Step1 as input, but instead uses the ROI as input. Similarly, Step5 does not use the output of Step4 as input, but instead uses the processed VH image as input.

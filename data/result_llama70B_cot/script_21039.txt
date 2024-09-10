@@ -1,0 +1,40 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationships between the steps. Here is the list of connections in a JSON array:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Filtered Landsat image collection', is used as input in Step2 to filter Landsat images for the year 2014."
+    },
+    {
+        "relationship":["Step1", "Step3"],
+        "reason": "The output of Step1, 'Filtered Landsat image collection', is used as input in Step3 to filter Landsat images for the year 2022."
+    },
+    {
+        "relationship":["Step1", "Step4"],
+        "reason": "The output of Step1, 'Filtered Landsat image collection', is used as input in Step4 to filter Landsat images for the year 2018."
+    },
+    {
+        "relationship":["Step2", "Step5"],
+        "reason": "The output of Step2, 'Landsat image collection for the year 2014', is used as input in Step5 to calculate NDSI for each image."
+    },
+    {
+        "relationship":["Step3", "Step5"],
+        "reason": "The output of Step3, 'Landsat image collection for the year 2022', is used as input in Step5 to calculate NDSI for each image."
+    },
+    {
+        "relationship":["Step4", "Step5"],
+        "reason": "The output of Step4, 'Landsat image collection for the year 2018', is used as input in Step5 to calculate NDSI for each image."
+    },
+    {
+        "relationship":["Step5", "Step6"],
+        "reason": "The output of Step5, 'Image with NDSI band', is used as input in Step6 to create a minimum composite of NDSI images for each year."
+    },
+    {
+        "relationship":["Step6", "Step7"],
+        "reason": "The output of Step6, 'Minimum composite NDSI images for 2014, 2018, and 2022', is used as input in Step7 to visualize the results on the map."
+    }
+]
+```
+
+Each JSON object in the array represents a connection between two steps, with the "relationship" key specifying the step names and

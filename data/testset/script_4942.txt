@@ -1,0 +1,42 @@
+﻿```json
+{
+"Code summarization": "This JavaScript code aims to analyze the water bodies in a specific region (Gansu) using MODIS land cover data. The code filters the MODIS MCD12Q1 dataset for the year 2017, selects the land cover type representing water bodies, masks out all other land cover types, calculates the number of water pixels within the Gansu region, and visualizes the water bodies on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Filter MODIS dataset for 2017",
+        "Step description": "The purpose of this step is to filter the MODIS MCD12Q1 dataset for the year 2017. The filterDate() function is called to filter the image collection based on the specified date range. This step ensures that only the data for the year 2017 is retained for further analysis.",
+        "Input": ["MODIS MCD12Q1 dataset", "date range ('2017-01-01','2017-12-31')"], 
+        "Output":["Filtered ImageCollection for the year 2017"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Select water bodies land cover type",
+        "Step description": "The purpose of this step is to select the land cover type representing water bodies. The select() function is called on the first image in the filtered ImageCollection to choose the band representing the land cover type. This step isolates the water bodies data for further processing.",
+        "Input": ["Filtered ImageCollection"], 
+        "Output":["Image with the selected land cover band"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Mask out non-water land cover types",
+        "Step description": "The purpose of this step is to mask out all land cover types except for water bodies. The mask() function is applied to the selected land cover image to create a mask based on the specified land cover type representing water bodies. This step ensures that only water bodies are visible in the image.",
+        "Input": ["Selected land cover image", "land cover type representing water bodies (17)"], 
+        "Output":["Masked image with only water bodies visible"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Calculate water pixels in Gansu region",
+        "Step description": "The purpose of this step is to calculate the number of water pixels within the Gansu region. The reduceRegion() function is used to perform pixel count reduction within the specified region. By providing the masked image, region of interest (Gansu), scale (30 meters), and maximum number of pixels, this step generates a dictionary containing the count of water pixels.",
+        "Input": ["Masked image", "region of interest (Gansu)", "scale (30 meters)", "maximum number of pixels"], 
+        "Output":["Dictionary containing the count of water pixels"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Visualize water bodies on map",
+        "Step description": "The purpose of this step is to visualize the water bodies on the map. The Map.centerObject() and Map.addLayer() functions are called to center the map on the Gansu region, add the Gansu vector layer, and display the water bodies layer. This step provides a visual representation of the water bodies within the specified region.",
+        "Input": ["Gansu region", "water bodies image", "visualization parameters"], 
+        "Output":["Map displaying the Gansu region and water bodies"]
+        }
+       ] 
+}
+```

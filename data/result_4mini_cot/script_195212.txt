@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is 'Loaded datasets stored in variables', which includes the Global Surface Water dataset and the Shimshal catchment area shapefile. These datasets are used as input in Step2 to select the 'occurrence' band from the Global Surface Water dataset and clip it to the Shimshal catchment area."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is 'Water occurrence layer clipped to the Shimshal catchment area'. This output is used as input in Step3 to visualize the water occurrence layer using a color palette."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs 'Visualized water occurrence layer on the map', which is not directly used in Step4. However, the water occurrence layer itself (used in Step2) is still relevant for Step4, as it requires the 'Water occurrence layer' as input to export the flooded area as a shapefile."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "The water occurrence layer visualized in Step3 is the same layer that is exported in Step5. Therefore, the output from Step2, which is 'Water occurrence layer clipped to the Shimshal catchment area', is used as input in Step5 to export the water occurrence image as a GeoTIFF."
+    }
+]
+```

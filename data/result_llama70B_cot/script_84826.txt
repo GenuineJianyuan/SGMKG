@@ -1,0 +1,26 @@
+﻿Based on the provided JSON summarization, I will analyze the steps and identify the combination relationships between them. Here is the result:
+
+```json
+[
+    {
+        "relationship":["Step1", "Step2"],
+        "reason": "The output of Step1, 'Cloud-masked Landsat 8 image', is used as input in Step2 for pan-sharpening."
+    },
+    {
+        "relationship":["Step2", "Step3"],
+        "reason": "The output of Step2, 'Pan-sharpened Landsat 8 image', is used as input in Step3 to create a composite image."
+    },
+    {
+        "relationship":["Step3", "Step4"],
+        "reason": "The output of Step3, 'Median composite image for the specified time period', is used as input in Step4 to visualize the original and pan-sharpened images on the map."
+    }
+]
+```
+
+Here's a brief explanation of each connection:
+
+1. Step1 and Step2: The cloud-masked image output from Step1 is used as input in Step2 for pan-sharpening.
+2. Step2 and Step3: The pan-sharpened image output from Step2 is used as input in Step3 to create a composite image.
+3. Step3 and Step4: The median composite image output from Step3 is used as input in Step4 to visualize the original and pan-sharpened images on the map.
+
+Note that there is no direct connection between Step1 and Step3, or between Step2 and Step4, as the outputs of these steps are not directly used as inputs in the subsequent steps.

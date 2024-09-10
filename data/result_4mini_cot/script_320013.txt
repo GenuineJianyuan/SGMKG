@@ -1,0 +1,28 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs the 'Loaded Landsat image', which is necessary for Step2 to set the display parameters. Although Step2 does not directly use this output, it prepares the visualization settings for the map where the loaded image will be displayed."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "Step2 outputs 'Updated display settings', which are required for Step3 to display the original Landsat image. Step3 takes the visualization parameters set in Step2 as input to display the image correctly on the map."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "Step3 outputs 'Displayed original Landsat image on the map', which does not directly transfer to Step4. However, Step4 uses the 'Original Landsat image' from Step1 as input for resampling. Therefore, there is no direct connection here."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "Step1 outputs 'Loaded Landsat image', which is used as input in Step4 for bicubic resampling. This connection exists because the original Landsat image is necessary for the resampling process."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs 'Resampled Landsat image using bicubic interpolation', which is then used as input in Step5 to display the resampled image on the map. This connection is valid as the output of Step4 directly feeds into Step5."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "Step2 outputs 'Updated display settings', which are required for Step5 to display the resampled Landsat image. Step5 takes the visualization parameters set in Step2 as input to display the resampled image correctly on the map."
+    }
+]
+```

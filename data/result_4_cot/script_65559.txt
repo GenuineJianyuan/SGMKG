@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the ImageCollections s2_before, s2_inTime, and s2_after, which contain the retrieved Sentinel-2 images for the specified time periods. These images are used as input in Step2 to calculate the NDVI bands for each image, resulting in the output ImageCollections ndvi_before, ndvi_in, and ndvi_after."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "Similar to Step2, the output from Step1 (ImageCollections s2_before, s2_inTime, and s2_after) is also used as input in Step3 to calculate the NBR bands for each image. This results in the output ImageCollections nbr_before, nbr_in, and nbr_after."
+    },
+    {
+        "relationship": ["Step2", "Step4"],
+        "reason": "The output from Step2, which includes the ImageCollections ndvi_before, ndvi_in, and ndvi_after containing the NDVI bands, is used as input in Step4 to visualize the NDVI bands on the map. This step also requires the NBR bands from Step3, which are included in the input for Step4."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output from Step3, which includes the ImageCollections nbr_before, nbr_in, and nbr_after containing the NBR bands, is used as input in Step4 to visualize the NBR bands on the map. This step also requires the NDVI bands from Step2, which are included in the input for Step4."
+    }
+]
+```

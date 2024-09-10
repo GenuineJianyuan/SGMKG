@@ -1,0 +1,24 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output of Step1 is the 'Filtered image collection for the year 1981', which provides the 'tmmn' and 'tmmx' bands as inputs for Step2 to calculate the average temperature."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output of Step2 is the 'New image with the tempave band representing average temperature', which is used as the 'Temperature average band' input in Step3 to join it with the original image."
+    },
+    {
+        "relationship": ["Step3", "Step4"],
+        "reason": "The output of Step3 is the 'Image with the temperature average band added', which serves as the 'Image data' input for Step4 to mask out zero values."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output of Step4 is the 'Masked image data without zero values', which is the 'Final image data' input for Step5 to display the image on the map."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output of Step5 is the 'Displayed image on the map', which is the 'Final image data' input for Step6 to export the image to Google Drive."
+    }
+]
+```

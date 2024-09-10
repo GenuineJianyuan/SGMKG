@@ -1,0 +1,36 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "Step1 outputs a 'Filtered Landsat image collection', which is used as input in Step2 to further filter the images specifically for the year 2014."
+    },
+    {
+        "relationship": ["Step1", "Step3"],
+        "reason": "Step1 outputs a 'Filtered Landsat image collection', which is used as input in Step3 to further filter the images specifically for the year 2022."
+    },
+    {
+        "relationship": ["Step1", "Step4"],
+        "reason": "Step1 outputs a 'Filtered Landsat image collection', which is used as input in Step4 to further filter the images specifically for the year 2018."
+    },
+    {
+        "relationship": ["Step2", "Step5"],
+        "reason": "Step2 outputs a 'Landsat image collection for the year 2014', which is used as input in Step5 to calculate the NDSI for each image in that collection."
+    },
+    {
+        "relationship": ["Step3", "Step5"],
+        "reason": "Step3 outputs a 'Landsat image collection for the year 2022', which is used as input in Step5 to calculate the NDSI for each image in that collection."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "Step4 outputs a 'Landsat image collection for the year 2018', which is used as input in Step5 to calculate the NDSI for each image in that collection."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "Step5 outputs 'Image with NDSI band' for each year (2014, 2018, and 2022), which is used as input in Step6 to create a minimum composite of NDSI images for those years."
+    },
+    {
+        "relationship": ["Step6", "Step7"],
+        "reason": "Step6 outputs 'Minimum composite NDSI images for 2014, 2018, and 2022', which is used as input in Step7 to visualize the snow cover results on the map."
+    }
+]
+```

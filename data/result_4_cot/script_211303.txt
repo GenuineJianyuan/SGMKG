@@ -1,0 +1,20 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is 'Population data for 2011 within Buffer2011', which is used as input in Step2 to calculate the total population sum for 2011 within the defined Buffer2011 area."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is 'Total population sum for 2011 within Buffer2011', which is used as input in Step3 to export the calculated population sum for 2011 to a CSV file."
+    },
+    {
+        "relationship": ["Step4", "Step5"],
+        "reason": "The output from Step4 is 'Population data for 2013 within Buffer2013', which is used as input in Step5 to calculate the total population sum for 2013 within the defined Buffer2013 area."
+    },
+    {
+        "relationship": ["Step5", "Step6"],
+        "reason": "The output from Step5 is 'Total population sum for 2013 within Buffer2013', which is used as input in Step6 to export the calculated population sum for 2013 to a CSV file."
+    }
+]
+```

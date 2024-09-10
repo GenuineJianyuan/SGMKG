@@ -1,0 +1,36 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code is a solution for detecting center-pivot irrigation systems using Google Earth Engine. It utilizes edge detection techniques and convolution with a ring kernel to highlight areas that match the characteristics of center-pivot irrigation systems. The code loads a Landsat EVI image, applies a threshold to identify areas of interest, detects edges using the Canny edge detector, creates a ring kernel, convolves the edge detection result with the ring kernel, and finally highlights the detected center-pivot irrigation systems on the map.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Load and Threshold Landsat EVI Image",
+        "Step description": "The purpose of this step is to load the Landsat EVI image and apply a threshold to identify areas of interest. The function ee.Image() is used to load the image, and the function image.gt() is used to apply a threshold of 0.3 to the image. Finally, the Map.addLayer() function is called to add the thresholded image layer to the map.",
+        "Input": ["Landsat EVI image"],
+        "Output":["Thresholded image layer on the map"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Detect Edges using Canny Edge Detector",
+        "Step description": "The purpose of this step is to detect edges in the thresholded image using the Canny edge detector. The function ee.Algorithms.CannyEdgeDetector() is called with a threshold of 0.3 to perform edge detection. The resulting edge detection layer is added to the map using the Map.addLayer() function.",
+        "Input": ["Thresholded image"],
+        "Output":["Edge detection layer on the map"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Create Ring Kernel for Convolution",
+        "Step description": "The purpose of this step is to create a ring kernel for convolution. Inner and outer circular kernels are created using the ee.Kernel.circle() function, and then combined to form a ring kernel using the .add() function.",
+        "Input": ["Farm size parameter"],
+        "Output":["Ring kernel for convolution"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Convolve with Ring Kernel and Highlight Detected Areas",
+        "Step description": "The purpose of this step is to convolve the edge detection result with the ring kernel, apply a threshold, and highlight the detected areas representing center-pivot irrigation systems on the map. The .convolve() function is used to convolve the edge detection result with the ring kernel, .gt() is used to apply a threshold, .focal_max() is used to highlight the detected areas, and .updateMask() is used to update the mask. Finally, the Map.addLayer() function is called to add the results layer to the map.",
+        "Input": ["Edge detection result", "Ring kernel"],
+        "Output":["Highlighted areas representing center-pivot irrigation systems on the map"]
+        }
+       ] 
+}
+```

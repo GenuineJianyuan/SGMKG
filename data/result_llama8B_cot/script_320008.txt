@@ -1,0 +1,24 @@
+﻿Based on the provided JSON summarization and steps, I will identify the combination relationship of these steps. Here is the result:
+
+```json
+[
+  {
+    "relationship": ["Step1", "Step2"],
+    "reason": "The output 'Landsat 8 image' from Step1 is used as input for Step2 to extract the RGB and panchromatic bands."
+  },
+  {
+    "relationship": ["Step2", "Step3"],
+    "reason": "The output 'RGB image' from Step2 is used as input for Step3 to convert the RGB image to HSV."
+  },
+  {
+    "relationship": ["Step3", "Step4"],
+    "reason": "The output 'HSV image' from Step3 is used as input for Step4 to swap in the panchromatic band and convert it back to RGB."
+  },
+  {
+    "relationship": ["Step4", "Step5"],
+    "reason": "The output 'Pansharpened RGB image' from Step4 is used as input for Step5 to display the original and pansharpened images on the map."
+  }
+]
+```
+
+Note that the relationship only exists if the output and its matched input exist.

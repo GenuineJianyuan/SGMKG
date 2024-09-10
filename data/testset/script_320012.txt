@@ -1,0 +1,43 @@
+﻿
+```json
+{
+"Code summarization": "This JavaScript code creates a composite image from Landsat satellite data for a specific location and time range. It selects Landsat images from 2020 within the specified date range and location, composites the selected bands, visualizes the composite image, and exports it to Google Drive.",
+"Step":[
+        {
+        "Step name":"Step1", 
+        "Short Name":"Select Landsat image collection",
+        "Step description": "The purpose of this step is to select the Landsat image collection and filter it by date range and location. This is achieved by using the ee.ImageCollection function to select the Landsat collection, then filtering the collection by date range and location using the filterDate and filterBounds functions. This step ensures that only the relevant Landsat images are included for further processing.",
+        "Input": ["Landsat image collection", "start date", "end date", "location coordinates"], 
+        "Output":["Filtered Landsat image collection"]
+        },
+        {
+        "Step name":"Step2", 
+        "Short Name":"Select bands for compositing",
+        "Step description": "The purpose of this step is to specify the bands to be included in the composite image. To implement this, an array of band names is defined to be selected for the composite image. This step ensures that only the desired bands are used in creating the composite image.",
+        "Input": ["Band names"], 
+        "Output":["Selected bands for compositing"]
+        },
+        {
+        "Step name":"Step3", 
+        "Short Name":"Composite the images",
+        "Step description": "This step aims to create a composite image by calculating the mean of the selected bands. The select function is used to choose the bands for compositing, followed by calculating the mean of these bands to generate the composite image. This step combines the selected bands into a single composite image for visualization.",
+        "Input": ["Selected bands"], 
+        "Output":["Composite image"]
+        },
+        {
+        "Step name":"Step4", 
+        "Short Name":"Visualize the composite image",
+        "Step description": "The purpose of this step is to add the composite image to the map for visualization. Visualization parameters such as bands, min-max values, and gamma correction are defined for the composite image. The addLayer function is used to add the composite image to the map, allowing for easy visualization of the final composite image.",
+        "Input": ["Composite image", "visualization parameters"], 
+        "Output":["Visualized composite image on the map"]
+        },
+        {
+        "Step name":"Step5", 
+        "Short Name":"Export the composite image to Google Drive",
+        "Step description": "This step involves exporting the composite image to Google Drive. The Export.image.toDrive function is utilized to export the composite image with specified parameters such as description, scale, region, and maxPixels. By exporting the composite image to Google Drive, it can be easily accessed and shared with others.",
+        "Input": ["Composite image", "export parameters"], 
+        "Output":["Exported composite image to Google Drive"]
+        }
+       ] 
+}
+```

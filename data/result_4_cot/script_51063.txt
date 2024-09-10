@@ -1,0 +1,12 @@
+﻿```json
+[
+    {
+        "relationship": ["Step1", "Step2"],
+        "reason": "The output from Step1 is the 'Image containing tree cover data for the year 2000 within the specified region', which is used as input in Step2 to calculate the total forest area in hectares for the year 2000 within the specified region."
+    },
+    {
+        "relationship": ["Step2", "Step3"],
+        "reason": "The output from Step2 is the 'Total forest area in hectares for the year 2000 within the specified region', which is used as input in Step3 to print the total tree cover in hectares meeting minimum canopy cover and forest area thresholds."
+    }
+]
+```
